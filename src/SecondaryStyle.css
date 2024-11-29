@@ -1,0 +1,7 @@
+.creativeIdea div {
+  transition: 0.3s ease-in-out;
+}
+.creativeIdea:hover div {
+  top: 40px;
+}
+
