@@ -1,0 +1,53 @@
+.bg-coloring {
+    background-image: -webkit-linear-gradient(90deg, #0c0e12 0%, rgba(31, 41, 53, 0.36078) 100%);
+    background-color: #121a23;
+}
+.about-us-BG {
+    background-image: url('https://themedox.com/mykd/wp-content/uploads/2023/10/area_bg01.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.clipedUnderline {
+    content: '';
+    display: block;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 93.846% 100%, 6.154% 100%, 0% 0%);
+    clip-path: polygon(0% 0%, 100% 0%, 93.846% 100%, 6.154% 100%, 0% 0%);
+    width: 65px;
+    height: 5px;
+    margin: 20px 0 0;
+    background-color: green;
+}
+.hr-custom-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(231deg, transparent 0%, #f37c20 50%, transparent 100%);
+}
+.hr-custom-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(231deg, transparent 0%, #f37c20 50%, transparent 100%);
+}
+.img-custom-border {
+    border: 1px #cfa374 solid;
+    border-radius: 50%;
+    padding: 1px;
+}
+.img-custom-border2 {
+    border: 1px #cfa374 solid;
+    border-radius: 50%;
+}
+.humanGame-sideButton {
+    background-image: -webkit-linear-gradient(0deg, #1f2935 0%, transparent 100%, #10181f 100%);
+}
+.humanGame-bottomButton {
+    background-image: -webkit-linear-gradient(90deg, #10181f 0%, transparent 0%, #141a20 100%);
+}

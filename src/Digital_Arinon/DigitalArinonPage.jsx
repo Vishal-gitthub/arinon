@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 
 // images & Svg files import
+import arinonBanner from "../Image_Files/Arinon_Digital_Banner.jpg"
 import BulbSvg from "../Image_Files/Icons_File/bulb-2.svg";
 import businessLogo from "../Image_Files/Icons_File/briefcase-2.svg";
 import heartLogo from "../Image_Files/Icons_File/heart.svg";
 import plantImg from "../Image_Files/plant.png";
+import plant2 from "../Image_Files/plant_2.png";
 import groupSvg from "../Image_Files/Icons_File/groupSvg.svg";
 import codeSvg from "../Image_Files/Icons_File/code-svgrepo-com.svg";
 import completedSvg from "../Image_Files/Icons_File/completedSvg.svg";
-import locationIcon from "../Image_Files/Icons_File/location-iconm.svg"
-import emailIcon from "../Image_Files/Icons_File/send-email-icon.svg"
-import callIcon from "../Image_Files/Icons_File/call-icon.svg"
-import formImg from "../Image_Files/brandsLogos/formIllustrator.png"
+import ServiceMockup from "../Image_Files/MockUp1forService.png"
+import contactIllu from "../Image_Files/contect form ill png.png"
+import downArrow from "../Image_Files/Icons_File/downArrow.png"
 // logo 
 import logo from "../Assets/Logo/Arinon_Logo_Final-02.png"
 // brand logo 
@@ -37,6 +38,30 @@ import "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// <<<<<<<------->>>>>>>
+import WorkMockUp_1 from "../Image_Files/ArinonImages/Work MockUp-01.jpg"
+import WorkMockUp_2 from "../Image_Files/ArinonImages/Work MockUp-02.jpg"
+import WorkMockUp_3 from "../Image_Files/ArinonImages/Work MockUp-03.jpg"
+import WorkMockUp_4 from "../Image_Files/ArinonImages/Work MockUp-04.jpg"
+import WorkMockUp_5 from "../Image_Files/ArinonImages/Work MockUp-05.jpg"
+import WorkMockUp_6 from "../Image_Files/ArinonImages/Work MockUp-06.jpg"
+import WorkMockUp_7 from "../Image_Files/ArinonImages/Work MockUp-07.jpg"
+import WorkMockUp_8 from "../Image_Files/ArinonImages/Work MockUp-08.jpg"
+// Arinon Projects Thumbnail Images 
+const projectsClient = [
+  { name: "Laxya Production", image: WorkMockUp_3 },
+  { name: "The Bridge Hotel", image: WorkMockUp_8 },
+  { name: "Musings of Aakanksha", image: WorkMockUp_5 },
+  { name: "Peter Cat", image: WorkMockUp_1 },
+  { name: "Musings Of Akanksha", image: WorkMockUp_2 },
+  { name: "3L Cafe", image: WorkMockUp_6 },
+  { name: "Laxya Production", image: WorkMockUp_7 },
+  { name: "The Bridge Hotel", image: WorkMockUp_4 },
+];
+
+
+// <<<<<<<------->>>>>>>
+
 
 const DigitalArinonPage = () => {
   // these 3 states for displaying our clients and projects with animation 
@@ -54,7 +79,6 @@ const DigitalArinonPage = () => {
 
   const [isVisible, setVisible] = useState(false)
 
-  // const [stickyBarVisible, setStickyBarVisible] = useState(false)
 
   // toggleButton for back to top Button 
   const toggleVisibility = () => {
@@ -65,21 +89,6 @@ const DigitalArinonPage = () => {
       setVisible(false)
     }
   }
-
-
-  // const stickyBarVisibility = () => {
-  //   if (window.scrollY > window.document.documentElement.scrollHeight * 0.88) {
-  //     setStickyBarVisible(true)
-  //   }
-  //   else {
-  //     setStickyBarVisible(false)
-  //   }
-  // }
-  // useEffect(() => {
-  //   window.addEventListener("scroll", stickyBarVisibility);
-  //   return () => { window.removeEventListener("scroll", stickyBarVisibility) }
-  // })
-
 
 
   const scrollToTop = () => {
@@ -261,13 +270,13 @@ const DigitalArinonPage = () => {
 
 
   let carouselSettings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 1000,
   };
 
@@ -277,7 +286,7 @@ const DigitalArinonPage = () => {
     infinite: true,
     arrows: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 800,
@@ -313,6 +322,11 @@ const DigitalArinonPage = () => {
     setWidthState(!widthState);
   }
 
+
+
+
+
+
   return (
     //  className="font-custom"
     <div className="font-custom">
@@ -320,9 +334,9 @@ const DigitalArinonPage = () => {
       {/* Navbar   */}
       <header className="sticky top-0  z-40 ">
         <nav
-          className="backdrop-blur-sm py-5 px-8 flex items-center justify-between bg-[#1d3962]"
+          className="backdrop-blur-sm py-3 px-8 flex items-center justify-between bg-[#1d3962]"
         >
-          <a href="#home">
+          <a href="#home" aria-label="LOGO">
             <div className="w-24">
               <img src={logo} alt="" className="w-full" />
             </div>
@@ -340,7 +354,7 @@ const DigitalArinonPage = () => {
             <a href="#about-us">
               About Us
             </a>
-            <a href="#faqs">FAQs</a>
+            {/* <a href="#faqs">FAQs</a> */}
 
             <a href="#contact">
               Contact Us
@@ -349,7 +363,7 @@ const DigitalArinonPage = () => {
 
           </div>
           <div className=" hidden max-md:block">
-            <button onClick={menuBtn}>
+            <button onClick={menuBtn} aria-label="Menu Bar">
               <img src={listIcon} alt="" />
             </button>
           </div>
@@ -361,7 +375,7 @@ const DigitalArinonPage = () => {
             } text-black max-md:w-64 bg-slate-50`}
 
         >
-          <button onClick={menuCloseBtn} className="p-4 grid place-items-center">
+          <button onClick={menuCloseBtn} aria-label="Close Menu" className="p-4 grid place-items-center">
             <img src={arrowRight} alt="" />
           </button>
 
@@ -377,27 +391,32 @@ const DigitalArinonPage = () => {
           >
             About Us
           </a>
-          <a href="#faqs"
+          {/* <a href="#faqs"
             className="py-3 hover:bg-[#1d3962] hover:text-white rounded-2xl mx-2 px-4 text-xl"
           >FAQs
-          </a>
+          </a> */}
 
           <a href="#contact"
             className="py-3 hover:bg-[#1d3962] hover:text-white rounded-2xl mx-2 px-4 text-xl"
           >
-
             Contact Us
           </a>
-
         </div>
-
       </header>
+      <section>
+        <div className="w-full h-[36rem]">
+          <img src={arinonBanner} className="w-full h-full object-cover relative" alt="" />
 
+          <a href="#home" className="absolute top-[85%] rounded-full  transition-all duration-500 left-2/4 py-4 px-4" >
+            <img src={downArrow} alt="" />
+          </a>
+        </div>
+      </section>
       {/* -------------------------------SECTION 1------------------------------- */}
       <section>
         {/* -------------------------------CHILD SECTION A------------------------------- */}
         <div className="px-36 max-md:px-20 max-sm:px-5 text-center " id="home">
-          <h1 className=" text-5xl max-sm:text-4xl font-bold py-8">
+          <h1 className=" text-5xl max-sm:text-4xl font-bold py-16">
             We are Digital Agency
           </h1>
           <p>
@@ -432,7 +451,6 @@ const DigitalArinonPage = () => {
               </h1>
             </div>
           </div>
-
           {/* Right Card */}
           <div className="flex flex-col items-center creativeIdea rightCard w-full sm:w-[30%] md:w-[50%] lg:w-[30%]">
             <div className="relative top-12">
@@ -448,19 +466,17 @@ const DigitalArinonPage = () => {
         {/* -------------------------------CHILD SECTION C------------------------------- */}
 
 
-      </section>
+      </section >
 
 
 
       {/* -------------------------------SECTION 2------------------------------- */}
-      <section className=" bg-violet-100 mt-12 py-20 " id="about-us">
+      < section className=" bg-blue-custom text-white mt-12 py-20 " id="about-us" >
         {/* -------------------------------CHILD SECTION A------------------------------- */}
         {/* our Philosophy and vision  */}
         <div className="flex items-center justify-center max-md:px-5 max-md:flex-col overflow-hidden">
           <div className="pr-11 w-2/4 max-md:w-full max-md:pr-0 max-md:text-center">
-            <span className="text-2xl font-light">
-              Our Philosophy and Vision
-            </span>
+
             <h1 className="text-4xl font-bold py-4">
               Our Philosophy
 
@@ -470,14 +486,14 @@ const DigitalArinonPage = () => {
             </p>
           </div>
           <div className="flex justify-end pl-6 objectRight ">
-            <img src={plantImg} alt="" className="pl-5 " />
+            <img src={plantImg} alt="" className="pl-5 w-full" />
           </div>
         </div>
 
 
         <div className="flex items-center justify-center max-md:px-5 max-md:flex-col-reverse overflow-hidden ">
           <div className="flex justify-end pl-6 objectLeft ">
-            <img src={plantImg} alt="" className="pl-5 " />
+            <img src={plant2} alt="" className="pl-5 " />
           </div>
           <div className="pr-11 w-2/4 max-md:w-full max-md:pr-0 max-md:text-center text-right">
 
@@ -496,7 +512,7 @@ const DigitalArinonPage = () => {
 
         {/* -------------------------------CHILD SECTION C------------------------------- */}
 
-        <div className="flex justify-around items-center  max-sm:gap-5 pt-9 max-md:flex-col">
+        <div className="flex justify-around items-center  max-sm:gap-5 pt-9 max-md:flex-col pb-7">
           <div className="flex items-center gap-3 ">
             <img src={groupSvg} alt="" />
             <div className="flex flex-col">
@@ -519,18 +535,16 @@ const DigitalArinonPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </ section>
 
 
 
       {/* Brands Logos Carousels */}
       {/* -------------------------------SECTION 3------------------------------- */}
-      <section className="py-20 brandBg">
+      <section className="py-10 brandBg">
         <div>
           <Slider {...brandCarousel}>
-            <div className="flex justify-center items-center">
-              <img src={elCafe} className=" w-full grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 1" />
-            </div>
+
             <div className="flex justify-center items-center">
               <img src={peterCat} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 2" />
             </div>
@@ -538,13 +552,16 @@ const DigitalArinonPage = () => {
               <img src={deeBake} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 3" />
             </div>
             <div className="flex justify-center items-center">
+              <img src={elCafe} className=" w-full grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 1" />
+            </div>
+            <div className="flex justify-center items-center">
+              <img src={musingOfAkansha} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 5" />
+            </div>
+            <div className="flex justify-center items-center">
               <img src={laxya} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 4" />
             </div>
             <div className="flex justify-center items-center">
               <img src={aeikyam} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 5" />
-            </div>
-            <div className="flex justify-center items-center">
-              <img src={musingOfAkansha} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 5" />
             </div>
             <div className="flex justify-center items-center">
               <img src={bridgeHotel} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 5" />
@@ -557,49 +574,28 @@ const DigitalArinonPage = () => {
 
 
       {/* -------------------------------SECTION 4------------------------------- */}
-      <section>
-        {/* -------------------------------CHILD SECTION A------------------------------- */}
-        {/* latest and creative works  */}
-        <div className="bg-violet-100 py-16 px-16">
-          <div className="flex items-center max-md:flex-col max-md:text-center max-md:gap-5">
-            <h1 className="text-5xl pr-7 flex-shrink-0">
-              Latest & <br />
-              <span>Creative Work</span>
-            </h1>
-            <p className="pl-7 text-lg py-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-              optio quos tempora vel error expedita cupiditate, consequatur
-              saepe numquam inventore?
-            </p>
-          </div>
-
-          <div className="h-62 w-full pt-10">
-            <Slider {...carouselSettings}>
-              <div>
+      <section className="pt-10 bg-blue-custom">
+        <h1 className="text-4xl font-semibold text-center pb-10 text-white">Our latest and Creative works</h1>
+        <div className="grid grid-rows-2 max-sm:grid-cols-1 max-sm:grid-rows-1 max-md:grid-cols-2 max-md:grid-rows-2 max-lg:grid-cols-3 max-lg:grid-rows-3 grid-cols-4 w-full gap-0">
+          {projectsClient.map((project, index) => (
+            <div key={index}>
+              <div className="relative group w-full h-full overflow-hidden">
                 <img
-                  className="object-cover w-full h-full"
-                  src="https://picsum.photos/seed/game5/2400/780"
-                  alt=""
+                  src={project.image}
+                  alt={`Image of ${project.name}`}
+                  className="w-full h-full object-cover"
                 />
+                <div className="text-center flex justify-center items-center text-2xl absolute -bottom-12 group-hover:bottom-0 transition-all duration-300 left-0 z-50 text-black w-full h-12 bg-white">
+                  {project.name}
+                </div>
+                <div className="absolute opacity-0 group-hover:opacity-100 top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 transition-all duration-300 text-white font-semibold tracking-[0.3em] text-xl bg-[#0000008f] flex justify-center items-center w-full h-full">
+                  VISIT
+                </div>
               </div>
-              <div>
-                <img
-                  className="object-cover w-full h-full"
-                  src="https://picsum.photos/seed/game5/2400/780"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  className="object-cover w-full h-full"
-                  src="https://picsum.photos/seed/game5/2400/780"
-                  alt=""
-                />
-              </div>
-            </Slider>
-          </div>
+            </div>
+          ))}
         </div>
-      </section >
+      </section>
 
 
 
@@ -609,115 +605,56 @@ const DigitalArinonPage = () => {
 
         {/* SERVICES  */}
         {/* -------------------------------CHILD SECTION A------------------------------- */}
-        <section className="py-20 overflow-hidden" id="services">
-          <div className="max-w-7xl mx-auto px-6">
-            {/* Section Title */}
-            <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">
-              Our Services
-            </h2>
 
-            {/* Services */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-
-              {/* Service 1: Digital Marketing */}
-              <div className="bg-white p-8 rounded-lg shadow-md objectLeft2">
-                <div className="flex justify-center mb-6">
-                  <img
-                    src="https://via.placeholder.com/60/a62e7a/FFFFFF?text=SEO"
-                    alt="SEO Icon"
-                    className="w-16 h-16 rounded-full bg-[#1d3962] p-4"
-                  />
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                  01. Digital Marketing
-                </h3>
-                <p className="text-lg text-gray-600 mb-4">
-                  Take your brand to the next level with powerful digital marketing strategies,
-                  that aligns with your vision.
-                </p>
-                <ul className="text-gray-600 list-inside list-disc mb-4">
-                  <li>SEO: Rank higher and attract the right audience.</li>
-                  <li>Social Media: Create engaging campaigns for your audience.</li>
-                  <li>Content Marketing: Drive conversions with well-crafted content.</li>
-                </ul>
-                <div className="text-center mt-6">
-                  <a
-                    href="#"
-                    className="inline-block px-6 py-3 bg-[#1d3962] text-white font-bold rounded-lg hover:bg-[#A62E7A] transition duration-300"
-                  >
-                    Learn More
-                  </a>
-                </div>
+        <section className="overflow-hidden py-20">
+          <div className="flex max-md:flex-col max-md:text-center max-md:gap-5 items-center">
+            <div className="flex flex-col justify-between pl-32 pr-10 max-md:px-8 text-right max-md:text-left max-md:gap-5 gap-40 objectLeft2">
+              <div>
+                <h1 className="text-xl font-semibold ">DIGITAL MARKETING</h1>
+                <p className="text-gray-600">Take your brand to the next level with powerful digital marketing strategies, that aligns with your vision.</p>
               </div>
-
-              {/* Service 2: Web Development */}
-              <div className="bg-white p-8 rounded-lg shadow-md">
-                <div className="flex justify-center mb-6">
-                  <img
-                    src="https://via.placeholder.com/60/a62e7a/FFFFFF?text=Web"
-                    alt="Web Development Icon"
-                    className="w-16 h-16 rounded-full bg-[#1d3962] p-4"
-                  />
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                  02. Web Development
-                </h3>
-                <p className="text-lg text-gray-600 mb-4">
-                  Build fast, responsive, and user-friendly websites with our expert development team.
-                </p>
-                <ul className="text-gray-600 list-inside list-disc mb-4">
-                  <li>Responsive Web Design: Optimized for all devices.</li>
-                  <li>Custom Websites: Tailored to your business needs.</li>
-                  <li>E-commerce: Powerful platforms for online sales.</li>
-                </ul>
-                <div className="text-center mt-6">
-                  <a
-                    href="#"
-                    className="inline-block px-6 py-3 bg-[#1d3962] text-white font-bold rounded-lg hover:bg-[#A62E7A] transition duration-300"
-                  >
-                    Learn More
-                  </a>
-                </div>
-              </div>
-
-              {/* Service 3: App Development */}
-              <div className="bg-white p-8 rounded-lg shadow-md objectRight2">
-                <div className="flex justify-center mb-6">
-                  <img
-                    src="https://via.placeholder.com/60/a62e7a/FFFFFF?text=App"
-                    alt="App Development Icon"
-                    className="w-16 h-16 rounded-full bg-[#1d3962] p-4"
-                  />
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                  03. App Development
-                </h3>
-                <p className="text-lg text-gray-600 mb-4">
+              {/* <div>
+                <h1 className="text-xl font-semibold ">WEB DEVELOPMENT</h1>
+                <p className="text-gray-600">Build fast, responsive, and user-friendly websites with our expert development team.</p>
+              </div> */}
+              <div>
+                <h1 className="text-xl font-semibold ">App Development
+                </h1>
+                <p className="text-gray-600">
                   Develop mobile and web applications that meet your business needs and enhance user experience.
                 </p>
-                <ul className="text-gray-600 list-inside list-disc mb-4">
-                  <li>Web Apps: Build powerful, fast, and functional applications.</li>
-                  <li>Mobile Apps: User-friendly apps for iOS and Android.</li>
-                  <li>Cross-Platform: Apps that work seamlessly across all devices.</li>
-                </ul>
-                <div className="text-center mt-6">
-                  <a
-                    href="#"
-                    className="inline-block px-6 py-3 bg-[#1d3962] text-white font-bold rounded-lg hover:bg-[#A62E7A] transition duration-300"
-                  >
-                    Learn More
-                  </a>
-                </div>
               </div>
+            </div>
 
+            <div className="max-w-72 min-w-52 max-md:max-w-52 controlOpacity">
+              <img src={ServiceMockup} alt="" />
+            </div>
+
+            <div className="flex flex-col pr-32 pl-10 gap-8 max-md:px-8 max-md:text-left objectRight2">
+              {/* <div>
+                <h1 className="text-xl font-semibold ">DIGITAL MARKETING</h1>
+                <p className="text-gray-600">Take your brand to the next level with powerful digital marketing strategies, that aligns with your vision.</p>
+              </div> */}
+              <div>
+                <h1 className="text-xl font-semibold ">WEB DEVELOPMENT</h1>
+                <p className="text-gray-600">Build fast, responsive, and user-friendly websites with our expert development team.</p>
+              </div>
+              {/* <div>
+                <h1 className="text-xl font-semibold ">App Development
+                </h1>
+                <p className="text-gray-600">
+                  Develop mobile and web applications that meet your business needs and enhance user experience.
+                </p>
+              </div> */}
             </div>
           </div>
         </section>
+
         {/* -------------------------------CHILD SECTION B------------------------------- */}
 
 
         {/* web design packages ---------------- */}
-        <div className=" items-centerflex-col text-center max-md:gap-5 pt-10" id="pricing">
+        <div className=" items-centerflex-col text-center max-md:gap-20 pt-10" id="pricing">
           <h1 className="text-5xl pr-7 flex-shrink-0 font-semibold font-custom">Web Designs Packages</h1>
           <p className="px-20 max-md:px-15 max-sm:px-5 text-lg py-5 ">We offer comprehensive social media management packages designed to help you achieve your brand goals, whether you're starting out or looking to dominate your niche.
           </p>
@@ -728,8 +665,8 @@ const DigitalArinonPage = () => {
 
 
         {/* prices up down annimation Cards */}
-        <div className="py-16">
-          <div className="flex items-center justify-center gap-7 flex-wrap pt-12">
+        <div>
+          <div className="flex items-center justify-center gap-7 flex-wrap pt-8">
 
             <div className="group shadow-[0px_2px_15px_4px_#0000001a] h-[450px]">
               <div className="relative w-72 h- bg-white overflow-hidden flex items-center justify-center ">
@@ -744,13 +681,13 @@ const DigitalArinonPage = () => {
 
               <div className="relative w-72 h- bg-white overflow-hidden flex items-center justify-center group">
                 <div className="relative z-10 text-center group-hover:text-white transition-all duration-300 px-5">
-                  <h3 className="text-base py-4">3 posts/week (Reels, photos, captions)</h3>
-                  <h3 className="text-base py-4">2 stories/week for audience engagement
-                  </h3>
-                  <h3 className="text-base py-4 ">Basic hashtag research boost reach
-                  </h3>
-                  <h3 className="text-base py-4 "> Monthly insights on followers and engagement
-                  </h3>
+                  <h1 className="text-base py-4">3 posts/week (Reels, photos, captions)</h1>
+                  <h1 className="text-base py-4">2 stories/week for audience engagement
+                  </h1>
+                  <h1 className="text-base py-4 ">Basic hashtag research boost reach
+                  </h1>
+                  <h1 className="text-base py-4 "> Monthly insights on followers and engagement
+                  </h1>
                 </div>
                 <div className="absolute top-[-100%] left-0 w-full h-full bg-[#a62d7a] transition-all duration-300 ease-in-out group-hover:top-0  " />
               </div>
@@ -768,18 +705,18 @@ const DigitalArinonPage = () => {
 
               <div className="relative w-72 h- bg-white overflow-hidden flex items-center justify-center group">
                 <div className="relative z-10 text-center group-hover:text-white transition-all duration-300 px-5">
-                  <h3 className="text-base py-4">4 posts/week (photos, Reels, captions)
-                  </h3>
-                  <h3 className="text-base py-4">3 stories/week to deepen connection
+                  <h1 className="text-base py-4">4 posts/week (photos, Reels, captions)
+                  </h1>
+                  <h1 className="text-base py-4">3 stories/week to deepen connection
 
-                  </h3>
-                  <h3 className="text-base py-4 "> 1 trending Reel per week
+                  </h1>
+                  <h1 className="text-base py-4 "> 1 trending Reel per week
 
-                  </h3>
-                  <h3 className="text-base py-4 "> Advanced monthly report with engagement insights
+                  </h1>
+                  <h1 className="text-base py-4 "> Advanced monthly report with engagement insights
 
 
-                  </h3>
+                  </h1>
                 </div>
                 <div className="absolute top-[-100%] left-0 w-full h-full bg-[#a62d7a] transition-all duration-300 ease-in-out group-hover:top-0  " />
               </div>
@@ -797,15 +734,15 @@ const DigitalArinonPage = () => {
 
               <div className="relative w-72 h- bg-white overflow-hidden flex items-center justify-center group">
                 <div className="relative z-10 text-center group-hover:text-white transition-all duration-300 px-5">
-                  <h3 className="text-base py-4"> 5 posts/week (diverse mix including Reels, quotes)
-                  </h3>
-                  <h3 className="text-base py-4">Daily stories to maintain engagement
-                  </h3>
-                  <h3 className="text-base py-4 ">2 high-quality Reels per week
+                  <h1 className="text-base py-4"> 5 posts/week (diverse mix including Reels, quotes)
+                  </h1>
+                  <h1 className="text-base py-4">Daily stories to maintain engagement
+                  </h1>
+                  <h1 className="text-base py-4 ">2 high-quality Reels per week
 
-                  </h3>
-                  <h3 className="text-base py-4 "> Detailed monthly analytics with growth strategies
-                  </h3>
+                  </h1>
+                  <h1 className="text-base py-4 "> Detailed monthly analytics with growth strategies
+                  </h1>
                 </div>
                 <div className="absolute top-[-100%] left-0 w-full h-full bg-[#a62d7a] transition-all duration-300 ease-in-out group-hover:top-0  " />
               </div>
@@ -818,7 +755,7 @@ const DigitalArinonPage = () => {
                   <p className="text-base py-4">In-person consultation for a deep dive into your brand strategy.
                   </p>
                   <p>
-                    Comprehensive guidance with hands-on support for execution.
+                    Comprehensive guidance with hands-on support for execution.
                   </p>
 
                 </div>
@@ -844,82 +781,58 @@ const DigitalArinonPage = () => {
 
 
       {/* -------------------------------CHILD SECTION 6------------------------------- */}
-      <section className="bg-blue-100 py-14 group" >
+      <section className="bg-blue-100 py-24 group  testimonialsBg" >
         <div className="flex flex-col items-center">
-          <h1 className="text-6xl  text-center">Testimonials</h1>
+          <h1 className="text-3xl font-semibold text-white  text-center uppercase">Happy clients</h1>
           <div className="w-16 h-1 bg-[#a62d7a] rounded-md group-hover:w-80 transition-all duration-500 " />
         </div>
-        <div className="w-[70%] max-sm:w-[90%] m-auto pt-12 testimonialsBg">
+        <div className="w-[90%] m-auto pt-12">
           <div>
             <Slider {...carouselSettings}>
               <div>
-                <div className="flex max-sm:flex-col justify-center items-center  gap-5  ">
-                  <div>
-                    <img src={laxya} alt="" />
-                  </div>
-                  <div>
-                    <h1 className="text-2xl font-semibold">LAXYA Prod.</h1>
-                    <p className="py-3  text-lg text-gray-700">Arinon’s dedication and expertise in social media have elevated our brand presence. We couldn’t ask for a better partner!
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="flex max-sm:flex-col justify-center items-center  gap-5 ">
-                  <div>
-                    <img src={aeikyam} alt="" />
-                  </div>
-                  <div>
-                    <h1 className="text-2xl font-semibold">AEIKYAM</h1>
-                    <p className="py-3  text-lg text-gray-700">Arinon’s content captures the essence of our Vastu-inspired products beautifully. They’ve helped us connect with the right audience.</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="flex max-sm:flex-col justify-center items-center  gap-5 ">
-                  <div>
-                    <img src={elCafe} alt="" />
-                  </div>
-                  <div>
-                    <h1 className="text-2xl font-semibold">3L CAFE</h1>
-                    <p className="py-3  text-lg text-gray-700">Arinon has helped us bring the essence of 3L Cafe to life online. Their expertise in managing our website and social media has truly elevated our brand.</p>
-                  </div>
-                </div>
-              </div>
+                <div className="flex max-sm:flex-col justify-center items-center  gap-20  max-sm:gap-7 ">
 
-              {/* bridge Hotel Testimonials pending  */}
-              {/* <div>
-                <div className="flex justify-center items-center  gap-5 ">
-                  <div>
-                    <img src={bridgeHotel} alt="" />
-                  </div>
-                  <div>
-                    <h1 className="text-2xl font-semibold">BRIDGE HOTEL</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim unde quisquam aliquam.</p>
-                  </div>
-                </div>
-              </div> */}
-
-              <div>
-                <div className="flex max-sm:flex-col justify-center items-center  gap-5 ">
-                  <div>
-                    <img src={musingOfAkansha} alt="" />
-                  </div>
-                  <div>
-                    <h1 className="text-2xl font-semibold">MUSINGS OF AKANKSHA</h1>
-                    <p className="py-3   text-lg text-gray-700">Arinon understands my audience perfectly! Their creative approach has taken my social media to the next level. </p>
+                  <div className="w-[80%] text-center max-sm:w-full">
+                    <p className="py-3 text-2xl  text-white">Arinon’s dedication and expertise in social media have elevated our brand presence. We couldn’t ask for a better partner!
+                    </p>
+                    <h1 className="text-lg font-medium text-gray-500">LAXYA PRODUCTION</h1>
                   </div>
                 </div>
               </div>
               <div>
-                <div className="flex max-sm:flex-col justify-center items-center  gap-5 ">
-                  <div>
-                    <img src={peterCat} alt="" />
+                <div className="flex max-sm:flex-col justify-center items-center  gap-20 max-sm:gap-7 ">
+
+                  <div className="w-[80%] text-center max-sm:w-full">
+                    <p className="py-3 text-2xl text-white">Arinon’s content captures the essence of our Vastu-inspired products beautifully. They’ve helped us connect with the right audience.</p>
+                    <h1 className="text-lg font-medium text-gray-500">AEIKYAM</h1>
                   </div>
-                  <div>
-                    <h1 className="text-2xl font-semibold">PETER CAT</h1>
-                    <p className="py-3 text-lg text-gray-700">Arinon has turned our cafe into a digital hotspot. Their posts capture the warm, cozy vibe we’re known for.
+                </div>
+              </div>
+              <div>
+                <div className="flex max-sm:flex-col justify-center items-center  gap-20 max-sm:gap-7 ">
+
+                  <div className="w-[80%] text-center max-sm:w-full">
+                    <p className="py-3 text-2xl  text-white">Arinon has helped us bring the essence of 3L Cafe to life online. Their expertise in managing our website and social media has truly elevated our brand.</p>
+                    <h1 className="text-lg font-medium text-gray-500">3L CAFE</h1>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="flex max-sm:flex-col justify-center items-center  gap-20  max-sm:gap-7">
+
+                  <div className="w-[80%] text-center max-sm:w-full" >
+                    <p className="py-3 text-2xl text-white">Arinon understands my audience perfectly! Their creative approach has taken my social media to the next level. </p>
+                    <h1 className="text-lg font-medium text-gray-500">MUSINGS OF AAKANKSHA</h1>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="flex max-sm:flex-col justify-center items-center  gap-20 max-sm:gap-7 ">
+
+                  <div className="w-[80%] text-center max-sm:w-full">
+                    <p className="py-3 text-2xl text-white">Arinon has turned our cafe into a digital hotspot. Their posts capture the warm, cozy vibe we’re known for.
                     </p>
+                    <h1 className="text-lg font-medium text-gray-500">PETER CAT</h1>
                   </div>
                 </div>
               </div>
@@ -929,7 +842,7 @@ const DigitalArinonPage = () => {
       </section>
 
 
-      <section id="faqs">
+      <section id="faqs" className="hidden">
         {/* Accordians  */}
         <div className="bg-gray-100 py-20 px-6 sm:px-8 lg:px-16">
           <div className="max-w-4xl mx-auto text-center mb-8">
@@ -1035,45 +948,78 @@ const DigitalArinonPage = () => {
 
 
       {/* -------------------------------Footer Section------------------------------- */}
-      <footer className="px-14 py-6 bg-blue-50" id="contact">
-        <div className="px-7 py-6 bg-blue-50 flex w-full items-center justify-center">
-          <div className="flex bg-white py-8 px-5 rounded-md">
-            <div className="flex flex-col gap-2 items-center">
-              <h1 className="text-5xl font-semibold">Contact</h1>
-              <input type="text" className="py-2 px-4 rounded-3xl w-full border " placeholder="👤Name" />
-              <input type="email" className="py-2 px-4 rounded-3xl w-full border" placeholder="✉️ Email" />
-              <textarea name="Description" id="disc" className="py-3 px-6 border w-72 h-36 rounded-3xl resize-none " placeholder="Drop Your Message"></textarea>
+      <footer className="px-14 pt-10 pb-4 bg-blue-custom text-white" id="contact">
+        <div className="flex flex-col w-full items-center justify-center px-4 py-6">
+          <div className="flex lg:flex-row w-full justify-center items-center gap-10 lg:gap-28 py-8 px-5 rounded-md">
+            {/* Contact Form Section */}
+            <div className="flex flex-col gap-4 items-center w-full lg:w-1/2 px-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center">Contact</h1>
+              <input
+                type="text"
+                className="py-2 px-4 text-black outline-none rounded-3xl w-full border min-w-60 max-w-64"
+                autoComplete="on"
+                id="UserName"
+                name="userName"
+                placeholder="👤 Name"
+              />
+              <input
+                type="email"
+                className="py-2 px-4 text-black outline-none rounded-3xl w-full border min-w-60 max-w-64"
+                id="email"
+                name="email"
+                autoComplete="on"
+                placeholder="✉️ Email"
+              />
+              <textarea
+                name="Description"
+                id="disc"
+                className="py-3 px-4 text-black outline-none border w-full rounded-3xl resize-none min-w-60 max-w-64"
+                rows="4"
+                placeholder="Drop Your Message"
+              ></textarea>
+              <div className="border rounded-full">
 
-              <button className="relative inline-flex border items-center justify-start px-10 py-3 overflow-hidden font-medium transition-all bg-[#f37c20] rounded-full hover:bg-[#a62d7a] group">
-                <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-400 transition-all border-[#1d3962] rounded-full"></span>
-                <span className="relative w-full text-left text-white transition-colors duration-500 ease-in-out group-hover:text-white">Submit</span>
-              </button>
+                <button
+                  aria-label="Submit Form"
+                  className="relative inline-flex items-center justify-center px-6 py-3 font-medium bg-blue-custom text-white rounded-full hover:bg-[#a62d7a] group transition-all"
+                >
+                  <span className="absolute inset-0 border-0 group-hover:border-[25px] transition-all border-[#a62d7a] rounded-full"></span>
+                  <span className="relative text-white group-hover:text-white">Submit</span>
+                </button>
 
+              </div>
             </div>
-            <div className="w-64 h-72 max-sm:hidden">
-              <img src={formImg} alt="" />
+
+            {/* Illustration Section */}
+            <div className="hidden md:block lg:w-1/2 w-full h-64 lg:h-auto">
+              <img
+                src={contactIllu}
+                alt="Contact Illustration"
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
         </div>
 
+
         <hr />
         {/* LOCATION  */}
 
-        <div className="flex justify-between max-md:justify-cente pt-10 gap-5 flex-wrap items-center ">
+        <div className="flex justify-between max-md:justify-center  pt-2 gap-20 max-md:gap-2 max-md:flex-col-reverse  max-md:flex-wrap  items-center ">
 
-          <div className="flex items-center gap-3 max-md:flex-col">
-            <img src={locationIcon} alt="" />
-            <p className="text-lg">Arinon Digital, Ghitorni, Delhi NCR</p>
+          <div className="flex items-center gap-1 max-md:flex-col  text-[12px]">
+            <i className="fa fa-copyright text-white"></i>
+            <p className="">{new Date().getFullYear()} Arinon, (a unit of Manisi) All rights reserved.</p>
           </div>
 
-          <div className="flex items-center gap-3 max-md:flex-col">
-            <img src={callIcon} alt="" />
-            <p className="tracking-wide text-lg">+91-0123456789</p>
+          <div className="flex items-center gap-3 max-md:flex-col text-[12px] flex-shrink-0">
+            <i className="fa fa-phone  text-white"></i>
+            <p className="tracking-wide ">+91 97738 36032</p>
           </div>
 
-          <div className="flex items-center gap-3 max-md:flex-col">
-            <img src={emailIcon} alt="" />
-            <p className="text-lg">info@arinon.com</p>
+          <div className="flex items-center gap-3 max-md:flex-col text-sm">
+            <i className="fa fa-envelope text-white"></i>
+            <p className="">info@arinon.com</p>
           </div>
 
         </div>
@@ -1081,11 +1027,17 @@ const DigitalArinonPage = () => {
         {/* ${stickyBarVisible ? "opacity-100" : "opacity-0"} this code will go for side sticky social bar */}
 
         <div className={`fixed right-0 top-1/2  inline-flex -translate-y-1/2 flex-col gap-2 pr-1`}>
-          <i className="fa fa-facebook text-3xl  border py-2 px-[15px] rounded-[50%] bg-transparent hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
-          <i className="fa fa-instagram text-3xl border py-2 px-3 rounded-[50%] bg-transparent hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
-          {/* <i className="fa fa-whatsapp text-3xl  border py-2 px-3 rounded-[50%] bg-white hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i> */}
-          <i className="fa fa-linkedin text-3xl  border py-2 px-3 rounded-[50%] bg-transparent hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
+          <a href="#Facebook" aria-label="Visit our Facebook page">
+            <i className="fa fa-facebook text-xl  border py-[15px] bg-[black] px-[18px] rounded-[50%] bg-transparent hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
+          </a>
+          <a href="#Instagram" aria-label="Visit our Instagram page">
+            <i className="fa fa-instagram text-xl border py-[15px] px-[17px] bg-[black] rounded-[50%] bg-transparent hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
+          </a>
+          <a href="#Linked-In" aria-label="Visit our Linked-in page">
+            <i className="fa fa-linkedin text-xl  border py-[15px] px-[17px] bg-[black] rounded-[50%] bg-transparent hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
+          </a>
         </div>
+        <p></p>
       </footer>
       <button onClick={scrollToTop} className={`z-50 backdrop-blur-sm fixed bottom-5 right-5 p-3 rounded-full hover:bg-[#1d3962] bg-transparent text-black hoe border-gray-700 border  text-2xl  duration-300 hover:text-white  shadow-lg transition-opacity ${isVisible ? "opacity-100" : "opacity-0"}`}>
         ⇡

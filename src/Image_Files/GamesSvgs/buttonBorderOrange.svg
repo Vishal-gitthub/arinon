@@ -1,0 +1,28 @@
+<svg preserveAspectRatio="none" viewBox="0 0 167 53" fill="none" width="158px" height="51px" xmlns="http://www.w3.org/2000/svg">
+	<!-- Outer Rectangle -->
+	<path d="M166 1H1V52H166V1Z" stroke="#f37c20" stroke-width="2">
+	</path>
+	<!-- Right Arrows -->
+	<path d="M166 22L161 27L166 33" stroke="#f37c20" stroke-width="2">
+	</path>
+	<path d="M166 14L154 28L166 40" stroke="#f37c20" stroke-width="2">
+	</path>
+	<!-- Vertical Lines -->
+	<path d="M8 1V21" stroke="#f37c20" stroke-width="2">
+	</path>
+	<path d="M159 1V22" stroke="#f37c20" stroke-width="2">
+	</path>
+	<path d="M159 33V52" stroke="#f37c20" stroke-width="2">
+	</path>
+	<path d="M8 34V52" stroke="#f37c20" stroke-width="2">
+	</path>
+	<!-- Left Arrows -->
+	<path d="M1 22L8 27L1 33" stroke="#f37c20" stroke-width="2">
+	</path>
+	<path d="M1 14L15 28L1 40" stroke="#f37c20" stroke-width="2">
+	</path>
+	<!-- Centered Text -->
+	<!-- <text x="50%" y="50%" fill="white" font-weight="bold" font-size="16" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">
+		BUY HERO
+	</text> -->
+</svg>
