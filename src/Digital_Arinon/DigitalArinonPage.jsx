@@ -47,6 +47,7 @@ import WorkMockUp_5 from "../Image_Files/ArinonImages/Work MockUp-05.jpg"
 import WorkMockUp_6 from "../Image_Files/ArinonImages/Work MockUp-06.jpg"
 import WorkMockUp_7 from "../Image_Files/ArinonImages/Work MockUp-07.jpg"
 import WorkMockUp_8 from "../Image_Files/ArinonImages/Work MockUp-08.jpg"
+import ContactForm from "./ContactForm";
 // Arinon Projects Thumbnail Images 
 const projectsClient = [
   { name: "Laxya Production", image: WorkMockUp_3 },
@@ -385,6 +386,12 @@ const DigitalArinonPage = () => {
           >
             Services
           </a>
+          <a href="#pricing"
+            className="py-3 hover:bg-[#1d3962] hover:text-white rounded-2xl mx-2 px-4 text-xl"
+
+          >
+            Pricing
+          </a>
 
           <a href="#about-us"
             className="py-3 hover:bg-[#1d3962] hover:text-white rounded-2xl mx-2 px-4 text-xl"
@@ -404,20 +411,24 @@ const DigitalArinonPage = () => {
         </div>
       </header>
       <section>
-        <div className="w-full h-[36rem]">
-          <img src={arinonBanner} className="w-full h-full object-cover relative" alt="" />
+        <div className="w-full h-[36rem] relative">
+          <img src={arinonBanner} className="w-full h-full object-cover" alt="" />
 
-          <a href="#home" className="absolute top-[85%] rounded-full  transition-all duration-500 left-2/4 py-4 px-4" >
-            <img src={downArrow} alt="" />
+          <a
+            href="#home"
+            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 rounded-full transition-all duration-500 py-4 px-4"
+          >
+            <img src={downArrow} alt="Down Arrow" />
           </a>
         </div>
+
       </section>
       {/* -------------------------------SECTION 1------------------------------- */}
       <section>
         {/* -------------------------------CHILD SECTION A------------------------------- */}
         <div className="px-36 max-md:px-20 max-sm:px-5 text-center " id="home">
           <h1 className=" text-5xl max-sm:text-4xl font-bold py-16">
-            We are Digital Agency
+            We Are Digital Agency
           </h1>
           <p>
 
@@ -475,7 +486,7 @@ const DigitalArinonPage = () => {
         {/* -------------------------------CHILD SECTION A------------------------------- */}
         {/* our Philosophy and vision  */}
         <div className="flex items-center justify-center max-md:px-5 max-md:flex-col overflow-hidden">
-          <div className="pr-11 w-2/4 max-md:w-full max-md:pr-0 max-md:text-center">
+          <div className="pr-11 w-2/4 max-md:w-full max-md:pr-0 max-md:text-center  pl-11">
 
             <h1 className="text-4xl font-bold py-4">
               Our Philosophy
@@ -515,7 +526,7 @@ const DigitalArinonPage = () => {
         <div className="flex justify-around items-center  max-sm:gap-5 pt-9 max-md:flex-col pb-7">
           <div className="flex items-center gap-3 ">
             <img src={groupSvg} alt="" />
-            <div className="flex flex-col">
+            <div className="flex flex-col pr-[29px]" >
               <span className="text-3xl font-bold">{`${happyClients}+`}</span>
               <span className="text-xl font-bold">Satisfied Clients</span>
             </div>
@@ -575,7 +586,7 @@ const DigitalArinonPage = () => {
 
       {/* -------------------------------SECTION 4------------------------------- */}
       <section className="pt-10 bg-blue-custom">
-        <h1 className="text-4xl font-semibold text-center pb-10 text-white">Our latest and Creative works</h1>
+        <h1 className="text-4xl font-semibold text-center pb-10 text-white">Our Latest and Creative Works</h1>
         <div className="grid grid-rows-2 max-sm:grid-cols-1 max-sm:grid-rows-1 max-md:grid-cols-2 max-md:grid-rows-2 max-lg:grid-cols-3 max-lg:grid-rows-3 grid-cols-4 w-full gap-0">
           {projectsClient.map((project, index) => (
             <div key={index}>
@@ -585,11 +596,11 @@ const DigitalArinonPage = () => {
                   alt={`Image of ${project.name}`}
                   className="w-full h-full object-cover"
                 />
-                <div className="text-center flex justify-center items-center text-2xl absolute -bottom-12 group-hover:bottom-0 transition-all duration-300 left-0 z-50 text-black w-full h-12 bg-white">
+                {/* <div className="text-center flex justify-center items-center text-2xl absolute -bottom-12 group-hover:bottom-0 transition-all duration-300 left-0 z-50 text-black w-full h-12 bg-white">
                   {project.name}
-                </div>
+                </div> */}
                 <div className="absolute opacity-0 group-hover:opacity-100 top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 transition-all duration-300 text-white font-semibold tracking-[0.3em] text-xl bg-[#0000008f] flex justify-center items-center w-full h-full">
-                  VISIT
+                  {/* VISIT */}
                 </div>
               </div>
             </div>
@@ -606,11 +617,12 @@ const DigitalArinonPage = () => {
         {/* SERVICES  */}
         {/* -------------------------------CHILD SECTION A------------------------------- */}
 
-        <section className="overflow-hidden py-20">
+        <section className="overflow-hidden py-15">
+          <h1 className="text-4xl text-center py-10 font-semibold">Our Services</h1>
           <div className="flex max-md:flex-col max-md:text-center max-md:gap-5 items-center">
             <div className="flex flex-col justify-between pl-32 pr-10 max-md:px-8 text-right max-md:text-left max-md:gap-5 gap-40 objectLeft2">
               <div>
-                <h1 className="text-xl font-semibold ">DIGITAL MARKETING</h1>
+                <h1 className="text-xl font-semibold py-2 ">DIGITAL MARKETING</h1>
                 <p className="text-gray-600">Take your brand to the next level with powerful digital marketing strategies, that aligns with your vision.</p>
               </div>
               {/* <div>
@@ -618,7 +630,7 @@ const DigitalArinonPage = () => {
                 <p className="text-gray-600">Build fast, responsive, and user-friendly websites with our expert development team.</p>
               </div> */}
               <div>
-                <h1 className="text-xl font-semibold ">App Development
+                <h1 className="text-xl font-semibold uppercase py-2 ">App Development
                 </h1>
                 <p className="text-gray-600">
                   Develop mobile and web applications that meet your business needs and enhance user experience.
@@ -636,7 +648,7 @@ const DigitalArinonPage = () => {
                 <p className="text-gray-600">Take your brand to the next level with powerful digital marketing strategies, that aligns with your vision.</p>
               </div> */}
               <div>
-                <h1 className="text-xl font-semibold ">WEB DEVELOPMENT</h1>
+                <h1 className="text-xl font-semibold py-2 ">WEB DEVELOPMENT</h1>
                 <p className="text-gray-600">Build fast, responsive, and user-friendly websites with our expert development team.</p>
               </div>
               {/* <div>
@@ -654,8 +666,8 @@ const DigitalArinonPage = () => {
 
 
         {/* web design packages ---------------- */}
-        <div className=" items-centerflex-col text-center max-md:gap-20 pt-10" id="pricing">
-          <h1 className="text-5xl pr-7 flex-shrink-0 font-semibold font-custom">Web Designs Packages</h1>
+        <div className=" items-centerflex-col text-center max-md:gap-20 pt-24" id="pricing">
+          <h1 className="text-4xl pr-7 flex-shrink-0 font-semibold font-custom">Web Designs Packages</h1>
           <p className="px-20 max-md:px-15 max-sm:px-5 text-lg py-5 ">We offer comprehensive social media management packages designed to help you achieve your brand goals, whether you're starting out or looking to dominate your niche.
           </p>
         </div>
@@ -949,58 +961,7 @@ const DigitalArinonPage = () => {
 
       {/* -------------------------------Footer Section------------------------------- */}
       <footer className="px-14 pt-10 pb-4 bg-blue-custom text-white" id="contact">
-        <div className="flex flex-col w-full items-center justify-center px-4 py-6">
-          <div className="flex lg:flex-row w-full justify-center items-center gap-10 lg:gap-28 py-8 px-5 rounded-md">
-            {/* Contact Form Section */}
-            <div className="flex flex-col gap-4 items-center w-full lg:w-1/2 px-4">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center">Contact</h1>
-              <input
-                type="text"
-                className="py-2 px-4 text-black outline-none rounded-3xl w-full border min-w-60 max-w-64"
-                autoComplete="on"
-                id="UserName"
-                name="userName"
-                placeholder="👤 Name"
-              />
-              <input
-                type="email"
-                className="py-2 px-4 text-black outline-none rounded-3xl w-full border min-w-60 max-w-64"
-                id="email"
-                name="email"
-                autoComplete="on"
-                placeholder="✉️ Email"
-              />
-              <textarea
-                name="Description"
-                id="disc"
-                className="py-3 px-4 text-black outline-none border w-full rounded-3xl resize-none min-w-60 max-w-64"
-                rows="4"
-                placeholder="Drop Your Message"
-              ></textarea>
-              <div className="border rounded-full">
-
-                <button
-                  aria-label="Submit Form"
-                  className="relative inline-flex items-center justify-center px-6 py-3 font-medium bg-blue-custom text-white rounded-full hover:bg-[#a62d7a] group transition-all"
-                >
-                  <span className="absolute inset-0 border-0 group-hover:border-[25px] transition-all border-[#a62d7a] rounded-full"></span>
-                  <span className="relative text-white group-hover:text-white">Submit</span>
-                </button>
-
-              </div>
-            </div>
-
-            {/* Illustration Section */}
-            <div className="hidden md:block lg:w-1/2 w-full h-64 lg:h-auto">
-              <img
-                src={contactIllu}
-                alt="Contact Illustration"
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-        </div>
-
+        <ContactForm />
 
         <hr />
         {/* LOCATION  */}
@@ -1024,17 +985,16 @@ const DigitalArinonPage = () => {
 
         </div>
 
-        {/* ${stickyBarVisible ? "opacity-100" : "opacity-0"} this code will go for side sticky social bar */}
 
         <div className={`fixed right-0 top-1/2  inline-flex -translate-y-1/2 flex-col gap-2 pr-1`}>
-          <a href="#Facebook" aria-label="Visit our Facebook page">
-            <i className="fa fa-facebook text-xl  border py-[15px] bg-[black] px-[18px] rounded-[50%] bg-transparent hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
+          <a href="https://www.facebook.com/arinondigital" aria-label="Visit our Facebook page" target="_blank">
+            <i className="fa fa-facebook text-xl  border py-[15px] bg-blue-custom px-[18px] rounded-[50%] hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
           </a>
-          <a href="#Instagram" aria-label="Visit our Instagram page">
-            <i className="fa fa-instagram text-xl border py-[15px] px-[17px] bg-[black] rounded-[50%] bg-transparent hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
+          <a href="https://www.instagram.com/arinondigital?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Visit our Instagram page">
+            <i className="fa fa-instagram text-xl border py-[15px] px-[17px] bg-blue-custom rounded-[50%] hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
           </a>
-          <a href="#Linked-In" aria-label="Visit our Linked-in page">
-            <i className="fa fa-linkedin text-xl  border py-[15px] px-[17px] bg-[black] rounded-[50%] bg-transparent hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
+          <a href="https://www.linkedin.com/company/arinon/" aria-label="Visit our Linked-in page">
+            <i className="fa fa-linkedin text-xl  border py-[15px] px-[17px] bg-blue-custom rounded-[50%] hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
           </a>
         </div>
         <p></p>

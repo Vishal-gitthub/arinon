@@ -49,7 +49,9 @@ html {
     margin: 0 auto;
     object-fit: contain;
 }
-
+.slick-dots li.slick-active button:before {
+    color: white !important;
+}
 
 .brandBg {
     /* background-image: url('../src/Image_Files/Orange Modern Technology LinkedIn Banner.png'); */

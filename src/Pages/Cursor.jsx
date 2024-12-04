@@ -27,7 +27,7 @@ const CustomCursor = () => {
   return (
     <div
       ref={cursorRef}
-      className="bg-[#ffffff44] w-6 h-6 rounded-[50%] border fixed pointer-events-none z-50 transform -translate-x-2/4 -translate-y-1/2 shadow-custom-shadow"
+      className="bg-[#ffffff44] max-md:hidden w-6 h-6 rounded-[50%] border fixed pointer-events-none z-50 transform -translate-x-2/4 -translate-y-1/2 shadow-custom-shadow"
     ></div>
   );
 };
