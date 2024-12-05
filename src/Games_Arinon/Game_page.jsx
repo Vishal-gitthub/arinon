@@ -1,19 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import qoutes from "../Image_Files/Icons_File/quotes-svgrepo-com.svg"
 import Slider from "react-slick";
-import logo from "../Assets/Logo/Arinon_Games-02.png"
 import "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import listIcon from "../Image_Files/Icons_File/hamburger.svg"
-import cross from "../Image_Files/Icons_File/cross-2-white.svg"
+
 import gsap from 'gsap';
 import "./Game_Page.css"
 import buttonBorderOrange from "../Image_Files/GamesSvgs/buttonBorderOrange.svg"
 import buttonBorderBlue from "../Image_Files/GamesSvgs/buttonBorderBlue.svg"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import AmazingSlider from './SliderComponent/Slider';
+import playCircle from "../Image_Files/Icons_File/play-circle-svgrepo-com.svg"
+import EffectCoverflowSlider from './SliderComponent/EffectCoverflow';
+import "../Games_Arinon/SliderComponent/effectCoverFlow.css"
+import Navbar from './Navbar';
+import Footer from './Footer';
 gsap.registerPlugin(ScrollTrigger);
 
+
+const gameCards = [
+      { name: "Killer Master", image: "https://html.themegenix.com/mykd/assets/img/team/team01.png", job: "Gamer" },
+      { name: "Tanu Mark", image: "https://html.themegenix.com/mykd/assets/img/team/team02.png", job: "Developer" },
+      { name: "Thompsom Master", image: "https://html.themegenix.com/mykd/assets/img/team/team03.png", job: "Art Director" },
+      { name: "Killer", image: "https://html.themegenix.com/mykd/assets/img/team/team04.png", job: "Advisor" }
+
+]
 const Game_page = () => {
       let carouselSettings = {
             dots: false,
@@ -25,15 +37,8 @@ const Game_page = () => {
             autoplay: true,
             autoplaySpeed: 2000,
       };
-      let [widthState, setWidthState] = useState(false);
 
-      function menuBtn() {
-            setWidthState(!widthState);
-      }
-
-      function menuCloseBtn() {
-            setWidthState(!widthState);
-      }
+   
 
       useEffect(() => {
             const cards = gsap.utils.toArray(".card");
@@ -67,87 +72,15 @@ const Game_page = () => {
 
                   });
             });
-
             return () => {
                   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
             };
       }, []);
-
       return (
             <div className='w-full h-full bg-black'>
-                  <header className="sticky top-0  z-40">
-                        <nav
-                              className="backdrop-blur-sm py-5 px-8 flex items-center justify-between bg-[#00000038]"
-                        >
+                 <Navbar/>
 
-                              <div className="w-32">
-                                    <img src={logo} alt="" className="w-full" />
-                              </div>
-
-                              <div className="flex gap-4 max-md:hidden text-white">
-
-                                    <a href="#home">
-                                          Home
-                                    </a>
-
-                                    <a href="#our-games">
-                                          Our Games
-                                    </a>
-
-                                    <a href="#about-us">
-                                          About Us
-                                    </a>
-
-                                    <a href="#contact">
-                                          Support
-                                    </a>
-
-                              </div>
-
-                              <div className="hidden max-md:block">
-                                    <button onClick={menuBtn}>
-                                          <img src={listIcon} alt="" />
-                                    </button>
-                              </div>
-
-                        </nav>
-
-                        <div
-                              id="sidebar"
-                              className={`flex flex-col fixed h-full top-0 right-0 transition-transform duration-300 z-50 ${widthState ? "translate-x-0" : "translate-x-full"
-                                    } text-white max-md:w-64 bg-[#00000038] backdrop-blur-md `}
-                        >
-                              <button onClick={menuCloseBtn} className="p-4 grid place-items-center">
-                                    <img src={cross} alt="" />
-                              </button>
-
-                              <a href="#home" className="py-3 hover:bg-[#00000038]  hover:backdrop-blur-md hover:text-white rounded-2xl mx-2 px-4 text-xl"
-                              >
-                                    Home
-                              </a>
-
-                              <a href="#our-games"
-                                    className="py-3 hover:bg-[#00000038]  hover:backdrop-blur-md hover:text-white rounded-2xl mx-2 px-4 text-xl"
-                              >
-                                    Our Games                              </a>
-
-                              <a href="#about-us"
-                                    className="py-3 hover:bg-[#00000038]  hover:backdrop-blur-md hover:text-white rounded-2xl mx-2 px-4 text-xl"
-                              >
-                                    About Us
-                              </a>
-                              <a href="#contact"
-                                    className="py-3 hover:bg-[#00000038]  hover:backdrop-blur-md hover:text-white rounded-2xl mx-2 px-4 text-xl"
-                              >
-
-                                    Support
-                              </a>
-
-                        </div>
-
-                  </header>
-
-                  <div className="home pin-panel">
+                  <div className="home pin-panel" id='home'>
                         <div className="flex gap-8">
 
                               <div className='cards flex-1 flex flex-col gap-8'>
@@ -393,156 +326,173 @@ const Game_page = () => {
 
 
                   {/* <========================== About-Us Section START ===================================> */}
-                  <section className='about-us-BG text-white flex justify-center flex-col items-center py-32 mt-12'>
-                        <h1 className=' uppercase text-5xl font-semibold text-center'>Top Rated Steamers</h1>
-                        <p className='clipedUnderline' />
+                  <section className='about-us-BG text-white  py-32 mt-12'>
+                        <div className='flex justify-center flex-col items-center'>
 
-                        <div className='pt-16 flex gap-4 flex-wrap '>
-                              <div>
-                                    <a href="#" className='relative py-[0.6rem] px-5  transition-all duration-300 text-xl hover:text-black font-bold tracking-wider hover:bg-[#f37c20] '>BUY HERO<img className='absolute top-0 left-0' src={buttonBorderOrange} alt="" />
-                                    </a>
+
+                              <h1 className=' uppercase text-5xl font-semibold text-center'>Top Rated Steamers</h1>
+                              <p className='clipedUnderline' />
+
+                              <div className='pt-16 flex gap-4 flex-wrap '>
+                                    <div>
+                                          <a href="#" className='relative py-[0.6rem] px-5  transition-all duration-300 text-xl hover:text-black font-bold tracking-wider hover:bg-[#f37c20] '>BUY HERO<img className='absolute top-0 left-0' src={buttonBorderOrange} alt="" />
+                                          </a>
+                                    </div>
+                                    <div>
+                                          <a href="#" className='relative py-[0.6rem] px-5  transition-all duration-300 text-xl hover:text-black font-bold tracking-wider hover:bg-blue-custom '>BUY NFTS<img className='absolute top-0 left-0' src={buttonBorderBlue} alt="" />
+                                          </a>
+                                    </div>
+
                               </div>
-                              <div>
-                                    <a href="#" className='relative py-[0.6rem] px-5  transition-all duration-300 text-xl hover:text-black font-bold tracking-wider hover:bg-blue-custom '>BUY NFTS<img className='absolute top-0 left-0' src={buttonBorderBlue} alt="" />
-                                    </a>
-                              </div>
 
-                        </div>
-
-                        <div className='hr-custom-line relative w-full mt-12 text-center'>
-                              <div className='py-7'>
-                                    <div className='flex justify-center gap-9'>
-                                          <div className='img-custom-border inline-flex'>
-                                                <div className='img-custom-border2'>
-                                                      <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab01.png" alt="" />
+                              <div className='hr-custom-line relative w-full mt-12 text-center'>
+                                    <div className='py-7'>
+                                          <div className='flex flex-wrap justify-center gap-9'>
+                                                <div className='img-custom-border inline-flex'>
+                                                      <div className='img-custom-border2'>
+                                                            <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab01.png" alt="" />
+                                                      </div>
                                                 </div>
-                                          </div>
-                                          <div className='img-custom-border inline-flex'>
-                                                <div className='img-custom-border2'>
-                                                      <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab02.png" alt="" />
+                                                <div className='img-custom-border inline-flex'>
+                                                      <div className='img-custom-border2'>
+                                                            <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab02.png" alt="" />
+                                                      </div>
                                                 </div>
-                                          </div>
-                                          <div className='img-custom-border inline-flex'>
-                                                <div className='img-custom-border2'>
-                                                      <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab03.png" alt="" />
+                                                <div className='img-custom-border inline-flex'>
+                                                      <div className='img-custom-border2'>
+                                                            <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab03.png" alt="" />
+                                                      </div>
                                                 </div>
-                                          </div>
-                                          <div className='img-custom-border inline-flex'>
-                                                <div className='img-custom-border2'>
-                                                      <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab04.png" alt="" />
+                                                <div className='img-custom-border inline-flex'>
+                                                      <div className='img-custom-border2'>
+                                                            <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab04.png" alt="" />
+                                                      </div>
                                                 </div>
-                                          </div>
-                                          <div className='img-custom-border inline-flex'>
-                                                <div className='img-custom-border2'>
-                                                      <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab05.png" alt="" />
+                                                <div className='img-custom-border inline-flex'>
+                                                      <div className='img-custom-border2'>
+                                                            <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab05.png" alt="" />
+                                                      </div>
                                                 </div>
-                                          </div>
-                                          <div className='img-custom-border inline-flex'>
-                                                <div className='img-custom-border2'>
-                                                      <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab06.png" alt="" />
+                                                <div className='img-custom-border inline-flex'>
+                                                      <div className='img-custom-border2'>
+                                                            <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_tab06.png" alt="" />
+                                                      </div>
                                                 </div>
                                           </div>
                                     </div>
                               </div>
                         </div>
 
+                        <section >
 
+                              {/* GAME NAME CARD  */}
+                              <div className="flex flex-col lg:flex-row lg:text-left text-center text-white px-10 pt-10 space-y-8 lg:space-y-0 lg:space-x-10">
+
+                                    <div className="w-full lg:w-1/2 px-5">
+                                          <img className="w-full h-full object-cover rounded-lg" src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_img01.jpg" alt="About Image" />
+                                    </div>
+
+                                    <div className="flex flex-col space-y-8">
+                                          <div className="flex lg:flex-row max-sm:flex-col justify-between items-start max-md:items-center space-y-5 lg:space-y-0">
+                                                <div className="flex flex-col gap-3 px-5">
+                                                      <h1 className="text-4xl font-semibold">HUMAN GAME</h1>
+                                                      <span className="text-orange-custom text-2xl font-semibold">RATE 50%</span>
+                                                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quaerat facere nobis dolor tempore repellat veritatis voluptas iure blanditiis vel!</p>
+                                                </div>
+
+                                                <div className="flex flex-col space-y-4 flex-shrink-0">
+                                                      <div className="flex items-center justify-start py-2 px-3 rounded-lg humanGame-sideButton">
+                                                            <img className="mr-2" src="https://themedox.com/mykd/wp-content/uploads/2023/10/features_icon01.png" alt="Icon 1" />
+                                                            <p>Chichi Dragon Ball</p>
+                                                      </div>
+                                                      <div className="flex items-center justify-start py-2 px-3 rounded-lg humanGame-sideButton">
+                                                            <img className="mr-2" src="https://themedox.com/mykd/wp-content/uploads/2023/10/features_icon01.png" alt="Icon 2" />
+                                                            <p>Chichi Dragon Ball</p>
+                                                      </div>
+                                                      <div className="flex items-center justify-start py-2 px-3 rounded-lg humanGame-sideButton">
+                                                            <img className="mr-2" src="https://themedox.com/mykd/wp-content/uploads/2023/10/features_icon01.png" alt="Icon 3" />
+                                                            <p>Chichi Dragon Ball</p>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                          <div className="flex gap-5 pt-5 max-sm:flex-col">
+                                                <button className="humanGame-bottomButton py-6 px-8 w-full lg:w-auto">DRAGON BALL</button>
+                                                <button className="humanGame-bottomButton py-6 px-8 w-full lg:w-auto">NFT MARKET</button>
+                                                <button className="humanGame-bottomButton py-6 px-8 w-full lg:w-auto">SUPPORT</button>
+                                          </div>
+                                    </div>
+                              </div>
+                              <div className='hr-custom-line ' />
+                              <AmazingSlider />
+
+                        </section>
                   </section>
-                  <section>
-
-                        {/* GAME NAME CARD  */}
-                        <div className="flex flex-col lg:flex-row lg:text-left text-center text-white px-10 pt-10 space-y-8 lg:space-y-0 lg:space-x-10">
-
-                              <div className="w-full lg:w-1/2 px-5">
-                                    <img className="w-full h-full object-cover rounded-lg" src="https://themedox.com/mykd/wp-content/uploads/2023/10/about_img01.jpg" alt="About Image" />
-                              </div>
-
-                              <div className="flex flex-col space-y-8">
-                                    <div className="flex lg:flex-row max-sm:flex-col justify-between items-start max-md:items-center space-y-5 lg:space-y-0">
-                                          <div className="flex flex-col gap-3 px-5">
-                                                <h1 className="text-4xl font-semibold">HUMAN GAME</h1>
-                                                <span className="text-orange-custom text-2xl font-semibold">RATE 50%</span>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quaerat facere nobis dolor tempore repellat veritatis voluptas iure blanditiis vel!</p>
-                                          </div>
-
-                                          <div className="flex flex-col space-y-4 flex-shrink-0">
-                                                <div className="flex items-center justify-start py-2 px-3 rounded-lg humanGame-sideButton">
-                                                      <img className="mr-2" src="https://themedox.com/mykd/wp-content/uploads/2023/10/features_icon01.png" alt="Icon 1" />
-                                                      <p>Chichi Dragon Ball</p>
-                                                </div>
-                                                <div className="flex items-center justify-start py-2 px-3 rounded-lg humanGame-sideButton">
-                                                      <img className="mr-2" src="https://themedox.com/mykd/wp-content/uploads/2023/10/features_icon01.png" alt="Icon 2" />
-                                                      <p>Chichi Dragon Ball</p>
-                                                </div>
-                                                <div className="flex items-center justify-start py-2 px-3 rounded-lg humanGame-sideButton">
-                                                      <img className="mr-2" src="https://themedox.com/mykd/wp-content/uploads/2023/10/features_icon01.png" alt="Icon 3" />
-                                                      <p>Chichi Dragon Ball</p>
-                                                </div>
-                                          </div>
-                                    </div>
-
-                                    <div className="flex gap-5 pt-5 max-sm:flex-col">
-                                          <button className="humanGame-bottomButton py-6 px-8 w-full lg:w-auto">DRAGON BALL</button>
-                                          <button className="humanGame-bottomButton py-6 px-8 w-full lg:w-auto">NFT MARKET</button>
-                                          <button className="humanGame-bottomButton py-6 px-8 w-full lg:w-auto">SUPPORT</button>
-                                    </div>
-                              </div>
-                        </div>
-                        <div className='hr-custom-line '/>
-
-                  </section>
-
-
                   {/* <========================== About-Us Section ENDS ===================================> */}
 
-
-
-                  {/* <================================================================================================> */}
-                  <footer id='contact'>
-                        <div className='px-10 py-6 '>
-                              <div className='text-white'>
-                                    <h1 className='text-[10vw] text-center'>CONTACT US</h1>
-                              </div>
-
-                              <div className='flex justify-between items-baseline text-white max-md:flex-col max-md:gap-6'>
-                                    <div>
-
-                                          <div className="w-32">
-                                                <img src={logo} title='A UNIT OF MANISI' alt="" className="w-full" />
-                                          </div>
-                                    </div>
-                                    <div>
-                                          <p className='pb-3'>LOCATION</p>
-                                          <p>GHITORNI, DELHI NCR</p>
-                                    </div>
-                                    <div className='pr-5'>
-                                          <p className=' pb-3'>INQUIRY</p>
-                                          <p>info@arinon.com</p>
-                                          <p>+91-1234567890</p>
-                                    </div>
-
-                              </div>
-
-                              <div className='flex items-center gap-4 pt-7 flex-wrap'>
-                                    <i className="fa fa-facebook text-3xl  border py-2 px-[15px] rounded-[50%] bg-white hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
-                                    <i className="fa fa-instagram text-3xl border py-2 px-3 rounded-[50%] bg-white hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
-                                    {/* <i className="fa fa-whatsapp text-3xl  border py-2 px-3 rounded-[50%] bg-white hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i> */}
-                                    <i className="fa fa-linkedin text-3xl  border py-2 px-3 rounded-[50%] bg-white hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
-
-                              </div>
-
-
-                        </div> <hr className='border-t-2 border-gray-700 my-4' />
-
-                        <div className='text-gray-400 px-10'>
-                              <p className='py-5'>© 2024 Arinon Games. All Right Reserved</p>
-                              <div className='py-6 flex justify-around flex-wrap'>
-                                    <i>Navigation 1</i><i>Navigation 2</i><i>Navigation 3</i><i>Navigation 4</i>
-                              </div>
+                  {/* <========================== Our Teams Section Starts ===================================> */}
+                  <section className='playerCardsBg pb-20'>
+                        <div className='uppercase text-white text-center m-auto grid-cols-1 grid-rows-1 place-items-center py-16'>
+                              <h1 className='text-sm font-bold tracking-wider text-orange-custom py-5'>our Team Member</h1>
+                              <h1 className='text-5xl font-bold'>ACTIVE TEAM MEMBERS</h1>
+                              <p className='clipedUnderline' />
                         </div>
 
-                  </footer>
-            </div>
+                        <div className='flex gap-10 flex-wrap flex-grow justify-center items-center '>
+                              {gameCards.map((players, index) => (
+                                    <div className='flex justify-center items-center' key={index}>
+                                          <div className=" bg-black py-10 px-5 overflow-hidden rounded-lg">
+                                                <div>
+                                                      <div className="relative teamCard">
+                                                            <div className="imgWrapper relative">
+                                                                  <div className='img-thumb border-[3px] rounded-full'>
+                                                                        <img src={players.image} alt="" />
+                                                                  </div>
+                                                            </div>
+                                                            <div className='text-center pt-5'>
+                                                                  <h1 className='text-2xl font-semibold text-white'>{players.name}</h1>
+                                                                  <p className='text-xl font-semibold text-orange-custom'>{players.job}</p>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              ))}
+                        </div>
+
+                  </section >
+                  {/* <================================================================================================> */}
+
+                  {/* <==================================== Discord Community ==========================================> */}
+                  <section className='community_bg text-center flex flex-col justify-center items-center text-white'>
+                        <div>
+                              <img src={playCircle} alt="" />
+                        </div>
+                        <div className='pt-5'>
+                              <h1 className='font-bold text-6xl '>JOIN THE <span className='text-orange-custom'> COMMUNITY</span></h1>
+                              <p className='text-lg font-semibold tracking-wider'>Join our Discord community and choosec onsteur</p>
+                        </div>
+                        <div className="border rounded-full mt-4">
+                              <button
+                                    aria-label="Join the Community"
+                                    className="relative inline-flex items-center justify-center px-6 py-3 font-medium bg-blue-custom text-white rounded-full hover:bg-[#a62d7a] group transition-all"
+                              >
+
+                                    <span className="relative text-white group-hover:text-white">
+                                          Submit
+                                    </span>
+
+                              </button>
+                        </div>
+                  </section>
+                  <section className='select-none pt-20 '>
+                        <h1 className='text-4xl px-8 font-bold text-white text-left flex items-center gap-3'>TOP TRENDING <span> <img src="https://html.themegenix.com/mykd/assets/img/icons/fire.png" alt="" className='w-8' /></span></h1>
+                        <EffectCoverflowSlider />
+                  </section>
+
+                  {/* <================================================================================================> */}
+                  <Footer/>
+            </div >
       )
 }
 

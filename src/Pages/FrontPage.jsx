@@ -53,11 +53,11 @@ const FrontPage = () => {
                 autoPlay
                 loop
               >
-              <source
-              src={web2}
-              type="video/mp4"
-              />
-              Your browser does not support the video tag.
+                <source
+                  src={web2}
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
               </video>
 
 
@@ -86,13 +86,14 @@ const FrontPage = () => {
 
                 </div>
               </Link>
-
-              <div className="bg-orange-custom w-full h-2/4 text-white px-4 max-sm:py-7">
-                <div className=" items-center flex justify-center flex-col py-14">
-                  <img src={arinonGames} className="w-[20rem]" alt="" />
-                  <p>COMING SOON...</p>
+              <Link to="/arinon-games">
+                <div className="bg-orange-custom w-full h-2/4 text-white px-4 max-sm:py-7">
+                  <div className=" items-center flex justify-center flex-col py-14">
+                    <img src={arinonGames} className="w-[20rem]" alt="" />
+                    <p>COMING SOON...</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

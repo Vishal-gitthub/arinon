@@ -17,7 +17,7 @@
     width: 65px;
     height: 5px;
     margin: 20px 0 0;
-    background-color: green;
+    background-color: #f37c20;
 }
 .hr-custom-line::before {
     content: '';
@@ -51,3 +51,86 @@
 .humanGame-bottomButton {
     background-image: -webkit-linear-gradient(90deg, #10181f 0%, transparent 0%, #141a20 100%);
 }
+
+/* Apply pseudo-elements to the image wrapper only */
+.imgWrapper::before {
+    content: '';
+    position: absolute;
+    left: -23px;
+    top: -80px;
+    width: 70px;
+    height: 320px;
+    background-color: #f37b20d2;
+    transform: rotate(-50deg);
+    z-index: -1;
+    transition: ease 0.3s;
+}
+.img-thumb::before {
+    content: '';
+    position: absolute;
+    left: 33px;
+    top: -113px;
+    width: 1px;
+    height: 320px;
+    background-color: #f37b20d2;
+    transform: rotate(-50deg);
+    z-index: -1;
+    transition: ease 0.3s;
+}
+.imgWrapper::after {
+    content: '';
+    position: absolute;
+    left: 186px;
+    top: -80px;
+    width: 70px;
+    height: 320px;
+    background-color: #f37b20d2;
+    transform: rotate(50deg);
+    z-index: -1;
+    transition: ease 0.3s;
+}
+.img-thumb::after {
+    content: '';
+    position: absolute;
+    left: 184px;
+    top: -100px;
+    width: 1px;
+    height: 320px;
+    background-color: #f37b20d2;
+    transform: rotate(50deg);
+    z-index: -1;
+    transition: ease 0.3s;
+}
+.imgWrapper:hover::after,
+.imgWrapper:hover::before,
+.img-thumb:hover::after,
+.img-thumb:hover::before {
+    background-color: #f37c20;
+}
+
+/* Ensure parent elements have proper z-index and position */
+.teamCard {
+    position: relative;
+    z-index: 1; /* Ensures content is above pseudo-elements */
+}
+
+.imgWrapper {
+    position: relative; /* To make pseudo-elements position relative to the image wrapper */
+    z-index: 0; /* Allows pseudo-elements to stay behind the image */
+}
+.playerCardsBg {
+    background-image: url('https://html.themegenix.com/mykd/assets/img/bg/team_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.community_bg {
+    background-image: url('https://html.themegenix.com/mykd/assets/img/bg/video_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    background-attachment: fixed;
+}
+
