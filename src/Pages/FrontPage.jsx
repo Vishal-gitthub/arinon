@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import web2 from "../Video_Files/Arinon (1920 x 1080 px).mp4";
 import tabImg from "../Image_Files/tabImgTest.jpg";
 import arinonLogo from "../Assets/Logo/Arinon_Logo_Icon-diffrentSize.svg"
-import arinonGames from "../Assets/Logo/Arinon_Games-02.png"
+import arinonGames from "../Assets/Logo/Arinon_Games-White-Logo.png"
 const FrontPage = () => {
   useEffect(() => {
     gsap.fromTo(
