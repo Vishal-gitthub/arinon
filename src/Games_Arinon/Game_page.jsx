@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import qoutes from "../Image_Files/Icons_File/quotes-svgrepo-com.svg"
 import Slider from "react-slick";
 import "react-slick";
@@ -14,8 +14,7 @@ import AmazingSlider from './SliderComponent/Slider';
 import playCircle from "../Image_Files/Icons_File/play-circle-svgrepo-com.svg"
 import EffectCoverflowSlider from './SliderComponent/EffectCoverflow';
 import "../Games_Arinon/SliderComponent/effectCoverFlow.css"
-import Navbar from './Navbar';
-import Footer from './Footer';
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -38,7 +37,7 @@ const Game_page = () => {
             autoplaySpeed: 2000,
       };
 
-   
+
 
       useEffect(() => {
             const cards = gsap.utils.toArray(".card");
@@ -77,12 +76,9 @@ const Game_page = () => {
             };
       }, []);
       return (
-            <div className='w-full h-full bg-black'>
-                 <Navbar/>
-
+            <div className='w-full h-full bg-blue-custom'>
                   <div className="home pin-panel" id='home'>
                         <div className="flex gap-8">
-
                               <div className='cards flex-1 flex flex-col gap-8'>
                                     <div className='w-full h-[90vh] relative   m-auto p-4 card'>
                                           <img className='w-full h-full object-cover rounded-md' src="https://uithemez.com/i/hubfolio_HTML/creative-studio/assets/imgs/works/1.jpg" alt="" />
@@ -104,7 +100,7 @@ const Game_page = () => {
 
                   </div>
 
-                  <div className='pt-10 max-sm:pt-0 max-md:pt-20 max-lg:pt-1 max-xl:pt-8 max-2xl:pt-8 max-[2560px]:pt-96'>
+                  <div className='pt-10 max-sm:pt-40 max-md:pt-20 max-lg:pt-1 max-xl:pt-8 max-2xl:pt-8 max-[2560px]:pt-96'>
                         <div id='about-us'>
                               <div className='flex justify-between px-5 text-white py-10'>
                                     <h1 className='text-4xl'>About Us ⏎</h1>
@@ -250,7 +246,7 @@ const Game_page = () => {
                   {/* <================================================================================================> */}
 
                   {/* <========================== Cards Section START ===================================> */}
-                  <section className='bg-[#0b0e13'>
+                  <section className='bg-white py-14'>
                         <div className='flex justify-center flex-wrap gap-6'>
 
                               <div className='inline-flex max-sm:flex-col max-sm:w-full max-sm:mx-6 hover:border-blue-custom transition-all duration-300 p-6 bg-transparent border border-[#4c4c4c80]  rounded-lg text-white bg-coloring gap-5 items-center'>
@@ -326,7 +322,7 @@ const Game_page = () => {
 
 
                   {/* <========================== About-Us Section START ===================================> */}
-                  <section className='about-us-BG text-white  py-32 mt-12'>
+                  <section className='about-us-BG text-white  py-32 mt-12' > 
                         <div className='flex justify-center flex-col items-center'>
 
 
@@ -345,7 +341,7 @@ const Game_page = () => {
 
                               </div>
 
-                              <div className='hr-custom-line relative w-full mt-12 text-center'>
+                              <div className='hr-custom-line relative w-full mt-12 text-center' id='ourGames'>
                                     <div className='py-7'>
                                           <div className='flex flex-wrap justify-center gap-9'>
                                                 <div className='img-custom-border inline-flex'>
@@ -432,7 +428,7 @@ const Game_page = () => {
 
                   {/* <========================== Our Teams Section Starts ===================================> */}
                   <section className='playerCardsBg pb-20'>
-                        <div className='uppercase text-white text-center m-auto grid-cols-1 grid-rows-1 place-items-center py-16'>
+                        <div className='uppercase text-black text-center m-auto grid-cols-1 grid-rows-1 place-items-center py-16'>
                               <h1 className='text-sm font-bold tracking-wider text-orange-custom py-5'>our Team Member</h1>
                               <h1 className='text-5xl font-bold'>ACTIVE TEAM MEMBERS</h1>
                               <p className='clipedUnderline' />
@@ -486,12 +482,11 @@ const Game_page = () => {
                         </div>
                   </section>
                   <section className='select-none pt-20 '>
-                        <h1 className='text-4xl px-8 font-bold text-white text-left flex items-center gap-3'>TOP TRENDING <span> <img src="https://html.themegenix.com/mykd/assets/img/icons/fire.png" alt="" className='w-8' /></span></h1>
+                        <h1 className='text-4xl px-8 font-bold text-white text-left flex items-center gap-3'>OUR LATEST CREATIONS<span> <img src="https://html.themegenix.com/mykd/assets/img/icons/fire.png" alt="" className='w-8' /></span></h1>
                         <EffectCoverflowSlider />
                   </section>
 
                   {/* <================================================================================================> */}
-                  <Footer/>
             </div >
       )
 }

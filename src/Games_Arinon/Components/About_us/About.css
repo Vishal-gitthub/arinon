@@ -4,3 +4,27 @@
     background-position: center;
     background-size: cover;
 }
+
+.shakeAnimate:hover {
+    animation: shake 0.5s linear 1;
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(-7px);
+    }
+    20% {
+        transform: translateX(7px);
+    }
+    30% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(-7px);
+    }
+    50% {
+        transform: translateX(7px);
+    }
+}

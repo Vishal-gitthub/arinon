@@ -1,17 +1,13 @@
 import React from 'react'
-import Navbar from "../Navbar"
-import Footer from "../Footer"
 import { Outlet } from 'react-router-dom'
-
-
-const Layout = () => {
+import Navbar from '../Digital_Arinon/Navbar'
+const DigitalLayout = () => {
       return (
-            <div>
+            <div className='h-full'>
                   <Navbar />
                   <Outlet />
-                  <Footer />
             </div>
       )
 }
 
-export default Layout
+export default DigitalLayout

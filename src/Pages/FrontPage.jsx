@@ -77,17 +77,16 @@ const FrontPage = () => {
             {/* -------------------------------CHILD SECTION B------------------------------- */}
             <div className="w-[40%] max-sm:w-full  right ">
               <Link to="/arinon-digital">
-                <div className="bg-[#1d3962] w-full h-2/4 text-white px-4 max-sm:py-7">
-
+                <div className="bg-[#1d3962] w-full h-2/4 text-white px-4 max-sm:py-7 flex justify-center items-center">
                   <div className=" items-center flex justify-center flex-col py-14">
                     <img src={arinonLogo} className="w-[20rem]" alt="" />
-                    <h1 className="text-5xl font-bold -mt-12 ml-40 ">Digital</h1>
+                    <h1 className="text-[2rem] font-bold -mt-[3.9rem] ml-52 ">Digital</h1>
                   </div>
 
                 </div>
               </Link>
               <Link to="/arinon-games">
-                <div className="bg-orange-custom w-full h-2/4 text-white px-4 max-sm:py-7">
+                <div className="bg-orange-custom w-full h-2/4 text-white px-4 max-sm:py-7  flex justify-center items-center">
                   <div className=" items-center flex justify-center flex-col py-14">
                     <img src={arinonGames} className="w-[20rem]" alt="" />
                     <p>COMING SOON...</p>

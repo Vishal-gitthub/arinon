@@ -3,7 +3,7 @@
     background-color: #121a23;
 }
 .about-us-BG {
-    background-image: url('https://themedox.com/mykd/wp-content/uploads/2023/10/area_bg01.jpg');
+    /* background-image: url('https://themedox.com/mykd/wp-content/uploads/2023/10/area_bg01.jpg'); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -119,10 +119,11 @@
     z-index: 0; /* Allows pseudo-elements to stay behind the image */
 }
 .playerCardsBg {
-    background-image: url('https://html.themegenix.com/mykd/assets/img/bg/team_bg.jpg');
+    /* background-image: url('https://html.themegenix.com/mykd/assets/img/bg/team_bg.jpg'); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-color: white;
 }
 
 .community_bg {

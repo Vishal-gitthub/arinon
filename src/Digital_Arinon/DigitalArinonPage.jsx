@@ -11,10 +11,8 @@ import groupSvg from "../Image_Files/Icons_File/groupSvg.svg";
 import codeSvg from "../Image_Files/Icons_File/code-svgrepo-com.svg";
 import completedSvg from "../Image_Files/Icons_File/completedSvg.svg";
 import ServiceMockup from "../Image_Files/MockUp1forService.png"
-import contactIllu from "../Image_Files/contect form ill png.png"
 import downArrow from "../Image_Files/Icons_File/downArrow.png"
 // logo 
-import logo from "../Assets/Logo/Arinon_Logo_Final-02.png"
 // brand logo 
 import elCafe from "../Image_Files/brandsLogos/3L-Cafe.png"
 import peterCat from "../Image_Files/brandsLogos/Peter-Cat.png"
@@ -24,8 +22,6 @@ import musingOfAkansha from "../Image_Files/brandsLogos/Musings-of-Aakanksha.png
 import deeBake from "../Image_Files/brandsLogos/Dee's_Bake.png"
 import bridgeHotel from "../Image_Files/brandsLogos/The-Bridge-Hotel.png"
 //nav bar import 
-import listIcon from "../Image_Files/Icons_File/hamburger.svg";
-import arrowRight from "../Image_Files/Icons_File/cross-svgrepo.svg";
 
 //gsap library import
 import gsap from "gsap";
@@ -315,14 +311,6 @@ const DigitalArinonPage = () => {
     ]
   }
 
-  let [widthState, setWidthState] = useState(false);
-  function menuBtn() {
-    setWidthState(!widthState);
-  }
-  function menuCloseBtn() {
-    setWidthState(!widthState);
-  }
-
 
 
 
@@ -331,85 +319,7 @@ const DigitalArinonPage = () => {
   return (
     //  className="font-custom"
     <div className="font-custom">
-      {/* -------------------------------NAVBAR------------------------------- */}
-      {/* Navbar   */}
-      <header className="sticky top-0  z-40 ">
-        <nav
-          className="backdrop-blur-sm py-3 px-8 flex items-center justify-between bg-[#1d3962]"
-        >
-          <a href="#home" aria-label="LOGO">
-            <div className="w-24">
-              <img src={logo} alt="" className="w-full" />
-            </div>
-          </a>
 
-          <div className="flex gap-4 max-md:hidden text-white">
-
-            <a href="#services">
-              Services
-            </a>
-            <a href="#pricing">
-              Pricing
-            </a>
-
-            <a href="#about-us">
-              About Us
-            </a>
-            {/* <a href="#faqs">FAQs</a> */}
-
-            <a href="#contact">
-              Contact Us
-            </a>
-
-
-          </div>
-          <div className=" hidden max-md:block">
-            <button onClick={menuBtn} aria-label="Menu Bar">
-              <img src={listIcon} alt="" />
-            </button>
-          </div>
-        </nav>
-
-        <div
-          id="sidebar"
-          className={`flex flex-col fixed h-full top-0 right-0 transition-transform duration-300 z-50 ${widthState ? "translate-x-0" : "translate-x-full"
-            } text-black max-md:w-64 bg-slate-50`}
-
-        >
-          <button onClick={menuCloseBtn} aria-label="Close Menu" className="p-4 grid place-items-center">
-            <img src={arrowRight} alt="" />
-          </button>
-
-          <a href="#services"
-
-            className="py-3 hover:bg-[#1d3962] hover:text-white rounded-2xl mx-2 px-4 text-xl"
-          >
-            Services
-          </a>
-          <a href="#pricing"
-            className="py-3 hover:bg-[#1d3962] hover:text-white rounded-2xl mx-2 px-4 text-xl"
-
-          >
-            Pricing
-          </a>
-
-          <a href="#about-us"
-            className="py-3 hover:bg-[#1d3962] hover:text-white rounded-2xl mx-2 px-4 text-xl"
-          >
-            About Us
-          </a>
-          {/* <a href="#faqs"
-            className="py-3 hover:bg-[#1d3962] hover:text-white rounded-2xl mx-2 px-4 text-xl"
-          >FAQs
-          </a> */}
-
-          <a href="#contact"
-            className="py-3 hover:bg-[#1d3962] hover:text-white rounded-2xl mx-2 px-4 text-xl"
-          >
-            Contact Us
-          </a>
-        </div>
-      </header>
       <section>
         <div className="w-full h-[36rem] relative">
           <img src={arinonBanner} className="w-full h-full object-cover" alt="" />
@@ -617,7 +527,7 @@ const DigitalArinonPage = () => {
         {/* SERVICES  */}
         {/* -------------------------------CHILD SECTION A------------------------------- */}
 
-        <section className="overflow-hidden py-15">
+        <section className="overflow-hidden py-16" id="services">
           <h1 className="text-4xl text-center py-10 font-semibold">Our Services</h1>
           <div className="flex max-md:flex-col max-md:text-center max-md:gap-5 items-center">
             <div className="flex flex-col justify-between pl-32 pr-10 max-md:px-8 text-right max-md:text-left max-md:gap-5 gap-40 objectLeft2">

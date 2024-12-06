@@ -15,3 +15,9 @@
     display: block;
     width: 100%;
 }
+.swiper-3d .swiper-slide-shadow-left{
+    background-image: none;
+}
+.swiper-3d .swiper-slide-shadow-right{
+    background-image: none;
+}
