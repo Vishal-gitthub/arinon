@@ -7,7 +7,7 @@ export default {
                 'custom-shadow': 'inset 2px 2px 4px #c4c4c4, inset -2px -2px 4px #ffffff',
             },
             fontFamily: {
-                custom: ['MyCustomFont', 'sans-serif'],
+                custom: ['myCustomFont', 'sans-serif'],
             },
             width: {
                 'fill-available': '-webkit-fill-available',

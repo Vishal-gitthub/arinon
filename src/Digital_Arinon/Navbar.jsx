@@ -45,10 +45,6 @@ const Navbar = () => {
                               <a href="#contact">
                                     Contact Us
                               </a>
-                              <NavLink to="/arinon-digital/privacy-policy">
-                                    Privacy Policy
-                              </NavLink>
-
 
                         </div>
                         <div className=" hidden max-md:block">

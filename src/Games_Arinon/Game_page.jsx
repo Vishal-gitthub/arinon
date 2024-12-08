@@ -1,19 +1,23 @@
 import React, { useEffect } from 'react'
-import qoutes from "../Image_Files/Icons_File/quotes-svgrepo-com.svg"
-import Slider from "react-slick";
+
 import "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import gsap from 'gsap';
-import "./Game_Page.css"
+import AmazingSlider from './SliderComponent/Slider';
+import EffectCoverflowSlider from './SliderComponent/EffectCoverflow';
+
+import playCircle from "../Image_Files/Icons_File/play-circle-svgrepo-com.svg"
 import buttonBorderOrange from "../Image_Files/GamesSvgs/buttonBorderOrange.svg"
 import buttonBorderBlue from "../Image_Files/GamesSvgs/buttonBorderBlue.svg"
+import cardStack1 from "../Image_Files/GamesImages/card_stack_1.jpg"
+import cardStack2 from "../Image_Files/GamesImages/card_stack_2.jpg"
+import cardStack3 from "../Image_Files/GamesImages/card_stack_3.jpg"
+
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import AmazingSlider from './SliderComponent/Slider';
-import playCircle from "../Image_Files/Icons_File/play-circle-svgrepo-com.svg"
-import EffectCoverflowSlider from './SliderComponent/EffectCoverflow';
+import "./Game_Page.css"
 import "../Games_Arinon/SliderComponent/effectCoverFlow.css"
+import gsap from 'gsap';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,34 +30,23 @@ const gameCards = [
 
 ]
 const Game_page = () => {
-      let carouselSettings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            arrows: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-      };
-
-
-
       useEffect(() => {
             const cards = gsap.utils.toArray(".card");
-            const spacer = 20;
+            const spacer = 10;
+
 
             cards.forEach((card, index) => {
                   ScrollTrigger.create({
                         trigger: card,
-                        start: `top-=${index * spacer} top+=10px`, // Adjust this based on your needs
+                        start: `top-=${index * spacer} top+=11px`, // Adjust this based on your needs
                         endTrigger: '.pin-panel',
-                        end: `bottom top+=${550 + (cards.length * spacer)}`,
+                        end: () => `bottom bottom-=${10}`,
                         pin: true,
                         pinSpacing: false,
                         markers: false, // Keep for debugging
                         id: 'card-pin',
-                        invalidateOnRefresh: true,
+                        invalidateOnRefresh: false,
+                        scrub: true,
                         onEnter: () => {
                               gsap.to(card, {
                                     scale: 0.96,
@@ -76,23 +69,23 @@ const Game_page = () => {
             };
       }, []);
       return (
-            <div className='w-full h-full bg-blue-custom'>
+            <div className='w-full h-full bg-white '>
                   <div className="home pin-panel" id='home'>
                         <div className="flex gap-8">
                               <div className='cards flex-1 flex flex-col gap-8'>
                                     <div className='w-full h-[90vh] relative   m-auto p-4 card'>
-                                          <img className='w-full h-full object-cover rounded-md' src="https://uithemez.com/i/hubfolio_HTML/creative-studio/assets/imgs/works/1.jpg" alt="" />
-                                          <h1 className='absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-[10vw] max-md:text-[15vw] max-sm:text-[17vw] text-white font-extrabold tracking-widest'>Dummy Content</h1>
+                                          <img className='w-full h-full object-cover rounded-md ' src={cardStack1} alt="" />
+                                          {/* <h1 className='absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-[10vw] max-md:text-[15vw] max-sm:text-[17vw] text-white font-extrabold tracking-widest'>Dummy Content</h1> */}
                                     </div>
 
                                     <div className='w-full h-[90vh] relative   m-auto p-4 card'>
-                                          <img className='w-full h-full object-cover  rounded-md' src="https://uithemez.com/i/hubfolio_HTML/creative-studio/assets/imgs/works/2.jpg" alt="" />
-                                          <h1 className='absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-[10vw] max-md:text-[15vw] max-sm:text-[17vw] text-white font-extrabold tracking-widest'>Dummy Content</h1>
+                                          <img className='w-full h-full object-cover  rounded-md  ' src={cardStack2} alt="" />
+                                          {/* <h1 className='absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-[10vw] max-md:text-[15vw] max-sm:text-[17vw] text-white font-extrabold tracking-widest'>Dummy Content</h1> */}
                                     </div>
 
                                     <div className='w-full h-[90vh] relative   m-auto p-4 card'>
-                                          <img className='w-full h-full object-cover  rounded-md' src="https://uithemez.com/i/hubfolio_HTML/creative-studio/assets/imgs/works/4.jpg" alt="" />
-                                          <h1 className='absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-[10vw] max-md:text-[15vw] max-sm:text-[17vw] text-white font-extrabold tracking-widest'>Dummy Content</h1>
+                                          <img className='w-full h-full object-cover  rounded-md ' src={cardStack3} alt="" />
+                                          {/* <h1 className='absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-[10vw] max-md:text-[15vw] max-sm:text-[17vw] text-white font-extrabold tracking-widest'>Dummy Content</h1> */}
                                     </div>
                               </div>
 
@@ -100,28 +93,8 @@ const Game_page = () => {
 
                   </div>
 
-                  <div className='pt-10 max-sm:pt-40 max-md:pt-20 max-lg:pt-1 max-xl:pt-8 max-2xl:pt-8 max-[2560px]:pt-96'>
-                        <div id='about-us'>
-                              <div className='flex justify-between px-5 text-white py-10'>
-                                    <h1 className='text-4xl'>About Us ⏎</h1>
-                                    <div className='bg-violet-500 hover:bg-blue-600 duration-300 transition-all text-black hover:text-white py-2 px-4 rounded-md'>View More →</div>
-                              </div>
-
-                        </div>
-                        <hr />
-
-                        <div className='flex justify-end max-md:justify-center text-white py-10'>
-                              <div className='w-3/4'>
-                                    <h1 className='text-2xl max-md:text-2xl '>At Arinon Games, we are passionate about creating immersive, captivating gaming experiences. As a leading game publisher and developer, we specialize in bringing innovative game concepts to life. From strategic development to marketing, we guide each project through every stage to ensure it reaches its full potential.
-                                          <br />
-                                          <p className='pt-2'>
-
-                                                Our team combines creativity, technology, and industry expertise to craft games that engage, entertain, and inspire players worldwide. Whether you're looking to publish a game or develop a new concept, Arinon Games is dedicated to delivering exceptional experiences that resonate with audiences and stand out in the gaming
-                                          </p>
-                                    </h1>
-                              </div>
-                        </div>
-
+                  {/* <div className='pt-10 bg-blue-custom'>
+                       
                         <div className='px-5 hidden' id='our-games'>
                               <div className='px-4 rounded-2xl bg-cyan-200 py-16 mt-8'>
                                     <div className='flex justify-between items-center py-6'>
@@ -241,7 +214,7 @@ const Game_page = () => {
                               </div>
                         </div>
 
-                  </div>
+                  </div> */}
 
                   {/* <================================================================================================> */}
 
@@ -322,7 +295,7 @@ const Game_page = () => {
 
 
                   {/* <========================== About-Us Section START ===================================> */}
-                  <section className='about-us-BG text-white  py-32 mt-12' > 
+                  <section className='about-us-BG bg-blue-custom text-white  py-32 mt-12' >
                         <div className='flex justify-center flex-col items-center'>
 
 
@@ -341,7 +314,7 @@ const Game_page = () => {
 
                               </div>
 
-                              <div className='hr-custom-line relative w-full mt-12 text-center' id='ourGames'>
+                              <div className='hr-custom-line relative w-full mt-12 text-center'>
                                     <div className='py-7'>
                                           <div className='flex flex-wrap justify-center gap-9'>
                                                 <div className='img-custom-border inline-flex'>
@@ -481,7 +454,7 @@ const Game_page = () => {
                               </button>
                         </div>
                   </section>
-                  <section className='select-none pt-20 '>
+                  <section className='select-none pt-20 bg-blue-custom '>
                         <h1 className='text-4xl px-8 font-bold text-white text-left flex items-center gap-3'>OUR LATEST CREATIONS<span> <img src="https://html.themegenix.com/mykd/assets/img/icons/fire.png" alt="" className='w-8' /></span></h1>
                         <EffectCoverflowSlider />
                   </section>

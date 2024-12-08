@@ -26,22 +26,20 @@ const Navbar = () => {
 
                         <div className="flex gap-4 max-md:hidden text-blue-custom">
 
-                              <a href="#ourGames" className='hover:text-orange-custom  font-semibold'>
+                              {/* <a href="#ourGames" className='hover:text-orange-custom  font-semibold'>
                                     Our Games
-                              </a>
-                              <NavLink to="/games~about-us" className={`({ isActive }) => isActive ? "text-orange-custom" : "text-blue-custom" hover:text-orange-custom font-semibold`}>
+                              </a> */}
+                              <NavLink to="/arinon-games/about-us" className={`({ isActive }) => isActive ? "text-orange-custom" : "text-blue-custom" hover:text-orange-custom font-semibold`}>
                                     <p>
                                           About Us
                                     </p>
                               </NavLink>
 
-                              <a href="#contact" className='hover:text-orange-custom font-semibold'>
+                              <NavLink to="/arinon-games/support" className='hover:text-orange-custom font-semibold'>
                                     Support
-                              </a>
-
-                              <NavLink to="/arinon-games/privacy-policy" className={`({ isActive }) => isActive ? "text-orange-custom" : "text-blue-custom" hover:text-orange-custom font-semibold`}>
-                                    Privacy Policy
                               </NavLink>
+
+
                         </div>
 
                         <div className="hidden max-md:block">
@@ -60,16 +58,6 @@ const Navbar = () => {
                         <button onClick={menuCloseBtn} className="p-4 grid place-items-center">
                               <img src={cross} alt="" />
                         </button>
-
-                        <a href="#home" className="py-3 hover:bg-[#00000038]  hover:backdrop-blur-md hover:text-orange-custom rounded-2xl mx-2 px-4 text-xl"
-                        >
-                              Home
-                        </a>
-
-                        <a href="#our-games"
-                              className="py-3 hover:bg-[#00000038]  hover:backdrop-blur-md hover:text-orange-custom rounded-2xl mx-2 px-4 text-xl"
-                        >
-                              Our Games                              </a>
 
                         <a href="#about-us"
                               className="py-3 hover:bg-[#00000038]  hover:backdrop-blur-md hover:text-orange-custom rounded-2xl mx-2 px-4 text-xl"

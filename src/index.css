@@ -50,6 +50,12 @@ html {
     margin: 0 auto;
     object-fit: contain;
 }
+.brand_logo_specify {
+    max-width: 80%;
+    max-height: 130px;
+    margin: 0 auto;
+    object-fit: contain;
+}
 .slick-dots li.slick-active button:before {
     color: white !important;
 }
@@ -119,4 +125,7 @@ html {
     100% {
         transform: rotate(360deg);
     }
+}
+.pin-spacer-card-pin:nth-child(3) {
+    /* height: 1200px !important; */
 }

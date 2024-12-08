@@ -6,7 +6,7 @@ const FrontPage = lazy(() => import("./Pages/FrontPage.jsx"))
 const DigitalArinonPage = lazy(() => import("./Digital_Arinon/DigitalArinonPage.jsx"))
 const Game_page = lazy(() => import("./Games_Arinon/Game_page"))
 const AboutUs = lazy(() => import("./Games_Arinon/Components/About_us/About-Us.jsx"))
-
+const Support = lazy(() => import("./Games_Arinon/Support.jsx"))
 const PrivacyPolicyDigital = lazy(() => import("./Digital_Arinon/DigitalPrivacyPolicy"));
 const PrivacyPolicyGame = lazy(() => import("./Games_Arinon/PrivacyPolicyGames"));
 
@@ -22,11 +22,11 @@ const App = () => {
       document.body.className = "bg-white"
     }
     else {
-      document.body.className = "bg-black"
+      document.body.className = "bg-white"
     }
   })
   return (
-    <div>
+    <div className="font-custom">
       <CustomCursor />
       <Suspense fallback={<div className="w-screen h-screen flex justify-center items-center bg-black"><span className="loader"></span></div>}>
         <Routes>
@@ -37,7 +37,8 @@ const App = () => {
           <Route path="/arinon-digital/privacy-policy" element={<PrivacyPolicyDigital />} />
           <Route element={<GamesLayout />}>
             <Route path="/arinon-games" element={<Game_page />} />
-            <Route path="/games~about-us" element={<AboutUs />} />
+            <Route path="/arinon-games/about-us" element={<AboutUs />} />
+            <Route path="/arinon-games/support" element={<Support />} />
           </Route>
           <Route path="/arinon-games/privacy-policy" element={<PrivacyPolicyGame />} />
         </Routes>

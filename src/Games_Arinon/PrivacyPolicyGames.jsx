@@ -5,7 +5,7 @@ const PrivacyPolicy = () => {
       return (
             <div className=" mx-auto bg-white px-16 py-6 max-sm:p-5 policy-bg">
                   <Link to="/arinon-games">
-                        <div className='w-32'>
+                        <div className='w-32' title='Back To Arinon Games'>
                               <img src={logo} alt="" />
                         </div>
                   </Link>
@@ -99,7 +99,7 @@ const PrivacyPolicy = () => {
                               </div>
                         </div>
 
-                        <div className='hidden'> 
+                        <div> 
 
 
                               <div>

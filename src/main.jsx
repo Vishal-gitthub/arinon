@@ -6,7 +6,7 @@ import { StrictMode } from "react";
 import 'font-awesome/css/font-awesome.min.css';
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter future={{ v7_startTransition: true }}>
     <StrictMode>
       <App />
     </StrictMode>

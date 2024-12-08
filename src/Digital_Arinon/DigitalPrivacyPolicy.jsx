@@ -5,11 +5,11 @@ const PrivacyPolicy = () => {
       return (
             <div className="bg-white text-black px-16 py-6">
                   <Link to="/arinon-digital">
-                        <div className='w-28'>
+                        <div className='w-28' title='Back To Arinon Digital'>
                               <img src={logo} alt="" />
                         </div>
                   </Link>
-                  <div className='-mt-8 hidden'>
+                  <div className='-mt-8'>
                         <h1 className="text-4xl font-extrabold text-blue-custom mb-4">Privacy Policy</h1>
                         <p className="mb-4 text-lg">Last updated: November 29, 2024</p>
                         <p className="mb-4 text-lg">

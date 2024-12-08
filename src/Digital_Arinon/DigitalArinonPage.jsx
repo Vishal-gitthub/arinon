@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom"
 // images & Svg files import
 import arinonBanner from "../Image_Files/Arinon_Digital_Banner.jpg"
 import BulbSvg from "../Image_Files/Icons_File/bulb-2.svg";
@@ -12,8 +12,7 @@ import codeSvg from "../Image_Files/Icons_File/code-svgrepo-com.svg";
 import completedSvg from "../Image_Files/Icons_File/completedSvg.svg";
 import ServiceMockup from "../Image_Files/MockUp1forService.png"
 import downArrow from "../Image_Files/Icons_File/downArrow.png"
-// logo 
-// brand logo 
+// brands logo 
 import elCafe from "../Image_Files/brandsLogos/3L-Cafe.png"
 import peterCat from "../Image_Files/brandsLogos/Peter-Cat.png"
 import aeikyam from "../Image_Files/brandsLogos/Aeikyam.png"
@@ -21,7 +20,11 @@ import laxya from "../Image_Files/brandsLogos/Laxya.png"
 import musingOfAkansha from "../Image_Files/brandsLogos/Musings-of-Aakanksha.png"
 import deeBake from "../Image_Files/brandsLogos/Dee's_Bake.png"
 import bridgeHotel from "../Image_Files/brandsLogos/The-Bridge-Hotel.png"
-//nav bar import 
+import fillme from "../Image_Files/brandsLogos/FillMe-whiteLogo.png"
+import Manch from "../Image_Files/brandsLogos/Manchh-Hindi-NewsLogo.png"
+import jmdLogo from "../Image_Files/brandsLogos/jmd-logo.png"
+import appKart from "../Image_Files/brandsLogos/app-kart-logo-White-png.webp"
+import specify from "../Image_Files/brandsLogos/specifyLogo.png"
 
 //gsap library import
 import gsap from "gsap";
@@ -285,7 +288,7 @@ const DigitalArinonPage = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 800,
     // variableWidth: true,
     responsive: [
@@ -317,7 +320,6 @@ const DigitalArinonPage = () => {
 
 
   return (
-    //  className="font-custom"
     <div className="font-custom">
 
       <section>
@@ -466,27 +468,43 @@ const DigitalArinonPage = () => {
         <div>
           <Slider {...brandCarousel}>
 
-            <div className="flex justify-center items-center">
-              <img src={peterCat} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 2" />
+            <div className="flex justify-center items-center outline-none">
+              <img src={peterCat} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="peter cat" />
             </div>
-            <div className="flex justify-center items-center">
-              <img src={deeBake} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 3" />
+            <div className="flex justify-center items-center outline-none">
+              <img src={deeBake} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="dee's Bake" />
             </div>
-            <div className="flex justify-center items-center">
-              <img src={elCafe} className=" w-full grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 1" />
+            <div className="flex justify-center items-center outline-none">
+              <img src={elCafe} className=" w-full grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="3L Cafe" />
             </div>
-            <div className="flex justify-center items-center">
-              <img src={musingOfAkansha} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 5" />
+            <div className="flex justify-center items-center outline-none">
+              <img src={musingOfAkansha} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="musings of aakanksha" />
             </div>
-            <div className="flex justify-center items-center">
-              <img src={laxya} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 4" />
+            <div className="flex justify-center items-center outline-none">
+              <img src={specify} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="specify" />
             </div>
-            <div className="flex justify-center items-center">
-              <img src={aeikyam} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 5" />
+            <div className="flex justify-center items-center outline-none">
+              <img src={laxya} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="laxya " />
             </div>
-            <div className="flex justify-center items-center">
-              <img src={bridgeHotel} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="brand logo 5" />
+            <div className="flex justify-center items-center outline-none">
+              <img src={aeikyam} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="aeikyam" />
             </div>
+            <div className="flex justify-center items-center outline-none">
+              <img src={jmdLogo} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="jmd logo" />
+            </div>
+            <div className="flex justify-center items-center outline-none">
+              <img src={Manch} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="manch" />
+            </div>
+            <div className="flex justify-center items-center outline-none">
+              <img src={fillme} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="fillme" />
+            </div>
+            <div className="flex justify-center items-center outline-none">
+              <img src={appKart} className=" grayscale hover:grayscale-0 invert transition-all duration-300 p-4 brand_logo" alt="appKart " />
+            </div>
+            <div className="flex justify-center items-center outline-none">
+              <img src={bridgeHotel} className=" grayscale hover:grayscale-0 transition-all duration-300 p-4 brand_logo" alt="bridge Hotel" />
+            </div>
+            
 
           </Slider>
         </div>
@@ -625,7 +643,7 @@ const DigitalArinonPage = () => {
                 <div className="absolute bottom-[-100%] left-0 w-full h-full bg-[#1d3962] transition-all duration-300 ease-in-out group-hover:bottom-0  " />
               </div>
 
-              <div className="relative w-72 h- bg-white overflow-hidden flex items-center justify-center group">
+              <div className="relative w-72 bg-white overflow-hidden flex items-center justify-center group">
                 <div className="relative z-10 text-center group-hover:text-white transition-all duration-300 px-5">
                   <h1 className="text-base py-4">4 posts/week (photos, Reels, captions)
                   </h1>
@@ -880,8 +898,15 @@ const DigitalArinonPage = () => {
 
           <div className="flex items-center gap-1 max-md:flex-col  text-[12px]">
             <i className="fa fa-copyright text-white"></i>
-            <p className="">{new Date().getFullYear()} Arinon, (a unit of Manisi) All rights reserved.</p>
+            <p className="">{new Date().getFullYear()} Arinon Digital, (a unit of Manisi) All rights reserved.</p>
           </div>
+
+          <div className="flex items-center gap-3 max-md:flex-col text-sm underline">
+            <Link to="/arinon-digital/privacy-policy">
+              Privacy Policy
+            </Link>
+          </div>
+
 
           <div className="flex items-center gap-3 max-md:flex-col text-[12px] flex-shrink-0">
             <i className="fa fa-phone  text-white"></i>
@@ -907,7 +932,6 @@ const DigitalArinonPage = () => {
             <i className="fa fa-linkedin text-xl  border py-[15px] px-[17px] bg-blue-custom rounded-[50%] hover:bg-[#a62d7a] hover:text-white transition-all duration-300"></i>
           </a>
         </div>
-        <p></p>
       </footer>
       <button onClick={scrollToTop} className={`z-50 backdrop-blur-sm fixed bottom-5 right-5 p-3 rounded-full hover:bg-[#1d3962] bg-transparent text-black hoe border-gray-700 border  text-2xl  duration-300 hover:text-white  shadow-lg transition-opacity ${isVisible ? "opacity-100" : "opacity-0"}`}>
         ⇡
