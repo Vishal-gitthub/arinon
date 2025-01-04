@@ -127,7 +127,7 @@
 }
 
 .community_bg {
-    background-image: url('https://html.themegenix.com/mykd/assets/img/bg/video_bg.jpg');
+    background-image: url('../Image_Files/GamesImages/communitySectionBg.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -135,3 +135,20 @@
     background-attachment: fixed;
 }
 
+/* ----------------------early access------------------------  */
+
+.e-a-bg {
+    background: rgba(0, 0, 0, 0.267);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border-radius: 10px;
+}
+.e-a-pop-up {
+    background:#1a1a1ba1;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border-radius: 10px;
+    z-index: 666;
+}

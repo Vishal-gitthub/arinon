@@ -27,7 +27,8 @@ export default function AboutUs() {
                                     </div>
                               </div>
                         </div>
-                  </div> <div id='about-us'>
+                  </div> 
+                  <div id='about-us'>
                         <div className='flex justify-between px-5 montserrat-bold  py-10'>
                               <h1 className='text-4xl'>About Us ⏎</h1>
                         </div>

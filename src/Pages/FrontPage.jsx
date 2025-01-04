@@ -89,7 +89,6 @@ const FrontPage = () => {
                 <div className="bg-orange-custom w-full h-2/4 text-white px-4 max-sm:py-7  flex justify-center items-center">
                   <div className=" items-center flex justify-center flex-col py-14">
                     <img src={arinonGames} className="w-[20rem]" alt="" />
-                    <p>COMING SOON...</p>
                   </div>
                 </div>
               </Link>
