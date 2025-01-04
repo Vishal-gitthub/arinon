@@ -15,7 +15,6 @@ import cardStack2 from '../Image_Files/GamesImages/card_stack_2.jpg';
 import cardStack3 from '../Image_Files/GamesImages/card_stack_3.jpg';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import './Game_Page.css';
 import '../Games_Arinon/SliderComponent/effectCoverFlow.css';
 import gsap from 'gsap';
 import PopUp from './PopUp';

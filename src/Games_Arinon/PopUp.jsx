@@ -18,9 +18,7 @@ const PopUp = () => {
                     Do you want Early Access of Street Runner Our First Game
                 </h1>
                 <div className='flex justify-center items-center hover:bg-white/50 mx-auto my-7 px-2 py-4 border rounded-md w-2/4 text-white transition duration-300 outline-none'>
-                    <Link to='/arinon-games/early-access'>
-                        Get Early Access 
-                    </Link>
+                    <Link to='/arinon-games/early-access'>Get Early Access</Link>
                 </div>
             </div>
         </div>

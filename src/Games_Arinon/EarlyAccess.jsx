@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './Game_page.css'; // Ensure the path to your CSS file is correct
 import emailjs from 'emailjs-com';
 
 import backgroundVideo from '../Video_Files/early access.mp4'; // Ensure correct file path
