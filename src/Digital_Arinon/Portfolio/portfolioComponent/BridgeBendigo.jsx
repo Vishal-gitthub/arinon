@@ -11,6 +11,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import PortfolioSlider from '../PortfolioSlider';
+import PortfolioNavbar from '../PortfolioNavbar';
 export default function BridgeBendigo() {
     const { data } = useContext(PortfolioContext);
     console.log(data);
@@ -35,6 +37,7 @@ export default function BridgeBendigo() {
     }, []);
     return (
         <div>
+            <PortfolioNavbar />
             <header>
                 <div className='relative h-72 max-lg:h-full'>
                     <img
@@ -154,7 +157,9 @@ export default function BridgeBendigo() {
                     </div>
                 </div>
             </div>
-            <h1 className='py-5 font-custom font-semibold text-3xl text-center'>We Designed T-Shirt</h1>
+            <h1 className='py-5 font-custom font-semibold text-3xl text-center'>
+                We Designed T-Shirt
+            </h1>
             <div className='flex flex-wrap justify-center items-center gap-10 w-full'>
                 {data[2].teesDesign.map((design, index) => (
                     <div className='min-w-64 max-w-96' key={index}>
@@ -163,8 +168,10 @@ export default function BridgeBendigo() {
                 ))}
             </div>
             <div className='flex justify-center items-center my-5 w-full'>
-                <div className='inline-flex justify-center items-center gap-5 px-10 py-10 border'>
-                    <div className='pr-5 border-r w-48'>
+                <div className='inline-flex max-sm:flex-col justify-center items-center gap-5 px-10 py-10 border'>
+                    <div
+                        className='pr-5 border-r max-sm:border-r-0 max-sm:border-b w-48'
+                    >
                         <img src={data[2].ClientIcon} className='w-full invert' alt='' />
                     </div>
                     <div className='flex flex-col gap-4'>
@@ -175,6 +182,7 @@ export default function BridgeBendigo() {
                     </div>
                 </div>
             </div>
+            <PortfolioSlider />
         </div>
     );
 }

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// images & Svg files import
-import arinonBanner from '../Image_Files/Arinon_Digital_Banner.jpg';
+import { Helmet } from 'react-helmet';
+// Importing images and SVG files
+import arinonBanner from '../Image_Files/Arinon_Digital_Banner.webp';
 import BulbSvg from '../Image_Files/Icons_File/bulb-2.svg';
 import businessLogo from '../Image_Files/Icons_File/briefcase-2.svg';
 import heartLogo from '../Image_Files/Icons_File/heart.svg';
@@ -12,7 +13,8 @@ import codeSvg from '../Image_Files/Icons_File/code-svgrepo-com.svg';
 import completedSvg from '../Image_Files/Icons_File/completedSvg.svg';
 import ServiceMockup from '../Image_Files/MockUp1forService.png';
 import downArrow from '../Image_Files/Icons_File/downArrow.png';
-// brands logo
+
+// Importing brand logos
 import elCafe from '../Image_Files/brandsLogos/3L-Cafe.png';
 import peterCat from '../Image_Files/brandsLogos/Peter-Cat.png';
 import aeikyam from '../Image_Files/brandsLogos/Aeikyam.png';
@@ -26,6 +28,29 @@ import jmdLogo from '../Image_Files/brandsLogos/jmd-logo.png';
 import appKart from '../Image_Files/brandsLogos/app-kart-logo-White-png.webp';
 import specify from '../Image_Files/brandsLogos/specifyLogo.png';
 
+// Importing work mockup images
+import WorkMockUp_1 from '../Image_Files/ArinonImages/Work MockUp-01.jpg';
+import WorkMockUp_2 from '../Image_Files/ArinonImages/Work MockUp-02.png';
+import WorkMockUp_3 from '../Image_Files/ArinonImages/Work MockUp-03.jpg';
+import WorkMockUp_4 from '../Image_Files/brandsLogos/app-kart-logo-White-png.webp';
+import WorkMockUp_5 from '../Image_Files/ArinonImages/Work MockUp-05.jpg';
+import WorkMockUp_6 from '../Image_Files/ArinonImages/Work MockUp-06.jpg';
+import WorkMockUp_7 from '../Image_Files/ArinonImages/Work MockUp-07.jpg';
+import WorkMockUp_8 from '../Image_Files/ArinonImages/Work MockUp-08.jpg';
+
+// Defining project client details for thumbnails
+const projectsClient = [
+    { name: 'Laxya Production', image: WorkMockUp_3, to: '/arinon-digital/portfolio/2' }, // Thumbnail for Laxya Production
+    { name: 'The Bridge Hotel', image: WorkMockUp_8, to: '/arinon-digital/portfolio/4' }, // Thumbnail for The Bridge Hotel
+    { name: 'Musings of Aakanksha', image: WorkMockUp_5, to: '/arinon-digital/portfolio/1' }, // Thumbnail for Musings of Aakanksha
+    { name: 'Peter Cat', image: WorkMockUp_1, to: '/arinon-digital/portfolio/3' }, // Thumbnail for Peter Cat
+    { name: 'Spacify', image: WorkMockUp_2, to: '/arinon-digital/portfolio/7' }, // Thumbnail entry for Spacify
+    { name: '3L Cafe', image: WorkMockUp_6, to: '/arinon-digital/portfolio/5' }, // Thumbnail for 3L Cafe
+    { name: 'Aeikyam', image: WorkMockUp_7, to: '/arinon-digital/portfolio/6' },
+    { name: 'AppKart Studio', image: WorkMockUp_4, to: '/arinon-digital/portfolio/8' },
+];
+// <================================>
+
 //gsap library import
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -38,46 +63,25 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 // <<<<<<<------->>>>>>>
-import WorkMockUp_1 from '../Image_Files/ArinonImages/Work MockUp-01.jpg';
-import WorkMockUp_2 from '../Image_Files/ArinonImages/Work MockUp-02.jpg';
-import WorkMockUp_3 from '../Image_Files/ArinonImages/Work MockUp-03.jpg';
-import WorkMockUp_4 from '../Image_Files/ArinonImages/Work MockUp-04.jpg';
-import WorkMockUp_5 from '../Image_Files/ArinonImages/Work MockUp-05.jpg';
-import WorkMockUp_6 from '../Image_Files/ArinonImages/Work MockUp-06.jpg';
-import WorkMockUp_7 from '../Image_Files/ArinonImages/Work MockUp-07.jpg';
-import WorkMockUp_8 from '../Image_Files/ArinonImages/Work MockUp-08.jpg';
-
-// Arinon Projects Thumbnail Images
-const projectsClient = [
-    { name: 'Laxya Production', image: WorkMockUp_3 , to: '/arinon-digital/2' },
-    { name: 'The Bridge Hotel', image: WorkMockUp_8 ,'to': '/arinon-digital/4'},
-    { name: 'Musings of Aakanksha', image: WorkMockUp_5, to: '/arinon-digital/1' },
-    { name: 'Peter Cat', image: WorkMockUp_1,to: '/arinon-digital/3'},
-    { name: 'Musings Of Akanksha', image: WorkMockUp_2, to: '/arinon-digital/1' },
-    { name: '3L Cafe', image: WorkMockUp_6 , to:"/ArinonDigital/5"},
-    { name: 'Laxya Production', image: WorkMockUp_7, to: '/arinon-digital/2' },
-    { name: 'The Bridge Hotel', image: WorkMockUp_4 ,to :"/ArinonDigital/4" }, //
-];
-
-// <<<<<<<------->>>>>>>
 
 const DigitalArinonPage = () => {
-    // these 3 states for displaying our clients and projects with animation
+    // States for animated counters
     const [happyClients, setHappyClients] = useState(0);
-    const [partners, setpartners] = useState(0);
+    const [partners, setPartners] = useState(0);
     const [projects, setProjects] = useState(0);
 
-    // these state is for side Navbar
+    // State for side Navbar active item
     const [activeIndex, setActiveIndex] = useState(null);
 
-    // these state is for FAQ accordian
+    // Function to toggle FAQ accordion
     const toggleAccordion = (index) => {
-        setActiveIndex(activeIndex === index ? null : index); // Toggle active item
+        setActiveIndex(activeIndex === index ? null : index);
     };
 
+    // State for "Back to Top" button visibility
     const [isVisible, setVisible] = useState(false);
 
-    // toggleButton for back to top Button
+    // Function to toggle visibility of "Back to Top" button
     const toggleVisibility = () => {
         if (window.scrollY > 200) {
             setVisible(true);
@@ -86,9 +90,12 @@ const DigitalArinonPage = () => {
         }
     };
 
+    // Function to scroll to the top of the page
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    // Effect to manage scroll visibility of "Back to Top" button
     useEffect(() => {
         window.addEventListener('scroll', toggleVisibility);
         return () => {
@@ -96,7 +103,9 @@ const DigitalArinonPage = () => {
         };
     }, []);
 
+    // Effect to initialize counters and GSAP animations
     useEffect(() => {
+        // Increment counters with intervals
         const interval_1 = setInterval(() => {
             setHappyClients((prev) => {
                 if (prev < 15) return prev + 1;
@@ -106,7 +115,7 @@ const DigitalArinonPage = () => {
         }, 500);
 
         const interval_2 = setInterval(() => {
-            setpartners((prev) => {
+            setPartners((prev) => {
                 if (prev < 5) return prev + 1;
                 clearInterval(interval_2);
                 return prev;
@@ -121,141 +130,45 @@ const DigitalArinonPage = () => {
             });
         }, 500);
 
-        gsap.fromTo(
-            '.left',
+        // GSAP animations
+        const animations = [
             {
-                x: '-100%',
-                opacity: 0,
+                element: '.left',
+                from: { x: '-100%', opacity: 0 },
+                to: { x: '0%', opacity: 1, duration: 1 },
             },
             {
-                x: '0%',
-                opacity: 1,
-                duration: 1,
-                ease: 'ease.out',
+                element: '.right',
+                from: { x: '100%', opacity: 0 },
+                to: { x: '0%', opacity: 1, duration: 1 },
             },
-        );
+            { element: '.leftCard', from: { x: '-100%' }, to: { x: '0%', duration: 1.5 } },
+            { element: '.rightCard', from: { x: '100%' }, to: { x: '0%', duration: 1.5 } },
+            { element: '.objectRight', from: { x: '100%' }, to: { x: '0%', duration: 1.5 } },
+            { element: '.objectLeft', from: { x: '-100%' }, to: { x: '0%', duration: 1.5 } },
+            { element: '.objectRight2', from: { x: '100%' }, to: { x: '0%', duration: 1.5 } },
+            { element: '.objectLeft2', from: { x: '-100%' }, to: { x: '0%', duration: 1.5 } },
+            {
+                element: '.controlOpacity',
+                from: { opacity: 0.01 },
+                to: { opacity: 1, duration: 1.9 },
+            },
+        ];
 
-        gsap.fromTo(
-            '.right',
-            { x: '100%', opacity: 0 },
-            { x: '0%', duration: 1, opacity: 1, ease: 'ease.out' },
-        );
-
-        gsap.fromTo(
-            '.leftCard',
-            { x: '-100%' },
-            {
-                x: '0%',
-                duration: 1.5,
-                ease: 'power2.out',
+        animations.forEach(({ element, from, to }) => {
+            gsap.fromTo(element, from, {
+                ...to,
+                ease: 'power2.in', // Use a more appropriate easing function
                 scrollTrigger: {
-                    trigger: '.leftCard',
-                    start: 'top 80%',
-                    toggleActions: 'play none none reset',
+                    trigger: element,
+                    start: 'top 60%', // Element starts animating when it's 60% into the viewport
+                    end: 'top bottom', // Ends animating when it's fully visible
+                    toggleActions: 'play none none none', // Animates only once
+                    scrub: 1, // Smooth scrubbing effect
                 },
-            },
-        );
-
-        gsap.fromTo(
-            '.rightCard',
-            {
-                x: '100%',
-            },
-            {
-                x: '0%',
-                duration: 1.5,
-                ease: 'ease.out',
-                scrollTrigger: {
-                    trigger: '.rightCard',
-                    start: 'top 80%',
-                    toggleActions: 'play none none reset',
-                },
-            },
-        );
-
-        gsap.fromTo(
-            '.objectRight',
-            {
-                x: '100%',
-            },
-            {
-                x: '0%',
-                duration: 1.5,
-                ease: 'ease.out',
-                scrollTrigger: {
-                    trigger: '.objectRight',
-                    start: 'top 70%',
-                    toggleActions: 'play none none reset',
-                    scrub: true,
-                },
-            },
-        );
-        gsap.fromTo(
-            '.objectLeft',
-            {
-                x: '-100%',
-            },
-            {
-                x: '0%',
-                duration: 1.5,
-                ease: 'ease.out',
-                scrollTrigger: {
-                    trigger: '.objectLeft',
-                    start: 'top 70%',
-                    toggleActions: 'play none none reset',
-                    scrub: 1,
-                },
-            },
-        );
-
-        gsap.fromTo(
-            '.objectRight2',
-            {
-                x: '100%',
-            },
-            {
-                x: '0%',
-                duration: 1.5,
-                ease: 'ease.out',
-                scrollTrigger: {
-                    trigger: '.objectRight2',
-                    start: 'top 70%',
-                    toggleActions: 'play none none reset',
-                },
-            },
-        );
-        gsap.fromTo(
-            '.objectLeft2',
-            {
-                x: '-100%',
-            },
-            {
-                x: '0%',
-                duration: 1.5,
-                ease: 'ease.out',
-                scrollTrigger: {
-                    trigger: '.objectLeft2',
-                    start: 'top 70%',
-                    toggleActions: 'play none none reset',
-                },
-            },
-        );
-
-        gsap.fromTo(
-            '.controlOpacity',
-            { opacity: 0.01 },
-            {
-                opacity: 1,
-                duration: 1.9,
-                scrollTrigger: {
-                    trigger: '.controlOpacity',
-                    start: 'top 80%',
-                    toggleActions: 'play none none reset',
-                },
-            },
-        );
+            });
+        });
     }, []);
-
     let carouselSettings = {
         dots: true,
         infinite: true,
@@ -263,7 +176,7 @@ const DigitalArinonPage = () => {
         arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 1000,
     };
 
@@ -274,8 +187,8 @@ const DigitalArinonPage = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 800,
+        autoplay: true,
+        autoplaySpeed: 1800,
         // variableWidth: true,
         responsive: [
             {
@@ -304,6 +217,31 @@ const DigitalArinonPage = () => {
 
     return (
         <div className='font-custom'>
+            <Helmet>
+                <title>Digital Arinon - Your Digital Partner</title>
+                <meta
+                    name='description'
+                    content='Digital Arinon offers top-notch digital solutions for your business needs. Explore our portfolio and services.'
+                />
+                <meta
+                    name='keywords'
+                    content='Digital Arinon, digital solutions, portfolio, services'
+                />
+                <meta property='og:title' content='Digital Arinon - Your Digital Partner' />
+                <meta
+                    property='og:description'
+                    content='Digital Arinon offers top-notch digital solutions for your business needs. Explore our portfolio and services.'
+                />
+                <meta property='og:image' content='URL_TO_IMAGE' />
+                <meta property='og:url' content='https://arinon.com/' />
+                <meta name='twitter:card' content='summary_large_image' />
+                <meta name='twitter:title' content='Digital Arinon - Your Digital Partner' />
+                <meta
+                    name='twitter:description'
+                    content='Digital Arinon offers top-notch digital solutions for your business needs. Explore our portfolio and services.'
+                />
+                <meta name='twitter:image' content='URL_TO_IMAGE' />
+            </Helmet>
             <section>
                 <div className='relative w-full h-[36rem]'>
                     <img src={arinonBanner} className='w-full h-full object-cover' alt='' />
@@ -526,8 +464,7 @@ const DigitalArinonPage = () => {
             </section>
 
             {/* -------------------------------SECTION 4------------------------------- */}
-
-            <section className='bg-blue-custom pt-10'>
+            <section className='bg-blue-custom pt-10' id='portfolio'>
                 <h1 className='pb-10 font-semibold text-4xl text-center text-white'>
                     Our Latest and Creative Works
                 </h1>
@@ -542,8 +479,8 @@ const DigitalArinonPage = () => {
                                         className='w-full h-full object-cover'
                                     />
 
-                                    <div className='top-2/4 left-2/4 absolute flex justify-center items-center bg-[#0000008f] opacity-0 group-hover:opacity-100 w-full h-full font-semibold text-white text-xl tracking-[0.3em] transition-all -translate-x-2/4 -translate-y-2/4 duration-300'>
-                                        VISIT
+                                    <div className='group-hover:text-lg top-2/4 left-2/4 absolute flex flex-shrink-0 justify-center items-center bg-[#0000008f] opacity-0 group-hover:opacity-100 w-full h-full font-semibold text-white text-white/55 uppercase tracking-[0.1em] transition-all -translate-x-2/4 -translate-y-2/4 duration-300'>
+                                        {project.name}
                                     </div>
                                 </div>
                             </Link>
@@ -563,20 +500,17 @@ const DigitalArinonPage = () => {
                         <div className='text-right flex flex-col justify-between gap-40 max-md:gap-5 max-md:px-8 pr-10 pl-32 max-md:text-left objectLeft2'>
                             <div>
                                 <h1 className='py-2 font-semibold text-xl'>DIGITAL MARKETING</h1>
-                                <p className='text-gray-600'>
+                                <p className='pl-40 max-sm:pl-0 max-md:pl-10 text-gray-600'>
                                     Take your brand to the next level with powerful digital
                                     marketing strategies, that aligns with your vision.
                                 </p>
                             </div>
-                            {/* <div>
-                <h1 className="font-semibold text-xl">WEB DEVELOPMENT</h1>
-                <p className="text-gray-600">Build fast, responsive, and user-friendly websites with our expert development team.</p>
-              </div> */}
+
                             <div>
                                 <h1 className='py-2 font-semibold text-xl uppercase'>
                                     App Development
                                 </h1>
-                                <p className='text-gray-600'>
+                                <p className='pl-40 max-sm:pl-0 max-md:pl-10 text-gray-600'>
                                     Develop mobile and web applications that meet your business
                                     needs and enhance user experience.
                                 </p>
@@ -588,24 +522,13 @@ const DigitalArinonPage = () => {
                         </div>
 
                         <div className='flex flex-col gap-8 max-md:px-8 pr-32 pl-10 max-md:text-left objectRight2'>
-                            {/* <div>
-                <h1 className="font-semibold text-xl">DIGITAL MARKETING</h1>
-                <p className="text-gray-600">Take your brand to the next level with powerful digital marketing strategies, that aligns with your vision.</p>
-              </div> */}
                             <div>
                                 <h1 className='py-2 font-semibold text-xl'>WEB DEVELOPMENT</h1>
-                                <p className='text-gray-600'>
+                                <p className='pr-40 max-sm:pr-0 max-md:pr-10 text-gray-600'>
                                     Build fast, responsive, and user-friendly websites with our
                                     expert development team.
                                 </p>
                             </div>
-                            {/* <div>
-                <h1 className="font-semibold text-xl">App Development
-                </h1>
-                <p className="text-gray-600">
-                  Develop mobile and web applications that meet your business needs and enhance user experience.
-                </p>
-              </div> */}
                         </div>
                     </div>
                 </section>
@@ -656,7 +579,6 @@ const DigitalArinonPage = () => {
                                         Basic hashtag research boost reach
                                     </h1>
                                     <h1 className='py-4 text-base'>
-                                        {' '}
                                         Monthly insights on followers and engagement
                                     </h1>
                                 </div>
@@ -712,7 +634,6 @@ const DigitalArinonPage = () => {
                             <div className='relative flex justify-center items-center bg-white w-72 h- overflow-hidden group'>
                                 <div className='group-hover:text-white relative z-10 px-5 text-center transition-all duration-300'>
                                     <h1 className='py-4 text-base'>
-                                        {' '}
                                         5 posts/week (diverse mix including Reels, quotes)
                                     </h1>
                                     <h1 className='py-4 text-base'>
@@ -722,7 +643,6 @@ const DigitalArinonPage = () => {
                                         2 high-quality Reels per week
                                     </h1>
                                     <h1 className='py-4 text-base'>
-                                        {' '}
                                         Detailed monthly analytics with growth strategies
                                     </h1>
                                 </div>
@@ -849,8 +769,8 @@ const DigitalArinonPage = () => {
                 </div>
             </section>
 
-            <section id='faqs' className='hidden'>
-                {/* Accordians  */}
+            {/* Accordians  */}
+            {/* <section id='faqs' className='hidden'>
                 <div className='bg-gray-100 px-6 sm:px-8 lg:px-16 py-20'>
                     <div className='mx-auto mb-8 max-w-4xl text-center'>
                         <h2 className='font-semibold text-2xl text-gray-800 md:text-3xl'>
@@ -936,17 +856,8 @@ const DigitalArinonPage = () => {
                             </div>
                         </div>
                     </div>
-                    {/* button here */}
-                    {/* <div className="mt-8 text-center">
-            <a
-              href="#"
-              className="inline-block bg-[#1d3962] hover:bg-[#A62E7A] px-6 py-3 rounded-lg font-bold text-white transition duration-300"
-            >
-              Learn More About Our Approach
-            </a>
-          </div> */}
                 </div>
-            </section>
+            </section> */}
 
             {/* -------------------------------SECTION 7------------------------------- */}
             {/* map */}

@@ -11,6 +11,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import PortfolioSlider from '../PortfolioSlider';
+import PortfolioNavbar from '../PortfolioNavbar';
 
 export default function Laxya() {
     const { data } = useContext(PortfolioContext);
@@ -39,6 +41,7 @@ export default function Laxya() {
 
     return (
         <div className='h-auto'>
+            <PortfolioNavbar />
             <header>
                 <div className='relative h-72 max-lg:h-full'>
                     <img
@@ -54,8 +57,8 @@ export default function Laxya() {
                     </div>
                 </div>
             </header>
-            <div className='flex max-sm:flex-col justify-center items-start max-sm:items-center gap-10 mx-auto px-5 pt-6 sm:pt-8 md:pt-10 w-full sm:w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-7/12'>
-                <div className='max-w-80 imgLeft'>
+            <div className='flex max-sm:flex-col justify-center items-center gap-10 mx-auto px-5 pt-6 sm:pt-8 md:pt-10 w-full sm:w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-7/12'>
+                <div className='min-w-40 max-w-80 imgLeft'>
                     <img src={data[1].ClientIcon} alt={`${data[1].name} Logo`} />
                 </div>
                 <div>
@@ -154,7 +157,6 @@ export default function Laxya() {
                     </div>
                 </div>
             </div>
-
             <h1 className='py-16 font-semibold text-4xl text-center'>Posts We Created for Laxya</h1>
             <div className='flex flex-wrap justify-center items-center gap-10 h-full'>
                 {data[1].postsGallery.map((post, index) => (
@@ -204,6 +206,7 @@ export default function Laxya() {
                     </div>
                 </div>
             </div>
+            <PortfolioSlider />
         </div>
     );
 }

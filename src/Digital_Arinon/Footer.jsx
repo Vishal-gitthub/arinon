@@ -36,7 +36,7 @@ export default function Footer() {
                 </div>
 
                 <div
-                    className={`fixed right-0 top-1/2  inline-flex -translate-y-1/2 flex-col gap-2 pr-1`}
+                    className={`fixed right-0 top-1/2  inline-flex -translate-y-1/2 flex-col gap-2 pr-1 z-30`}
                 >
                     <a
                         href='https://www.facebook.com/arinondigital'

@@ -5,41 +5,45 @@ import listIcon from '../Image_Files/Icons_File/hamburgerwhite.svg';
 import arrowRight from '../Image_Files/Icons_File/cross-svgrepo.svg';
 
 const Navbar = () => {
-    let [widthState, setWidthState] = useState(false);
-    function menuBtn() {
-        setWidthState(!widthState);
-    }
-    function menuCloseBtn() {
-        setWidthState(!widthState);
-    }
+    const [widthState, setWidthState] = useState(false);
+
+    const menuItems = [
+        { label: 'Portfolio', href: '#portfolio' },
+        { label: 'Services', href: '#services' },
+        { label: 'Pricing', href: '#pricing' },
+        { label: 'About Us', href: '#about-us' },
+        { label: 'Contact Us', href: '#contact' },
+    ];
+
+    const toggleMenu = () => setWidthState(!widthState);
 
     return (
         <header className='top-0 z-40 sticky'>
             {/* -------------------------------NAVBAR------------------------------- */}
-            {/* Navbar   */}
             <nav className='flex justify-between items-center bg-[#1d3962] backdrop-blur-sm px-8 py-3'>
                 <NavLink to='/' aria-label='LOGO'>
                     <div className='w-24'>
-                        <img src={logo} alt='' className='w-full' />
+                        <img src={logo} alt='Logo' className='w-full' />
                     </div>
                 </NavLink>
-
+                {/* Desktop Menu */}
                 <div className='flex gap-4 max-md:hidden text-white'>
-                    <a href='#services'>Services</a>
-                    <a href='#pricing'>Pricing</a>
-
-                    <a href='#about-us'>About Us</a>
-                    {/* <a href="#faqs">FAQs</a> */}
-
-                    <a href='#contact'>Contact Us</a>
+                    {menuItems.map((item) => (
+                        <a key={item.label} href={item.href}>
+                            {item.label}
+                        </a>
+                    ))}
                 </div>
+                
+                {/* Mobile Menu Button */}
                 <div className='max-md:block hidden'>
-                    <button onClick={menuBtn} aria-label='Menu Bar'>
-                        <img src={listIcon} alt='' />
+                    <button onClick={toggleMenu} aria-label='Menu Bar'>
+                        <img src={listIcon} alt='Menu Icon' />
                     </button>
                 </div>
             </nav>
 
+            {/* Sidebar */}
             <div
                 id='sidebar'
                 className={`flex flex-col fixed h-full top-0 right-0 transition-transform duration-300 z-50 ${
@@ -47,43 +51,23 @@ const Navbar = () => {
                 } text-black max-md:w-64 bg-slate-50`}
             >
                 <button
-                    onClick={menuCloseBtn}
+                    onClick={toggleMenu}
                     aria-label='Close Menu'
                     className='place-items-center grid p-4'
                 >
-                    <img src={arrowRight} alt='' />
+                    <img src={arrowRight} alt='Close Icon' />
                 </button>
 
-                <a
-                    href='#services'
-                    className='hover:bg-[#1d3962] mx-2 px-4 py-3 rounded-2xl text-xl hover:text-white'
-                >
-                    Services
-                </a>
-                <a
-                    href='#pricing'
-                    className='hover:bg-[#1d3962] mx-2 px-4 py-3 rounded-2xl text-xl hover:text-white'
-                >
-                    Pricing
-                </a>
-
-                <a
-                    href='#about-us'
-                    className='hover:bg-[#1d3962] mx-2 px-4 py-3 rounded-2xl text-xl hover:text-white'
-                >
-                    About Us
-                </a>
-                {/* <a href="#faqs"
-            className="hover:bg-[#1d3962] mx-2 px-4 py-3 rounded-2xl text-xl hover:text-white"
-          >FAQs
-          </a> */}
-
-                <a
-                    href='#contact'
-                    className='hover:bg-[#1d3962] mx-2 px-4 py-3 rounded-2xl text-xl hover:text-white'
-                >
-                    Contact Us
-                </a>
+                {menuItems.map((item) => (
+                    <a
+                        key={item.label}
+                        href={item.href}
+                        className='hover:bg-[#1d3962] mx-2 px-4 py-3 rounded-2xl text-xl hover:text-white'
+                        onClick={toggleMenu}
+                    >
+                        {item.label}
+                    </a>
+                ))}
             </div>
         </header>
     );

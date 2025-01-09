@@ -4,6 +4,8 @@ import gsap from 'gsap';
 import { PortfolioContext } from '../Context';
 import IgReel from '../InstaPostEmbed/AakankshaReel';
 import IgReel2 from '../InstaPostEmbed/AakankshaReel2';
+import PortfolioSlider from '../PortfolioSlider';
+import PortfolioNavbar from '../PortfolioNavbar';
 
 export default function Aakanksha() {
     const { data } = useContext(PortfolioContext);
@@ -29,6 +31,7 @@ export default function Aakanksha() {
     }, []);
     return (
         <div>
+            <PortfolioNavbar />
             <header>
                 <div className='relative h-72 max-lg:h-full'>
                     <img
@@ -148,6 +151,7 @@ export default function Aakanksha() {
                 <IgReel />
                 <IgReel2 />
             </div>
+            <PortfolioSlider />
         </div>
     );
 }
