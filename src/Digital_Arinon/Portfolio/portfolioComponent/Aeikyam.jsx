@@ -15,7 +15,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import PortfolioSlider from '../PortfolioSlider';
 
-import { Link } from 'react-router-dom';
 import PortfolioNavbar from '../PortfolioNavbar';
 
 export default function Aeikyam() {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../Assets/Logo/Arinon_Logo_Final-02.png';
 import listIcon from '../Image_Files/Icons_File/hamburgerwhite.svg';
 import arrowRight from '../Image_Files/Icons_File/cross-svgrepo.svg';
@@ -12,6 +12,7 @@ const Navbar = () => {
         { label: 'Services', href: '#services' },
         { label: 'Pricing', href: '#pricing' },
         { label: 'About Us', href: '#about-us' },
+        { routeLabel: 'Careers', to: '/arinon-digital/career' },
         { label: 'Contact Us', href: '#contact' },
     ];
 
@@ -28,13 +29,16 @@ const Navbar = () => {
                 </NavLink>
                 {/* Desktop Menu */}
                 <div className='flex gap-4 max-md:hidden text-white'>
-                    {menuItems.map((item) => (
-                        <a key={item.label} href={item.href}>
-                            {item.label}
-                        </a>
+                    {menuItems.map((item, index) => (
+                        <div key={index}>
+                            <a key={item.label} href={item.href}>
+                                {item.label}
+                            </a>
+                            <Link to={item.to}>{item.routeLabel}</Link>
+                        </div>
                     ))}
                 </div>
-                
+
                 {/* Mobile Menu Button */}
                 <div className='max-md:block hidden'>
                     <button onClick={toggleMenu} aria-label='Menu Bar'>
@@ -58,15 +62,24 @@ const Navbar = () => {
                     <img src={arrowRight} alt='Close Icon' />
                 </button>
 
-                {menuItems.map((item) => (
-                    <a
-                        key={item.label}
-                        href={item.href}
-                        className='hover:bg-[#1d3962] mx-2 px-4 py-3 rounded-2xl text-xl hover:text-white'
-                        onClick={toggleMenu}
-                    >
-                        {item.label}
-                    </a>
+                {menuItems.map((item, index) => (
+                    <div key={index}>
+                        <a
+                            href={item.href}
+                            className='hover:bg-[#1d3962] mx-2 px-4 py-3 rounded-2xl text-xl hover:text-white'
+                            onClick={toggleMenu}
+                        >
+                            {item.label}
+                        </a>
+
+                        <Link
+                            className='hover:bg-[#1d3962] mx-2 px-4 py-3 rounded-2xl text-left text-xl hover:text-white'
+                            onClick={toggleMenu}
+                            to={menuItems.to}
+                        >
+                            {item.routeLabel}
+                        </Link>
+                    </div>
                 ))}
             </div>
         </header>

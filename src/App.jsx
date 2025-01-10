@@ -17,17 +17,28 @@ import GamesLayout from './Layouts/GamesLayout';
 import DigitalLayout from './Layouts/DigitalLayout';
 
 import './SecondaryStyle.css';
-import Aakanksha from './Digital_Arinon/Portfolio/portfolioComponent/Aakanksha.jsx';
-import Laxya from './Digital_Arinon/Portfolio/portfolioComponent/Laxya.jsx';
-import PeterCat from './Digital_Arinon/Portfolio/portfolioComponent/PeterCat.jsx';
-import BridgeBendigo from './Digital_Arinon/Portfolio/portfolioComponent/BridgeBendigo.jsx';
-import LCafe from './Digital_Arinon/Portfolio/portfolioComponent/LCafe.jsx';
-import Aeikyam from './Digital_Arinon/Portfolio/portfolioComponent/Aeikyam.jsx';
-import Spacify from './Digital_Arinon/Portfolio/portfolioComponent/Spacify.jsx';
-import AppKart from './Digital_Arinon/Portfolio/portfolioComponent/AppKart.jsx';
-import Career from './Digital_Arinon/CareerPages/Career.jsx';
-import Department from './Digital_Arinon/CareerPages/Department.jsx';
-import Department_1 from './Digital_Arinon/CareerPages/ChildComponents/Department_1.jsx';
+const Aakanksha = lazy(() => import('./Digital_Arinon/Portfolio/portfolioComponent/Aakanksha.jsx'));
+const Laxya = lazy(() => import('./Digital_Arinon/Portfolio/portfolioComponent/Laxya.jsx'));
+const PeterCat = lazy(() => import('./Digital_Arinon/Portfolio/portfolioComponent/PeterCat.jsx'));
+const BridgeBendigo = lazy(() =>
+    import('./Digital_Arinon/Portfolio/portfolioComponent/BridgeBendigo.jsx'),
+);
+const LCafe = lazy(() => import('./Digital_Arinon/Portfolio/portfolioComponent/LCafe.jsx'));
+const Aeikyam = lazy(() => import('./Digital_Arinon/Portfolio/portfolioComponent/Aeikyam.jsx'));
+const Spacify = lazy(() => import('./Digital_Arinon/Portfolio/portfolioComponent/Spacify.jsx'));
+const AppKart = lazy(() => import('./Digital_Arinon/Portfolio/portfolioComponent/AppKart.jsx'));
+const Career = lazy(() => import('./Digital_Arinon/CareerPages/Career.jsx'));
+const Department = lazy(() => import('./Digital_Arinon/CareerPages/Department.jsx'));
+const Department_1 = lazy(() =>
+    import('./Digital_Arinon/CareerPages/ChildComponents/Department_1.jsx'),
+);
+const Department_2 = lazy(() =>
+    import('./Digital_Arinon/CareerPages/ChildComponents/Department_2.jsx'),
+);
+const Department_3 = lazy(() =>
+    import('./Digital_Arinon/CareerPages/ChildComponents/Department_3.jsx'),
+);
+
 const App = () => {
     const location = useLocation();
 
@@ -73,6 +84,8 @@ const App = () => {
                     <Route path='/arinon-digital/career' element={<Career />} />
                     <Route path='/arinon-digital/department' element={<Department />} />
                     <Route path='/arinon-digital/department/1' element={<Department_1 />} />
+                    <Route path='/arinon-digital/department/2' element={<Department_2 />} />
+                    <Route path='/arinon-digital/department/3' element={<Department_3 />} />
                     {/* -------------------------------- */}
 
                     {/* Games Layout Routes */}

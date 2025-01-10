@@ -324,8 +324,16 @@ export const DataProvider = ({ children }) => {
     ];
 
     const [data, setData] = useState(objectData);
+
+    // this is for Career Form Page
+    const [formVisible, setFormVisible] = useState(false);
+    const ToggleForm = () => {
+        setFormVisible(!formVisible);
+    };
     return (
-        <PortfolioContext.Provider value={{ data, setData }}>{children}</PortfolioContext.Provider>
+        <PortfolioContext.Provider value={{ data, setData, formVisible, ToggleForm }}>
+            {children}
+        </PortfolioContext.Provider>
     );
 };
 export default DataProvider;

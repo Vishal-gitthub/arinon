@@ -2,158 +2,79 @@ import careerBg from '../CareerPages/CareerPageImages/careerBg1.jpg';
 import PortfolioNavbar from '../Portfolio/PortfolioNavbar';
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 const cards = [
-    // Development Roles
+    // Design Roles
     {
         id: 1,
-        title: 'Backend Developer',
-        description: 'Responsible for server-side development and database management.',
-    },
-    {
-        id: 2,
-        title: 'Frontend Developer',
-        description: 'Focuses on creating user-facing interfaces and user experiences.',
-    },
-
-    {
-        id: 4,
-        title: 'Game Developer',
-        description: 'Develops video games for various platforms using specialized tools.',
-    },
-    {
-        id: 5,
-        title: 'Software Developer',
-        description: 'Designs and builds software applications for different use cases.',
-    },
-
-    // AI Roles
-    {
-        id: 6,
-        title: 'AI Engineer',
-        description: 'Builds and trains AI models and implements machine learning solutions.',
-    },
-
-    // Creative Roles
-    {
-        id: 7,
-        title: '3D Animator',
-        description: 'Creates lifelike 3D animations for various projects.',
-    },
-    {
-        id: 8,
-        title: 'Content Creator',
-        description: 'Generates engaging content for online and offline platforms.',
-    },
-    {
-        id: 9,
-        title: 'Gaming Content Creator',
-        description: 'Produces gaming-related content for streaming or social platforms.',
-    },
-    {
-        id: 10,
         title: 'Graphic Designer',
         description: 'Designs visual content using tools like Photoshop and Illustrator.',
     },
     {
-        id: 11,
-        title: 'Motion Graphics Designer',
-        description: 'Specializes in creating animated graphics for video content.',
+        id: 2,
+        title: '2D Designer',
+        description:
+            'Specializes in creating 2D artwork for various projects like games, media, and advertising.',
     },
+
+    // Video Production Roles
     {
-        id: 12,
-        title: 'UI/UX Designer',
-        description: 'Designs user interfaces and ensures optimal user experiences.',
-    },
-    {
-        id: 13,
+        id: 3,
         title: 'Video Editor',
         description: 'Edits video content for projects like films, ads, or social media.',
-    },
-    {
-        id: 14,
-        title: 'Visual Effects (VFX) Artist',
-        description: 'Creates special effects for movies, games, or other media.',
     },
 
     // Digital Marketing Roles
     {
-        id: 15,
-        title: 'Affiliate Marketing Manager',
-        description: 'Oversees affiliate partnerships to drive sales and revenue.',
+        id: 4,
+        title: 'Ads Manager',
+        description:
+            'Oversees and optimizes paid advertising campaigns on platforms like Google and Facebook.',
     },
     {
-        id: 16,
-        title: 'Content Marketing Manager',
-        description: 'Plans and executes content strategies to engage target audiences.',
+        id: 5,
+        title: 'SEO Executive',
+        description:
+            'Implements strategies to improve website rankings and visibility on search engines.',
     },
     {
-        id: 17,
-        title: 'Digital Marketing Specialist',
-        description: 'Manages digital campaigns across platforms like Google and social media.',
-    },
-    {
-        id: 18,
-        title: 'Email Marketing Specialist',
-        description: 'Creates and manages email campaigns to engage users.',
-    },
-    {
-        id: 19,
-        title: 'Gaming Marketing Specialist',
-        description: 'Promotes gaming content and manages marketing campaigns.',
-    },
-    {
-        id: 20,
-        title: 'Influencer Marketing Manager',
-        description: 'Coordinates with influencers to promote brand visibility.',
-    },
-    {
-        id: 21,
-        title: 'SEO Specialist',
-        description: 'Optimizes websites to rank higher on search engines.',
-    },
-    {
-        id: 22,
+        id: 6,
         title: 'Social Media Manager',
-        description: 'Manages social media accounts to build brand presence.',
+        description:
+            'Manages social media accounts, creating strategies to build brand awareness and engagement.',
+    },
+    {
+        id: 7,
+        title: 'Google Ads Expert',
+        description:
+            'Specializes in creating and optimizing campaigns on Google Ads to maximize ROI.',
     },
 
-    // Management and Sales Roles
+    // Business Development Roles
     {
-        id: 23,
-        title: 'Business Development Manager',
-        description: 'Identifies growth opportunities and builds partnerships.',
-    },
-    {
-        id: 24,
-        title: 'HR/Admin',
-        description: 'Handles human resources and administrative tasks.',
-    },
-    {
-        id: 25,
-        title: 'Marketing Specialist',
-        description: 'Plans and executes marketing strategies.',
-    },
-    {
-        id: 26,
-        title: 'Sales Manager',
-        description: 'Leads sales teams to achieve revenue targets.',
+        id: 8,
+        title: 'Business Development Executive',
+        description:
+            'Identifies growth opportunities, builds partnerships, and drives business expansion.',
     },
 
-    // Miscellaneous Roles
+    // Development Roles
     {
-        id: 27,
-        title: 'E-commerce Specialist',
-        description: 'Manages online store operations and strategies.',
+        id: 9,
+        title: 'Frontend Web Developer',
+        description:
+            'Focuses on creating user-facing interfaces and ensuring optimal user experiences.',
     },
     {
-        id: 28,
-        title: 'Game Tester',
-        description: 'Tests video games to identify bugs and improve quality.',
+        id: 10,
+        title: 'Backend Web Developer',
+        description: 'Responsible for server-side development and database management.',
     },
     {
-        id: 29,
-        title: 'Technical Writer',
-        description: 'Creates technical documentation and guides.',
+        id: 11,
+        title: 'Database Developer',
+        description:
+            'Designs, implements, and manages databases to ensure data integrity and performance.',
     },
 ];
 
@@ -170,10 +91,12 @@ export default function Career() {
                     <h1 className='max-sm:hidden -ml-10 py-4 font-medium text-5xl uppercase'>
                         Join Us
                     </h1>
+                    <Link to='/arinon-digital/department'>
+                        <button className='flex flex-shrink-0 justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-3xl w-auto font-medium text-white max-sm:text-sm transition-all'>
+                            Explore All Jobs
+                        </button>
+                    </Link>
                 </div>
-                    <button className='inline-flex relative justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-full font-medium text-white transition-all'>
-                        Explore All Jobs
-                    </button>
                 <div className='right-[10%] absolute'>
                     <div className='relative w-full h-screen overflow-hidden' ref={containerRef}>
                         <motion.div
@@ -183,7 +106,7 @@ export default function Career() {
                             }}
                             transition={{
                                 repeat: Infinity,
-                                duration: 100,
+                                duration: 30,
                                 ease: 'linear',
                                 repeatType: 'loop',
                                 repeatDelay: 0,
@@ -205,7 +128,7 @@ export default function Career() {
                                         <h3 className='mb-1 font-semibold text-lg text-white'>
                                             {card.title}
                                         </h3>
-                                        <p className='text-sm text-white'>{card.description}</p>
+                                        {/* <p className='text-sm text-white'>{card.description}</p> */}
                                     </div>
                                 </motion.div>
                             ))}

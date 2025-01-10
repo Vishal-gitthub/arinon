@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import Chatbot from '../Chatbox';
 // Importing images and SVG files
 import arinonBanner from '../Image_Files/Arinon_Digital_Banner.webp';
 import BulbSvg from '../Image_Files/Icons_File/bulb-2.svg';
@@ -27,6 +28,7 @@ import Manch from '../Image_Files/brandsLogos/Manchh-Hindi-NewsLogo.png';
 import jmdLogo from '../Image_Files/brandsLogos/jmd-logo.png';
 import appKart from '../Image_Files/brandsLogos/app-kart-logo-White-png.webp';
 import specify from '../Image_Files/brandsLogos/specifyLogo.png';
+import litebite from "../Image_Files/brandsLogos/lite-bite-foods-1.jpg"
 
 // Importing work mockup images
 import WorkMockUp_1 from '../Image_Files/ArinonImages/Work MockUp-01.jpg';
@@ -217,6 +219,8 @@ const DigitalArinonPage = () => {
 
     return (
         <div className='font-custom'>
+            <Chatbot />
+
             <Helmet>
                 <title>Digital Arinon - Your Digital Partner</title>
                 <meta
@@ -455,6 +459,13 @@ const DigitalArinonPage = () => {
                         <div className='flex justify-center items-center outline-none'>
                             <img
                                 src={bridgeHotel}
+                                className='p-4 transition-all duration-300 brand_logo grayscale hover:grayscale-0'
+                                alt='bridge Hotel'
+                            />
+                        </div>
+                        <div className='flex justify-center items-center outline-none'>
+                            <img
+                                src={litebite}
                                 className='p-4 transition-all duration-300 brand_logo grayscale hover:grayscale-0'
                                 alt='bridge Hotel'
                             />

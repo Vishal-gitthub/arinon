@@ -18,7 +18,7 @@ const PortfolioNavbar = () => {
 
                 <Link
                     to='/arinon-digital'
-                    className='flex items-center gap-4 text-white hover:text-purple-custom transition-all duration-300'
+                    className='flex items-center gap-4 text-white transition-all duration-300'
                 >
                     <i className='fa-arrow-left fa'></i>
                     <p>Home</p>
