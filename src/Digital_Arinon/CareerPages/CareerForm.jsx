@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { PortfolioContext } from '../Portfolio/Context';
 import axios from 'axios';
-import { form } from 'motion/react-client';
 export default function CareerForm() {
     const { ToggleForm, formVisible } = useContext(PortfolioContext);
     const [isSending, setIsSending] = useState(false); // New state for loading
@@ -96,7 +95,7 @@ export default function CareerForm() {
                                 value={formData.name}
                                 onChange={handleChange}
                                 className='border-gray-300 mt-2 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-custom w-full focus:outline-none'
-                                placeholder='Your full name'
+                                placeholder='e.g. John Doe'
                                 required
                             />
                         </div>
@@ -116,7 +115,7 @@ export default function CareerForm() {
                                 value={formData.email}
                                 onChange={handleChange}
                                 className='border-gray-300 mt-2 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-custom w-full focus:outline-none'
-                                placeholder='Your email'
+                                placeholder='e.g. johndoe@example.com'
                                 required
                             />
                         </div>
@@ -136,7 +135,7 @@ export default function CareerForm() {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 className='border-gray-300 mt-2 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-custom w-full focus:outline-none'
-                                placeholder='Your phone number'
+                                placeholder='e.g. +91 12345-67890'
                                 required
                             />
                         </div>
@@ -156,7 +155,7 @@ export default function CareerForm() {
                                 value={formData.role}
                                 onChange={handleChange}
                                 className='border-gray-300 mt-2 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-custom w-full focus:outline-none'
-                                placeholder="Role you're applying for"
+                                placeholder='e.g. Software Engineer'
                                 required
                             />
                         </div>

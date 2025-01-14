@@ -12,9 +12,9 @@ export default function Footer() {
                 {/* LOCATION  */}
 
                 <div className='flex max-md:flex-col-reverse max-md:flex-wrap justify-between max-md:justify-center items-center gap-20 max-md:gap-2 pt-2'>
-                    <div className='flex max-md:flex-col items-center gap-1 text-[12px]'>
-                        <i className='fa-copyright text-white fa'></i>
-                        <p className=''>
+                    <div className='flex items-center gap-1 text-[12px]'>
+                        <p >
+                            <i className='fa-copyright px-1 text-white fa'></i>
                             {new Date().getFullYear()} Arinon Digital, (a unit of Manisi) All rights
                             reserved.
                         </p>
@@ -24,12 +24,12 @@ export default function Footer() {
                         <Link to='/arinon-digital/privacy-policy'>Privacy Policy</Link>
                     </div>
 
-                    <div className='flex max-md:flex-col flex-shrink-0 items-center gap-3 text-[12px]'>
+                    <div className='flex flex-shrink-0 items-center gap-3 text-[12px]'>
                         <i className='text-white fa fa-phone'></i>
                         <p className='tracking-wide'>+91 97738 36032</p>
                     </div>
 
-                    <div className='flex max-md:flex-col items-center gap-3 text-sm'>
+                    <div className='flex items-center gap-3 text-sm'>
                         <i className='text-white fa fa-envelope'></i>
                         <p className=''>info@arinon.com</p>
                     </div>
@@ -59,7 +59,6 @@ export default function Footer() {
                     </a>
                 </div>
             </footer>
-           
         </div>
     );
 }

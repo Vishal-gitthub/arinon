@@ -3,7 +3,7 @@ import PortfolioNavbar from '../../Portfolio/PortfolioNavbar';
 import { PortfolioContext } from '../../Portfolio/Context';
 import CareerForm from '../CareerForm';
 
-export default function Department_3() {
+export default function JuniorSalesIntern() {
     const { ToggleForm } = useContext(PortfolioContext);
     return (
         <div>
@@ -12,9 +12,9 @@ export default function Department_3() {
                 <div className='max-md:static fixed flex flex-col items-start bg-purple-custom p-8 w-1/2 max-md:w-full h-screen max-md:h-auto'>
                     <div>
                         <h1 className='font-semibold text-5xl text-left text-white max-sm:text-2xl max-md:text-3xl leading-tight'>
-                            Business Development Executive - Expanding Horizons
+                            Junior Sales Executive Intern - Building Client Relationships
                             <br />
-                            <span className='text-white/50'> Onsite / Full-time</span>
+                            <span className='text-white/50'>Onsite / Internship</span>
                         </h1>
                     </div>
                     <div className='bottom-20 left-5 absolute'>
@@ -33,25 +33,19 @@ export default function Department_3() {
                             <div>
                                 <ul className='text-sm marker:text-blue-custom tracking-widest list-disc'>
                                     <li className='py-4 text-black/60'>
-                                        Identify and develop new business opportunities through
-                                        market research, networking, and outreach.
+                                        Support the sales team in lead generation, outreach, and follow-up activities.
                                     </li>
                                     <li className='py-4 text-black/60'>
-                                        Build strong relationships with clients and stakeholders to
-                                        understand their needs and deliver value.
+                                        Assist in preparing sales presentations, proposals, and reports.
                                     </li>
                                     <li className='py-4 text-black/60'>
-                                        Collaborate with internal teams to create tailored
-                                        proposals, presentations, and strategies for client
-                                        acquisition.
+                                        Build and maintain positive relationships with potential clients and partners.
                                     </li>
                                     <li className='py-4 text-black/60'>
-                                        Meet and exceed sales targets and KPIs by closing deals and
-                                        generating revenue growth.
+                                        Conduct market research to identify potential business opportunities.
                                     </li>
                                     <li className='py-4 text-black/60'>
-                                        Stay updated with market trends and competitor activities to
-                                        identify new opportunities.
+                                        Collaborate with the team to brainstorm strategies for achieving sales targets.
                                     </li>
                                 </ul>
                             </div>
@@ -62,8 +56,7 @@ export default function Department_3() {
                             <div>
                                 <ul className='text-sm marker:text-blue-custom list-disc'>
                                     <li className='py-4 text-black/60'>
-                                        Hybrid: You’ll work partly from our Ghitorni, Delhi office
-                                        and partly remotely.
+                                        Onsite: You’ll work from our Ghitorni, Delhi office.
                                     </li>
                                 </ul>
                             </div>
@@ -73,11 +66,7 @@ export default function Department_3() {
                             <div>
                                 <ul className='text-sm marker:text-blue-custom list-disc'>
                                     <li className='py-4 text-black/60'>
-                                        Experience:{' '}
-                                        <strong>
-                                            1+ Years in Business Development, Sales, or related
-                                            fields
-                                        </strong>
+                                        Preferred: Prior internship or coursework in sales, marketing, or related fields.
                                     </li>
                                 </ul>
                             </div>
@@ -87,31 +76,16 @@ export default function Department_3() {
                             <div>
                                 <ul className='text-sm marker:text-blue-custom list-disc'>
                                     <li className='py-4 text-black/60'>
-                                        Business Development:
-                                        <strong>
-                                            Lead generation, market research, and sales strategy
-                                        </strong>
+                                        Communication: Strong verbal and written communication skills.
                                     </li>
                                     <li className='py-4 text-black/60'>
-                                        Communication:
-                                        <strong>
-                                            Excellent verbal and written communication skills,
-                                            client relationship management
-                                        </strong>
+                                        Customer Relations: Ability to build rapport and understand client needs.
                                     </li>
                                     <li className='py-4 text-black/60'>
-                                        Tools:
-                                        <strong>
-                                            CRM platforms (e.g., Salesforce, HubSpot), MS Office,
-                                            and Google Workspace
-                                        </strong>
+                                        Tools: Basic knowledge of CRM tools (e.g., Salesforce, HubSpot) and MS Office Suite.
                                     </li>
                                     <li className='py-4 text-black/60'>
-                                        Problem Solving:
-                                        <strong>
-                                            Strong negotiation and analytical skills to handle
-                                            client challenges
-                                        </strong>
+                                        Teamwork: Collaborative mindset with a willingness to learn and adapt.
                                     </li>
                                 </ul>
                             </div>
@@ -124,7 +98,7 @@ export default function Department_3() {
                             </div>
                             <div>
                                 <span className='text-black/60 text-sm'>Job Type</span>
-                                <p>Permanent</p>
+                                <p>Internship</p>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<!-- Home Page -->
+	<url>
+		<loc>
+			https://www.arinon.com/
+		</loc>
+		<lastmod>
+			2025-01-10
+		</lastmod>
+		<priority>
+			1.00
+		</priority>
+	</url>
+	<!-- Arinon Digital Main Page -->
+	<url>
+		<loc>
+			https://www.arinon.com/arinon-digital
+		</loc>
+		<lastmod>
+			2025-01-10
+		</lastmod>
+		<priority>
+			0.90
+		</priority>
+	</url>
+	<!-- Arinon Digital Portfolio Section -->
+	<url>
+		<loc>
+			https://www.arinon.com/arinon-digital#portfolio
+		</loc>
+		<lastmod>
+			2025-01-10
+		</lastmod>
+		<priority>
+			0.80
+		</priority>
+	</url>
+	<!-- Arinon Digital Services Section -->
+	<url>
+		<loc>
+			https://www.arinon.com/arinon-digital#services
+		</loc>
+		<lastmod>
+			2025-01-10
+		</lastmod>
+		<priority>
+			0.80
+		</priority>
+	</url>
+	<!-- Arinon Digital Pricing Section -->
+	<url>
+		<loc>
+			https://www.arinon.com/arinon-digital#pricing
+		</loc>
+		<lastmod>
+			2025-01-10
+		</lastmod>
+		<priority>
+			0.80
+		</priority>
+	</url>
+	<!-- Arinon Digital About Us Section -->
+	<url>
+		<loc>
+			https://www.arinon.com/arinon-digital#about-us
+		</loc>
+		<lastmod>
+			2025-01-10
+		</lastmod>
+		<priority>
+			0.80
+		</priority>
+	</url>
+	<!-- Career Page -->
+	<url>
+		<loc>
+			https://www.arinon.com/arinon-digital/career
+		</loc>
+		<lastmod>
+			2025-01-10
+		</lastmod>
+		<priority>
+			0.70
+		</priority>
+	</url>
+	<!-- Department Main Page -->
+	<url>
+		<loc>
+			https://www.arinon.com/arinon-digital/department
+		</loc>
+		<lastmod>
+			2025-01-10
+		</lastmod>
+		<priority>
+			0.90
+		</priority>
+	</url>
+	<!-- Department 1 Page -->
+	<url>
+		<loc>
+			https://www.arinon.com/arinon-digital/department/1
+		</loc>
+		<lastmod>
+			2025-01-10
+		</lastmod>
+		<priority>
+			0.90
+		</priority>
+	</url>
+	<!-- Department 2 Page -->
+	<url>
+		<loc>
+			https://www.arinon.com/arinon-digital/department/2
+		</loc>
+		<lastmod>
+			2025-01-10
+		</lastmod>
+		<priority>
+			0.90
+		</priority>
+	</url>
+	<!-- Department 3 Page -->
+	<url>
+		<loc>
+			https://www.arinon.com/arinon-digital/department/3
+		</loc>
+		<lastmod>
+			2025-01-10
+		</lastmod>
+		<priority>
+			0.90
+		</priority>
+	</url>
+</urlset>

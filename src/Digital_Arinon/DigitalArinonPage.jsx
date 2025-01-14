@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Chatbot from '../Chatbox';
 // Importing images and SVG files
-import arinonBanner from '../Image_Files/Arinon_Digital_Banner.webp';
+import arinonBannerVideo from '../Image_Files/ArinonImages/ArinonHero.mp4';
 import BulbSvg from '../Image_Files/Icons_File/bulb-2.svg';
 import businessLogo from '../Image_Files/Icons_File/briefcase-2.svg';
 import heartLogo from '../Image_Files/Icons_File/heart.svg';
@@ -28,7 +28,7 @@ import Manch from '../Image_Files/brandsLogos/Manchh-Hindi-NewsLogo.png';
 import jmdLogo from '../Image_Files/brandsLogos/jmd-logo.png';
 import appKart from '../Image_Files/brandsLogos/app-kart-logo-White-png.webp';
 import specify from '../Image_Files/brandsLogos/specifyLogo.png';
-import litebite from "../Image_Files/brandsLogos/lite-bite-foods-1.jpg"
+import litebite from '../Image_Files/brandsLogos/lite-bite-foods-1.jpg';
 
 // Importing work mockup images
 import WorkMockUp_1 from '../Image_Files/ArinonImages/Work MockUp-01.jpg';
@@ -75,13 +75,13 @@ const DigitalArinonPage = () => {
     // State for side Navbar active item
     const [activeIndex, setActiveIndex] = useState(null);
 
+    // State for "Back to Top" button visibility
+    const [isVisible, setVisible] = useState(false);
+
     // Function to toggle FAQ accordion
     const toggleAccordion = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
-
-    // State for "Back to Top" button visibility
-    const [isVisible, setVisible] = useState(false);
 
     // Function to toggle visibility of "Back to Top" button
     const toggleVisibility = () => {
@@ -171,6 +171,7 @@ const DigitalArinonPage = () => {
             });
         });
     }, []);
+
     let carouselSettings = {
         dots: true,
         infinite: true,
@@ -248,8 +249,10 @@ const DigitalArinonPage = () => {
             </Helmet>
             <section>
                 <div className='relative w-full h-[36rem]'>
-                    <img src={arinonBanner} className='w-full h-full object-cover' alt='' />
-
+                    <video autoPlay muted loop className='object-left w-full h-full object-cover'>
+                        <source src={arinonBannerVideo} />
+                    </video>
+                    <div className='bottom-0 absolute w-full h-full' />
                     <a
                         href='#home'
                         className='bottom-4 left-1/2 absolute px-4 py-4 rounded-full transform transition-all -translate-x-1/2 duration-500'
@@ -549,7 +552,7 @@ const DigitalArinonPage = () => {
                 {/* web design packages ---------------- */}
                 <div className='items-centerflex-col max-md:gap-20 pt-24 text-center' id='pricing'>
                     <h1 className='flex-shrink-0 pr-7 font-custom font-semibold text-4xl'>
-                        Web Designs Packages
+                        Our Digital Packages
                     </h1>
                     <p className='px-20 max-sm:px-5 max-md:px-15 py-5 text-lg'>
                         We offer comprehensive social media management packages designed to help you
@@ -557,7 +560,6 @@ const DigitalArinonPage = () => {
                         your niche.
                     </p>
                 </div>
-
                 {/* -------------------------------CHILD SECTION C------------------------------- */}
 
                 {/* prices up down annimation Cards */}
@@ -571,7 +573,7 @@ const DigitalArinonPage = () => {
                                     </h1>
 
                                     <h1 className='font-bold text-5xl tracking-wider'>
-                                        10000<span className='font-medium text-2xl'>₹</span>
+                                        15000<span className='font-medium text-2xl'>₹</span>
                                     </h1>
                                     <span className='font-medium text-lg'>Monthly billing</span>
                                 </div>
@@ -603,7 +605,7 @@ const DigitalArinonPage = () => {
                                         Growth Package
                                     </h1>
                                     <h1 className='font-bold text-5xl tracking-wider'>
-                                        16000<span className='font-medium text-2xl'>₹</span>
+                                        22000<span className='font-medium text-2xl'>₹</span>
                                     </h1>
                                     <span className='font-medium text-lg'>Monthly billing</span>
                                 </div>
@@ -635,7 +637,7 @@ const DigitalArinonPage = () => {
                                     </h1>
 
                                     <h1 className='font-bold text-5xl tracking-wider'>
-                                        20000<span className='font-medium text-2xl'>₹</span>
+                                        25000<span className='font-medium text-2xl'>₹</span>
                                     </h1>
                                     <span className='font-medium text-lg'>Monthly billing</span>
                                 </div>
@@ -779,96 +781,6 @@ const DigitalArinonPage = () => {
                     </div>
                 </div>
             </section>
-
-            {/* Accordians  */}
-            {/* <section id='faqs' className='hidden'>
-                <div className='bg-gray-100 px-6 sm:px-8 lg:px-16 py-20'>
-                    <div className='mx-auto mb-8 max-w-4xl text-center'>
-                        <h2 className='font-semibold text-2xl text-gray-800 md:text-3xl'>
-                            Why Arinon Is the Right Choice for You
-                        </h2>
-                    </div>
-
-                    <div className='space-y-4'>
-                        <div className='bg-white shadow-md rounded-lg'>
-                            <button
-                                className='flex justify-between items-center bg-gray-200 hover:bg-gray-300 px-6 py-4 rounded-t-lg w-full font-medium text-gray-800 text-left text-xl focus:outline-none'
-                                onClick={() => toggleAccordion(0)}
-                            >
-                                <span>01. Innovative Solutions</span>
-                                <span
-                                    className={`transform transition-transform duration-300 ${
-                                        activeIndex === 0 ? 'rotate-180' : ''
-                                    }`}
-                                >
-                                    ↑
-                                </span>
-                            </button>
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                                    activeIndex === 0 ? 'max-h-40' : 'max-h-0'
-                                }`}
-                            >
-                                <div className='px-6 py-4 text-gray-600'>
-                                    We stay ahead of the curve, leveraging the latest tools and
-                                    trends to create impactful solutions.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='bg-white shadow-md rounded-lg'>
-                            <button
-                                className='flex justify-between items-center bg-gray-200 hover:bg-gray-300 px-6 py-4 rounded-t-lg w-full font-medium text-gray-800 text-left text-xl focus:outline-none'
-                                onClick={() => toggleAccordion(1)}
-                            >
-                                <span>02. Industry Expertise</span>
-                                <span
-                                    className={`transform transition-transform duration-300 ${
-                                        activeIndex === 1 ? 'rotate-180' : ''
-                                    }`}
-                                >
-                                    ↑
-                                </span>
-                            </button>
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                                    activeIndex === 1 ? 'max-h-40' : 'max-h-0'
-                                }`}
-                            >
-                                <div className='px-6 py-4 text-gray-600'>
-                                    With years of experience and a proven track record, our team
-                                    delivers excellence in every project.
-                                </div>
-                            </div>
-                        </div>
-                        <div className='bg-white shadow-md rounded-lg'>
-                            <button
-                                className='flex justify-between items-center bg-gray-200 hover:bg-gray-300 px-6 py-4 rounded-t-lg w-full font-medium text-gray-800 text-left text-xl focus:outline-none'
-                                onClick={() => toggleAccordion(2)}
-                            >
-                                <span>03. Customer-Centric Approach</span>
-                                <span
-                                    className={`transform transition-transform duration-300 ${
-                                        activeIndex === 2 ? 'rotate-180' : ''
-                                    }`}
-                                >
-                                    ↑
-                                </span>
-                            </button>
-                            <div
-                                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                                    activeIndex === 2 ? 'max-h-40' : 'max-h-0'
-                                }`}
-                            >
-                                <div className='px-6 py-4 text-gray-600'>
-                                    We prioritize your success by providing tailored solutions and
-                                    exceptional service.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
 
             {/* -------------------------------SECTION 7------------------------------- */}
             {/* map */}

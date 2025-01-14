@@ -45,6 +45,7 @@ const gameCards = [
 ];
 const Game_page = () => {
     useEffect(() => {
+        alert('This Page is Under Development');
         const cards = gsap.utils.toArray('.card');
         const spacer = 10;
 

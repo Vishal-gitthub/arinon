@@ -7,23 +7,23 @@ import { Link } from 'react-router-dom';
 const department = [
     {
         img: videoEditing,
-        name: 'Video Editing',
-        description: 'Lorem ipsum dolor sit amet consectetur,icia, labore!',
-        role: 'Veritatis nam quisquam delectus perspiciatis error consequuntur optio temporibus. Porro suscipit incidunt pariatur',
+        name: 'Video Editor - Intern',
+        description: 'Master the art of storytelling through visuals, cuts, and transitions.',
+        role: 'Edit, enhance, and produce high-quality videos that captivate audiences and meet creative goals.',
         to: '/arinon-digital/department/1',
     },
     {
         img: s_w_Devlopment,
-        name: 'S/W Devlopment',
-        description: 'Lorem ipsum dolor sit amet consectetur,icia, labore!',
-        role: 'Veritatis nam quisquam delectus perspiciatis error consequuntur optio temporibus. Porro suscipit incidunt pariatur',
+        name: 'Social Media - Intern',
+        description: 'Develop and maintain cutting-edge software solutions.',
+        role: 'Design, code, and debug applications while ensuring robust and scalable software architecture.',
         to: '/arinon-digital/department/2',
     },
     {
         img: businessDev,
-        name: 'Sales Marketing',
-        description: 'Lorem ipsum dolor sit amet consectetur,icia, labore!',
-        role: 'Veritatis nam quisquam delectus perspiciatis error consequuntur optio temporibus. Porro suscipit incidunt pariatur',
+        name: 'Junior Sales Executive - Intern',
+        description: 'Drive growth through innovative sales strategies and marketing campaigns.',
+        role: 'Engage with clients, identify opportunities, and implement data-driven marketing approaches to maximize ROI.',
         to: '/arinon-digital/department/3',
     },
 ];
