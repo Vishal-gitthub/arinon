@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import chatbotLogo from './Image_Files/Icons_File/ai-assistant_logo.gif'
+import chatbotLogo from './Image_Files/Icons_File/ai-assistant_logo.gif';
 const Chatbot = () => {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -30,11 +30,7 @@ const Chatbot = () => {
                 className='bg-transparent'
             >
                 <div className='w-16 h-16'>
-                    <img
-                        src={chatbotLogo}
-                        alt=''
-                        className='rounded-full'
-                    />
+                    <img src={chatbotLogo} alt='' className='rounded-full' />
                 </div>
             </button>
 
@@ -72,7 +68,7 @@ const Chatbot = () => {
                         X
                     </button>
                     <iframe
-                        src='https://www.chatbase.co/chatbot-iframe/azaX1KfK8G_dKOzaIvSbI'
+                        src='https://www.chatbase.co/chatbot-iframe/bSmGcB_LErOQOJ5LSw0ST'
                         width='100%'
                         height='100%' // Corrected height style
                         frameBorder='0'

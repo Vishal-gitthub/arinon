@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -14,10 +14,19 @@ import cardStack1 from '../Image_Files/GamesImages/card_stack_1.jpg';
 import cardStack2 from '../Image_Files/GamesImages/card_stack_2.jpg';
 import cardStack3 from '../Image_Files/GamesImages/card_stack_3.jpg';
 
+// background Images
+import token_cardsBg from '../Image_Files/GamesImages/cartoon-owl-flying-with-red-smoke-trail.jpg';
+import communityBg from '../Image_Files/GamesImages/5443501_1082.jpg';
+import communityBg2 from '../Image_Files/GamesImages/bg-community.jpg';
+
+import gameVideo from '../Image_Files/GamesImages/gameVideo.mp4';
+
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../Games_Arinon/SliderComponent/effectCoverFlow.css';
 import gsap from 'gsap';
 import PopUp from './PopUp';
+
+import '../Games_Arinon/Game_page.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,8 +53,14 @@ const gameCards = [
     },
 ];
 const Game_page = () => {
+    const [videoVisibility, setVideoVisibility] = useState(false);
+    const changeVisibility = () => {
+        setVideoVisibility(!videoVisibility);
+    };
+    const closeVideoVisibility = () => {
+        setVideoVisibility(false);
+    };
     useEffect(() => {
-        alert('This Page is Under Development');
         const cards = gsap.utils.toArray('.card');
         const spacer = 10;
 
@@ -112,142 +127,18 @@ const Game_page = () => {
                                 src={cardStack3}
                                 alt=''
                             />
-                            {/* <h1 className='top-2/4 left-2/4 absolute font-extrabold text-[10vw] text-white max-sm:text-[17vw] max-md:text-[15vw] tracking-widest -translate-x-2/4 -translate-y-2/4'>Dummy Content</h1> */}
                         </div>
                     </div>
                 </div>
             </div>
             <PopUp />
-
-            {/* <div className='bg-blue-custom pt-10'>
-                       
-                        <div className='hidden px-5' id='our-games'>
-                              <div className='bg-cyan-200 mt-8 px-4 py-16 rounded-2xl'>
-                                    <div className='flex justify-between items-center py-6'>
-                                          <h1 className='text-4xl'>↳ Our Games</h1>
-                                          <div className='bg-violet-500 hover:bg-blue-600 px-4 py-2 rounded-md text-black hover:text-white transition-all duration-300'>View More →</div>
-                                    </div>
-                                    <hr />
-                                    <div>
-
-                                          <div className='flex justify-between items-baseline py-5'>
-                                                <p className='text-2xl max-sm:text-lg max-md:text-xl'>01.</p>
-                                                <div className='font-bold text-5xl max-sm:text-2xl max-md:text-3xl'>GAME NAME 1</div>
-                                                <div className='text-2xl'>Game logo</div>
-                                          </div>
-                                          <hr />
-                                          <div className='flex justify-between items-baseline py-5'>
-                                                <p className='text-2xl max-sm:text-lg max-md:text-xl'>02.</p>
-                                                <div className='font-bold text-5xl max-sm:text-2xl max-md:text-3xl'>GAME NAME 2</div>
-                                                <div className='text-2xl'>Game logo</div>
-                                          </div>
-                                          <hr />
-                                          <div className='flex justify-between items-baseline py-5'>
-                                                <p className='text-2xl max-sm:text-lg max-md:text-xl'>03.</p>
-                                                <div className='font-bold text-5xl max-sm:text-2xl max-md:text-3xl'>GAME NAME 3</div>
-                                                <div className='text-2xl'>Game logo</div>
-                                          </div>
-                                          <hr />
-                                          <div className='flex justify-between items-baseline py-5'>
-                                                <p className='text-2xl max-sm:text-lg max-md:text-xl'>04.</p>
-                                                <div className='font-bold text-5xl max-sm:text-2xl max-md:text-3xl'>GAME NAME 4</div>
-                                                <div className='text-2xl'>Game logo</div>
-                                          </div>
-                                          <hr />
-                                    </div>
-                              </div>
-
-                        </div>
-
-                        <div className='hidden px-5 py-6'>
-                              <div className='bg-[#1a1b1e] pb-14 rounded-2xl' >
-
-                                    <div className='flex max-md:flex-col px-7 py-16'>
-
-                                          <div className='w-2/4 max-md:w-full text-center'>
-                                                <div className='relative'>
-                                                      <div>
-                                                            <img src="https://uithemez.com/i/hubfolio_HTML/creative-studio/assets/imgs/testim/Vector_Cricle_Text.svg" alt="" />
-                                                      </div>
-                                                      <div className='top-2/4 right-2/4 absolute w-[100px] -translate-x-2/4 -translate-y-2/4'>
-                                                            <img src={qoutes} alt="" />
-                                                      </div>
-                                                </div>
-                                          </div>
-
-                                          <div className='w-2/4 max-md:w-full'>
-                                                <div className="pt-10 w-full h-52 md:h-72 text-white">
-                                                      <Slider {...carouselSettings}>
-                                                            <div className="h-full">
-                                                                  <h1 className='py-3 text-2xl max-sm:text-xl'>" Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad magnam aperiam, sint recusandae dolore laborum. Eaque laboriosam dolorem rerum assumenda. "</h1>
-                                                                  <hr />
-                                                                  <div className='flex items-center gap-9 py-4'>
-                                                                        <div className='w-12 h-12'>
-                                                                              <img src="https://images.pexels.com/photos/3823495/pexels-photo-3823495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className='rounded-[50%] w-full h-full' alt="" />
-                                                                        </div>
-                                                                        <div >
-                                                                              <h1>John Doe</h1>
-                                                                              <p>Ceo</p>
-                                                                        </div>
-
-                                                                  </div>
-                                                            </div>
-                                                            <div className="h-full">
-                                                                  <h1 className='py-3 text-2xl max-sm:text-xl'>" Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad magnam aperiam, sint recusandae dolore laborum. Eaque laboriosam dolorem rerum assumenda. "</h1>
-                                                                  <hr />
-                                                                  <div className='flex items-center gap-9 py-4'>
-                                                                        <div className='w-12 h-12'>
-                                                                              <img src="https://images.pexels.com/photos/3823495/pexels-photo-3823495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className='rounded-[50%] w-full h-full' alt="" />
-                                                                        </div>
-                                                                        <div >
-                                                                              <h1>John Doe</h1>
-                                                                              <p>Ceo</p>
-                                                                        </div>
-
-                                                                  </div>
-                                                            </div>
-                                                            <div className="h-full">
-                                                                  <h1 className='py-3 text-2xl max-sm:text-xl'>" Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad magnam aperiam, sint recusandae dolore laborum. Eaque laboriosam dolorem rerum assumenda. "</h1>
-                                                                  <hr />
-                                                                  <div className='flex items-center gap-9 py-4'>
-                                                                        <div className='w-12 h-12'>
-                                                                              <img src="https://images.pexels.com/photos/3823495/pexels-photo-3823495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className='rounded-[50%] w-full h-full' alt="" />
-                                                                        </div>
-                                                                        <div >
-                                                                              <h1>John Doe</h1>
-                                                                              <p>Ceo</p>
-                                                                        </div>
-
-                                                                  </div>
-                                                            </div>
-
-                                                      </Slider>
-                                                </div>
-                                          </div>
-
-
-                                    </div>
-                                    <div className='px-7 py-8 max-sm:py-28 text-white'>
-                                          <h1 className='text-4xl'>↳ Partner with +150 brands</h1>
-                                          <div className='flex flex-wrap justify-between pt-14'>
-                                                <div className='border-[#c9c8c72b] hover:bg-[#59595945] px-8 py-12 border rounded-[80px] text-lg'>icon1-------</div>
-                                                <div className='border-[#c9c8c72b] hover:bg-[#59595945] px-8 py-12 border rounded-[80px] text-lg'>icon2-------</div>
-                                                <div className='border-[#c9c8c72b] hover:bg-[#59595945] px-8 py-12 border rounded-[80px] text-lg'>icon3-------</div>
-                                                <div className='border-[#c9c8c72b] hover:bg-[#59595945] px-8 py-12 border rounded-[80px] text-lg'>icon4-------</div>
-                                                <div className='border-[#c9c8c72b] hover:bg-[#59595945] px-8 py-12 border rounded-[80px] text-lg'>icon5-------</div>
-                                          </div>
-                                    </div>
-                              </div>
-                        </div>
-
-                  </div> */}
-
-            {/* <================================================================================================> */}
-
             {/* <========================== Cards Section START ===================================> */}
-            <section className='bg-white py-14'>
-                <div className='flex flex-wrap justify-center gap-6'>
-                    <div className='inline-flex max-sm:flex-col items-center gap-5 border-[#4c4c4c80] bg-transparent max-sm:mx-6 p-6 border hover:border-blue-custom rounded-lg bg-coloring max-sm:w-full text-white transition-all duration-300'>
+            <section
+                className='max-sm:bg-[20%] bg-cover bg-center bg-fixed'
+                style={{ backgroundImage: `url(${token_cardsBg})` }}
+            >
+                <div className='flex flex-wrap justify-center gap-6 backdrop-blur-sm py-14'>
+                    <div className='inline-flex max-sm:flex-col items-center gap-5 border-[#4c4c4c80] bg-black/60 backdrop-blur-sm max-sm:mx-6 p-6 border hover:border-blue-custom rounded-lg bg-coloring max-sm:w-full text-white transition-all duration-300'>
                         <div className='m-6 min-w-[150px] max-w-[170px]'>
                             <img
                                 className='rounded-md'
@@ -262,9 +153,9 @@ const Game_page = () => {
                                 <img
                                     src='https://themedox.com/mykd/wp-content/uploads/2023/10/nft_avatar.png'
                                     alt=''
-                                />{' '}
-                                <span>Alax Max</span>{' '}
-                                <span className='border- pl-2 border-l font-semibold text-gray-400 text-xs tracking-wide'>
+                                />
+                                <span>Alax Max</span>
+                                <span className='pl-2 border-l font-semibold text-gray-400 text-xs tracking-wide'>
                                     CREATOR
                                 </span>
                             </div>
@@ -279,7 +170,7 @@ const Game_page = () => {
                         </div>
                     </div>
 
-                    <div className='inline-flex max-sm:flex-col items-center gap-5 border-[#4c4c4c80] bg-transparent max-sm:mx-6 p-6 border hover:border-blue-custom rounded-lg bg-coloring max-sm:w-full text-white transition-all duration-300'>
+                    <div className='inline-flex max-sm:flex-col items-center gap-5 border-[#4c4c4c80] bg-black/60 backdrop-blur-sm max-sm:mx-6 p-6 border hover:border-blue-custom rounded-lg bg-coloring max-sm:w-full text-white transition-all duration-300'>
                         <div className='m-6 min-w-[150px] max-w-[170px]'>
                             <img
                                 className='rounded-md'
@@ -294,8 +185,8 @@ const Game_page = () => {
                                 <img
                                     src='https://themedox.com/mykd/wp-content/uploads/2023/10/nft_avatar.png'
                                     alt=''
-                                />{' '}
-                                <span>Alax Max</span>{' '}
+                                />
+                                <span>Alax Max</span>
                                 <span className='border- pl-2 border-l font-semibold text-gray-400 text-xs tracking-wide'>
                                     CREATOR
                                 </span>
@@ -311,7 +202,7 @@ const Game_page = () => {
                         </div>
                     </div>
 
-                    <div className='inline-flex max-sm:flex-col items-center gap-5 border-[#4c4c4c80] bg-transparent max-sm:mx-6 p-6 border hover:border-blue-custom rounded-lg bg-coloring max-sm:w-full text-white transition-all duration-300'>
+                    <div className='inline-flex max-sm:flex-col items-center gap-5 border-[#4c4c4c80] bg-black/60 backdrop-blur-sm max-sm:mx-6 p-6 border hover:border-blue-custom rounded-lg bg-coloring max-sm:w-full text-white transition-all duration-300'>
                         <div className='m-6 min-w-[150px] max-w-[170px]'>
                             <img
                                 className='rounded-md'
@@ -326,8 +217,8 @@ const Game_page = () => {
                                 <img
                                     src='https://themedox.com/mykd/wp-content/uploads/2023/10/nft_avatar.png'
                                     alt=''
-                                />{' '}
-                                <span>Alax Max</span>{' '}
+                                />
+                                <span>Alax Max</span>
                                 <span className='border- pl-2 border-l font-semibold text-gray-400 text-xs tracking-wide'>
                                     CREATOR
                                 </span>
@@ -345,9 +236,8 @@ const Game_page = () => {
                 </div>
             </section>
             {/* <========================== Cards Section ENDS ===================================> */}
-
             {/* <========================== About-Us Section START ===================================> */}
-            <section className='bg-blue-custom mt-12 py-32 text-white about-us-BG'>
+            <section className='bg-blue-custom py-32 text-white about-us-BG'>
                 <div className='flex flex-col justify-center items-center'>
                     <h1 className='font-semibold text-5xl text-center uppercase'>
                         Top Rated Steamers
@@ -510,72 +400,102 @@ const Game_page = () => {
                 </section>
             </section>
             {/* <========================== About-Us Section ENDS ===================================> */}
-
             {/* <========================== Our Teams Section Starts ===================================> */}
-            <section className='pb-20 playerCardsBg'>
-                <div className='place-items-center grid-cols-1 grid-rows-1 m-auto py-16 text-black text-center uppercase'>
-                    <h1 className='py-5 font-bold text-orange-custom text-sm tracking-wider'>
-                        our Team Member
-                    </h1>
-                    <h1 className='font-bold text-5xl'>ACTIVE TEAM MEMBERS</h1>
-                    <p className='clipedUnderline' />
-                </div>
+            <section
+                className='bg-cover bg-no-repeat bg-center max-sm:bg-left bg-fixed playerCardsBg'
+                style={{ backgroundImage: `url(${communityBg})` }}
+            >
+                <div className='backdrop-blur-sm pb-20 w-full h-full'>
+                    <div className='place-items-center grid-cols-1 grid-rows-1 m-auto py-16 text-black text-center uppercase'>
+                        <h1 className='py-5 font-bold text-orange-custom text-sm tracking-wider'>
+                            our Team Member
+                        </h1>
+                        <h1 className='font-bold text-5xl text-white'>ACTIVE TEAM MEMBERS</h1>
+                        <p className='clipedUnderline' />
+                    </div>
 
-                <div className='flex flex-wrap flex-grow justify-center items-center gap-10'>
-                    {gameCards.map((players, index) => (
-                        <div className='flex justify-center items-center' key={index}>
-                            <div className='bg-black px-5 py-10 rounded-lg overflow-hidden'>
-                                <div>
-                                    <div className='relative teamCard'>
-                                        <div className='relative imgWrapper'>
-                                            <div className='border-[3px] rounded-full img-thumb'>
-                                                <img src={players.image} alt='' />
+                    <div className='flex flex-wrap flex-grow justify-center items-center gap-10'>
+                        {gameCards.map((players, index) => (
+                            <div className='flex justify-center items-center' key={index}>
+                                <div className='bg-black px-5 py-10 rounded-lg overflow-hidden'>
+                                    <div>
+                                        <div className='relative teamCard'>
+                                            <div className='relative imgWrapper'>
+                                                <div className='border-[3px] rounded-full img-thumb'>
+                                                    <img src={players.image} alt='' />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className='pt-5 text-center'>
-                                            <h1 className='font-semibold text-2xl text-white'>
-                                                {players.name}
-                                            </h1>
-                                            <p className='font-semibold text-orange-custom text-xl'>
-                                                {players.job}
-                                            </p>
+                                            <div className='pt-5 text-center'>
+                                                <h1 className='font-semibold text-2xl text-white'>
+                                                    {players.name}
+                                                </h1>
+                                                <p className='font-semibold text-orange-custom text-xl'>
+                                                    {players.job}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </section>
             {/* <================================================================================================> */}
-
             {/* <==================================== Discord Community ==========================================> */}
-            <section className='flex flex-col justify-center items-center text-center text-white community_bg'>
-                <div>
-                    <img src={playCircle} alt='' />
+
+            {/* this video will be open when user will click playcircle button */}
+            {videoVisibility ? (
+                <div className='z-50 fixed bg-black w-full h-full'>
+                    <div className='top-1/2 left-1/2 fixed w-80 -translate-x-1/2 -translate-y-1/2'>
+                        <button
+                            onClick={closeVideoVisibility}
+                            className='top-0 -right-8 absolute font-semibold text-4xl text-white'
+                        >
+                            X
+                        </button>
+                        <video loop muted autoPlay className='rounded-3xl'>
+                            <source src={gameVideo} type='video/mp4' />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
-                <div className='pt-5'>
-                    <h1 className='font-bold text-6xl'>
-                        JOIN THE <span className='text-orange-custom'> COMMUNITY</span>
-                    </h1>
-                    <p className='font-semibold text-lg tracking-wider'>
-                        Join our Discord community and choosec onsteur
-                    </p>
-                </div>
-                <div className='mt-4 border rounded-full'>
-                    <button
-                        aria-label='Join the Community'
-                        className='inline-flex relative justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-full font-medium text-white transition-all group'
-                    >
-                        <span className='group-hover:text-white relative text-white'>Submit</span>
+            ) : (
+                ''
+            )}
+            <section
+                className='bg-cover bg-no-repeat backdrop-blur-sm text-center text-white community_bg'
+                style={{ backgroundImage: `url(${communityBg2})` }}
+            >
+                <div className='flex flex-col justify-center items-center backdrop-blur-sm py-24'>
+                    {/* //play circle button */}
+                    <button onClick={changeVisibility}>
+                        <img src={playCircle} alt='' />
                     </button>
+                    <div className='pt-5'>
+                        <h1 className='font-bold text-6xl'>
+                            JOIN THE <span className='text-orange-custom'> COMMUNITY</span>
+                        </h1>
+                        <p className='font-semibold text-lg tracking-wider'>
+                            Join our Discord community and choosec onsteur
+                        </p>
+                    </div>
+                    <div className='mt-4 border rounded-full'>
+                        <button
+                            aria-label='Join the Community'
+                            className='inline-flex relative justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-full font-medium text-white transition-all group'
+                        >
+                            <span className='group-hover:text-white relative text-white'>
+                                Submit
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </section>
-            <section className='bg-blue-custom pt-20 select-none'>
+            <section className='bg-blue-custom -mt-2 pt-20 select-none'>
                 <h1 className='flex items-center gap-3 px-8 font-bold text-4xl text-left text-white'>
                     OUR LATEST CREATIONS
                     <span>
-                        {' '}
                         <img
                             src='https://html.themegenix.com/mykd/assets/img/icons/fire.png'
                             alt=''
@@ -585,7 +505,6 @@ const Game_page = () => {
                 </h1>
                 <EffectCoverflowSlider />
             </section>
-
             {/* <================================================================================================> */}
         </div>
     );

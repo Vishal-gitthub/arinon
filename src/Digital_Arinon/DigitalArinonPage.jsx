@@ -63,6 +63,7 @@ import Slider from 'react-slick';
 import 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import PackageComparison from './Arinon_Child_page/PackageComparison';
 
 // <<<<<<<------->>>>>>>
 
@@ -566,7 +567,7 @@ const DigitalArinonPage = () => {
                 <div>
                     <div className='flex flex-wrap justify-center items-center gap-7 pt-8'>
                         <div className='shadow-[0px_2px_15px_4px_#0000001a] h-[450px] group'>
-                            <div className='relative flex justify-center items-center bg-white w-72 h- overflow-hidden'>
+                            <div className='relative flex justify-center items-center bg-white w-72 overflow-hidden'>
                                 <div className='group-hover:text-white relative z-10 py-6 text-center transition-all duration-300'>
                                     <h1 className='font-bold text-xl tracking-wider'>
                                         Starter Package
@@ -580,19 +581,20 @@ const DigitalArinonPage = () => {
                                 <div className='bottom-[-100%] group-hover:bottom-0 left-0 absolute bg-[#1d3962] w-full h-full transition-all duration-300 ease-in-out' />
                             </div>
 
-                            <div className='relative flex justify-center items-center bg-white w-72 h- overflow-hidden group'>
+                            <div className='relative flex justify-center items-center bg-white w-72 h-[66%] overflow-hidden group'>
                                 <div className='group-hover:text-white relative z-10 px-5 text-center transition-all duration-300'>
-                                    <h1 className='py-4 text-base'>
+                                    <h1 className='py-2 text-base'>
                                         3 posts/week (Reels, photos, captions)
                                     </h1>
-                                    <h1 className='py-4 text-base'>
+                                    <h1 className='py-2 text-base'>
                                         2 stories/week for audience engagement
                                     </h1>
-                                    <h1 className='py-4 text-base'>
+                                    <h1 className='py-2 text-base'>
                                         Basic hashtag research boost reach
                                     </h1>
-                                    <h1 className='py-4 text-base'>
-                                        Monthly insights on followers and engagement
+                                    <hr />
+                                    <h1 className='py-4 font-semibold text-base'>
+                                        Best for Personal Profile Optimization
                                     </h1>
                                 </div>
                                 <div className='group-hover:top-0 top-[-100%] left-0 absolute bg-[#a62d7a] w-full h-full transition-all duration-300 ease-in-out' />
@@ -612,51 +614,52 @@ const DigitalArinonPage = () => {
                                 <div className='bottom-[-100%] group-hover:bottom-0 left-0 absolute bg-[#1d3962] w-full h-full transition-all duration-300 ease-in-out' />
                             </div>
 
-                            <div className='relative flex justify-center items-center bg-white w-72 overflow-hidden group'>
+                            <div className='relative flex justify-center items-center bg-white w-72 h-[66%] overflow-hidden group'>
                                 <div className='group-hover:text-white relative z-10 px-5 text-center transition-all duration-300'>
-                                    <h1 className='py-4 text-base'>
+                                    <h1 className='py-2 text-base'>
                                         4 posts/week (photos, Reels, captions)
                                     </h1>
-                                    <h1 className='py-4 text-base'>
+                                    <h1 className='py-2 text-base'>
                                         3 stories/week to deepen connection
                                     </h1>
-                                    <h1 className='py-4 text-base'> 1 trending Reel per week</h1>
-                                    <h1 className='py-4 text-base'>
-                                        {' '}
-                                        Advanced monthly report with engagement insights
+                                    <h1 className='py-2 text-base'> 1 trending Reel per week</h1>
+                                    <hr />
+                                    <h1 className='py-4 font-semibold text-base'>
+                                        Best for Small Business Success and Brand Growth
                                     </h1>
                                 </div>
                                 <div className='group-hover:top-0 top-[-100%] left-0 absolute bg-[#a62d7a] w-full h-full transition-all duration-300 ease-in-out' />
                             </div>
                         </div>
                         <div className='shadow-[0px_2px_15px_4px_#0000001a] h-[450px] group'>
-                            <div className='relative flex justify-center items-center bg-white w-72 h- overflow-hidden'>
+                            <div className='relative flex justify-center items-center bg-white w-72 overflow-hidden'>
                                 <div className='group-hover:text-white relative z-10 py-6 text-center transition-all duration-300'>
                                     <h1 className='font-bold text-xl tracking-wider'>
                                         Premium Package
                                     </h1>
 
                                     <h1 className='font-bold text-5xl tracking-wider'>
-                                        25000<span className='font-medium text-2xl'>₹</span>
+                                        30000<span className='font-medium text-2xl'>₹</span>
                                     </h1>
                                     <span className='font-medium text-lg'>Monthly billing</span>
                                 </div>
                                 <div className='bottom-[-100%] group-hover:bottom-0 left-0 absolute bg-[#1d3962] w-full h-full transition-all duration-300 ease-in-out' />
                             </div>
 
-                            <div className='relative flex justify-center items-center bg-white w-72 h- overflow-hidden group'>
+                            <div className='relative flex justify-center items-center bg-white w-72 h-[66%] overflow-hidden group'>
                                 <div className='group-hover:text-white relative z-10 px-5 text-center transition-all duration-300'>
-                                    <h1 className='py-4 text-base'>
+                                    <h1 className='py-2 text-base'>
                                         5 posts/week (diverse mix including Reels, quotes)
                                     </h1>
-                                    <h1 className='py-4 text-base'>
+                                    <h1 className='py-2 text-base'>
                                         Daily stories to maintain engagement
                                     </h1>
-                                    <h1 className='py-4 text-base'>
+                                    <h1 className='py-2 text-base'>
                                         2 high-quality Reels per week
                                     </h1>
-                                    <h1 className='py-4 text-base'>
-                                        Detailed monthly analytics with growth strategies
+                                    <hr />
+                                    <h1 className='py-4 font-semibold text-base'>
+                                        Best for Boosting Influencer Growth and Brand Power{' '}
                                     </h1>
                                 </div>
                                 <div className='group-hover:top-0 top-[-100%] left-0 absolute bg-[#a62d7a] w-full h-full transition-all duration-300 ease-in-out' />
@@ -666,29 +669,29 @@ const DigitalArinonPage = () => {
                             <div className='relative flex justify-center items-center bg-white py-5 w-72 overflow-hidden group'>
                                 <div className='group-hover:text-white relative z-10 px-5 text-center transition-all duration-300'>
                                     <h1 className='font-bold text-2xl tracking-wider'>
-                                        1:1 Consulting
+                                        Customized Plan
                                     </h1>
-                                    <p className='py-4 text-base'>
-                                        In-person consultation for a deep dive into your brand
-                                        strategy.
-                                    </p>
-                                    <p>
-                                        Comprehensive guidance with hands-on support for execution.
-                                    </p>
+                                    <h1 className='font-bold text-5xl tracking-wider'>
+                                        Design
+                                        <span className='font-medium text-2xl'></span>
+                                    </h1>
+                                    <span className='font-medium text-lg'>Your Own</span>
                                 </div>
                                 <div className='bottom-[-100%] group-hover:bottom-0 left-0 absolute bg-[#1d3962] w-full h-full transition-all duration-300 ease-in-out' />
                             </div>
                             <div className='relative flex justify-center items-center bg-white py-4 w-72 overflow-hidden'>
                                 <div className='group-hover:text-white relative z-10 px-5 text-center transition-all duration-300'>
-                                    <h1 className='font-bold text-2xl tracking-wider'>
-                                        Online Consulting
-                                    </h1>
-                                    <p className='py-4 tracking-wide'>
-                                        Personalized strategy session via video call tailored to
-                                        your business goals.
+                                    <p className='pb-4 text-base'>
+                                        Custom social media strategies for your brand
                                     </p>
-                                    <p className='py-4'>
-                                        Actionable insights and a roadmap for your digital growth.
+                                    <p className='py-4 text-base'>
+                                        Plans that evolve with your audience growth
+                                    </p>
+                                    <p className='pb-4 text-base'>
+                                        Scalable solutions to amplify your social presence
+                                    </p>
+                                    <p className='pb-4 text-base'>
+                                        Affordable pricing based on your social needs
                                     </p>
                                 </div>
                                 <div className='group-hover:top-0 top-[-100%] left-0 absolute bg-[#a62d7a] w-full h-full transition-all duration-300 ease-in-out' />
@@ -696,6 +699,7 @@ const DigitalArinonPage = () => {
                         </div>
                     </div>
                 </div>
+                <PackageComparison />
             </section>
 
             {/* -------------------------------CHILD SECTION 6------------------------------- */}
