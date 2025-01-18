@@ -3,7 +3,7 @@ import { Routes, Route, useLocation, Outlet } from 'react-router-dom';
 
 const FrontPage = lazy(() => import('./Pages/FrontPage.jsx'));
 const DigitalArinonPage = lazy(() => import('./Digital_Arinon/DigitalArinonPage.jsx'));
-const GamePage = lazy(() => import('./Games_Arinon/Game_page'));
+const GamePage = lazy(() => import('./Games_Arinon/Game_page.jsx'));
 const AboutUs = lazy(() => import('./Games_Arinon/Components/About_us/About-Us.jsx'));
 const Support = lazy(() => import('./Games_Arinon/Support.jsx'));
 const PrivacyPolicyDigital = lazy(() => import('./Digital_Arinon/DigitalPrivacyPolicy'));

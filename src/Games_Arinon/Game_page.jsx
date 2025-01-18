@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -25,9 +24,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../Games_Arinon/SliderComponent/effectCoverFlow.css';
 import gsap from 'gsap';
 import PopUp from './PopUp';
-
-import '../Games_Arinon/Game_page.css';
-
+import '../Games_Arinon/gamePage.css'
 gsap.registerPlugin(ScrollTrigger);
 
 const gameCards = [
