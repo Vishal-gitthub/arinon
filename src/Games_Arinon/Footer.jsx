@@ -14,7 +14,7 @@ const Footer = () => {
 
                     <p>info@arinon.com</p>
 
-                    <p>+91 97738 36032</p>
+                    <p>+91 92204 40702</p>
                 </div>
             </div>
             <hr className='border-gray-900 border-t-2' />

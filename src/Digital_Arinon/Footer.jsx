@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
     return (
         <div>
-            {' '}
             <footer className='bg-blue-custom px-14 pt-10 pb-4 text-white' id='contact'>
                 <ContactForm />
 
@@ -13,7 +12,7 @@ export default function Footer() {
 
                 <div className='flex max-md:flex-col-reverse max-md:flex-wrap justify-between max-md:justify-center items-center gap-20 max-md:gap-2 pt-2'>
                     <div className='flex items-center gap-1 text-[12px]'>
-                        <p >
+                        <p>
                             <i className='fa-copyright px-1 text-white fa'></i>
                             {new Date().getFullYear()} Arinon Digital, (a unit of Manisi) All rights
                             reserved.
@@ -26,7 +25,7 @@ export default function Footer() {
 
                     <div className='flex flex-shrink-0 items-center gap-3 text-[12px]'>
                         <i className='text-white fa fa-phone'></i>
-                        <p className='tracking-wide'>+91 97738 36032</p>
+                        <p className='tracking-wide'>+91 92204 40702</p>
                     </div>
 
                     <div className='flex items-center gap-3 text-sm'>

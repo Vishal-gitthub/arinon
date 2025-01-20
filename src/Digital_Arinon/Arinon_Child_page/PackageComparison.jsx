@@ -5,6 +5,7 @@ const plans = [
     {
         name: 'Starter Package',
         price: '₹15,000/month',
+        gst: '+GST',
         features: [
             {
                 name: '3 posts per week (Reels, photos, captions)',
@@ -48,6 +49,7 @@ const plans = [
     {
         name: 'Growth Package',
         price: '₹22,000/month',
+        gst: '+GST',
         highlighted: true,
         highlightedMessage: 'Most Popular',
         features: [
@@ -92,6 +94,7 @@ const plans = [
     {
         name: 'Premium Package',
         price: '₹30,000/month',
+        gst: '+GST',
         features: [
             {
                 name: 'Daily posts (mix of Reels, carousels, quotes, and photos)',
@@ -242,43 +245,46 @@ function PackageComparison() {
                                         <p className='-top-[1px] -right-[1px] absolute bg-gradient-to-r from-purple-custom to-blue-custom px-5 border border-blue-custom rounded-tr-lg rounded-bl-md text-center text-sm text-white'>
                                             {plan.highlightedMessage}
                                         </p>
-                                        <div className='p-6'>
-                                            <h3 className='font-semibold text-gray-900 text-xl'>
-                                                {plan.name}
-                                            </h3>
-                                            <p className='mt-4 font-bold text-3xl text-gray-900'>
-                                                {plan.price}
-                                            </p>
-                                            <ul className='space-y-4 mt-6'>
-                                                {plan.features.map((feature) => (
-                                                    <li
-                                                        key={feature.name}
-                                                        className={`flex items-center space-x-3 ${
-                                                            feature.included ? '' : 'opacity-50'
-                                                        }`}
-                                                    >
-                                                        {feature.included ? (
-                                                            <Check className='flex-shrink-0 w-5 h-5 text-green-500' />
-                                                        ) : (
-                                                            <X className='flex-shrink-0 w-5 h-5 text-red-500' />
-                                                        )}
-                                                        <div>
-                                                            <span
-                                                                className={`text-sm ${
-                                                                    feature.included
-                                                                        ? 'text-gray-600'
-                                                                        : 'line-through text-gray-500'
-                                                                }`}
-                                                            >
-                                                                {feature.name}
-                                                            </span>
-                                                            <p className='text-gray-500 text-xs'>
-                                                                {feature.amount}
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                        <div className='flex flex-col justify-between p-6 h-full'>
+                                            <div>
+                                                <h3 className='font-semibold text-gray-900 text-xl'>
+                                                    {plan.name}
+                                                </h3>
+                                                <p className='mt-4 font-bold text-3xl text-gray-900'>
+                                                    {plan.price}
+                                                    <span className='font-normal text-gray-500 text-xs'>{plan.gst}</span>
+                                                </p>
+                                                <ul className='space-y-4 mt-6'>
+                                                    {plan.features.map((feature) => (
+                                                        <li
+                                                            key={feature.name}
+                                                            className={`flex items-center space-x-3 ${
+                                                                feature.included ? '' : 'opacity-50'
+                                                            }`}
+                                                        >
+                                                            {feature.included ? (
+                                                                <Check className='flex-shrink-0 w-5 h-5 text-green-500' />
+                                                            ) : (
+                                                                <X className='flex-shrink-0 w-5 h-5 text-red-500' />
+                                                            )}
+                                                            <div>
+                                                                <span
+                                                                    className={`text-sm ${
+                                                                        feature.included
+                                                                            ? 'text-gray-600'
+                                                                            : 'line-through text-gray-500'
+                                                                    }`}
+                                                                >
+                                                                    {feature.name}
+                                                                </span>
+                                                                <p className='text-gray-500 text-xs'>
+                                                                    {feature.amount}
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                             <a href='#contact' onClick={() => setIsOpen(false)}>
                                                 <button
                                                     className={`mt-8 w-full px-4 py-2 rounded-md font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 ${

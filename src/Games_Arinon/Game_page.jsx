@@ -451,7 +451,7 @@ const Game_page = () => {
                         >
                             X
                         </button>
-                        <video loop muted autoPlay className='rounded-3xl'>
+                        <video loop autoPlay className='rounded-3xl'>
                             <source src={gameVideo} type='video/mp4' />
                             Your browser does not support the video tag.
                         </video>

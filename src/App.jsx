@@ -3,7 +3,7 @@ import { Routes, Route, useLocation, Outlet } from 'react-router-dom';
 
 const FrontPage = lazy(() => import('./Pages/FrontPage.jsx'));
 const DigitalArinonPage = lazy(() => import('./Digital_Arinon/DigitalArinonPage.jsx'));
-const GamePage = lazy(() => import('./Games_Arinon/Game_page.jsx'));
+const GamePage = lazy(() => import('./Games_Arinon/Game_page'));
 const AboutUs = lazy(() => import('./Games_Arinon/Components/About_us/About-Us.jsx'));
 const Support = lazy(() => import('./Games_Arinon/Support.jsx'));
 const PrivacyPolicyDigital = lazy(() => import('./Digital_Arinon/DigitalPrivacyPolicy'));
@@ -43,8 +43,19 @@ const App = () => {
     const location = useLocation();
 
     useEffect(() => {
-        document.body.className = 'bg-white'; // No need for condition as both cases are the same
-    }, []);
+        const scrollToHashElement = () => {
+            if (location.hash) {
+                const element = document.querySelector(location.hash);
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }, 100); // Delay ensures element is rendered
+                }
+            }
+        };
+
+        scrollToHashElement();
+    }, [location]); // Runs whenever location changes
 
     return (
         <div className='font-custom'>

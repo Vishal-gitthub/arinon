@@ -20,8 +20,8 @@ const Chatbot = () => {
                 onClick={toggleChatbot}
                 style={{
                     position: 'fixed',
-                    bottom: '70px',
-                    right: '10px',
+                    bottom: '0px',
+                    left: '0px',
                     border: 'none',
                     borderRadius: '50%',
                     cursor: 'pointer',
@@ -29,7 +29,7 @@ const Chatbot = () => {
                 }}
                 className='bg-transparent'
             >
-                <div className='w-16 h-16'>
+                <div className='w-36'>
                     <img src={chatbotLogo} alt='' className='rounded-full' />
                 </div>
             </button>
@@ -39,11 +39,11 @@ const Chatbot = () => {
                 <div
                     style={{
                         position: 'fixed',
-                        bottom: '40px',
-                        right: '20px',
+                        bottom: '0px',
+                        left: '0px',
                         zIndex: 9999,
-                        width: '300px',
-                        height: '400px',
+                        width: '400px',
+                        height: '600px',
                         border: 'none',
                         borderRadius: '8px',
                         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
@@ -55,7 +55,7 @@ const Chatbot = () => {
                         style={{
                             position: 'absolute',
                             top: '0px',
-                            right: '0px',
+                            left: '0px',
                             backgroundColor: '#fff',
                             color: 'black',
                             border: 'none',

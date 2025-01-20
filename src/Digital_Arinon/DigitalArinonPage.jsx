@@ -574,7 +574,8 @@ const DigitalArinonPage = () => {
                                     </h1>
 
                                     <h1 className='font-bold text-5xl tracking-wider'>
-                                        15000<span className='font-medium text-2xl'>₹</span>
+                                        15,000<span className='font-medium text-2xl'>₹</span>
+                                        <span className='opacity-65 font-normal text-xs'>+GST</span>
                                     </h1>
                                     <span className='font-medium text-lg'>Monthly billing</span>
                                 </div>
@@ -607,7 +608,8 @@ const DigitalArinonPage = () => {
                                         Growth Package
                                     </h1>
                                     <h1 className='font-bold text-5xl tracking-wider'>
-                                        22000<span className='font-medium text-2xl'>₹</span>
+                                        22,000<span className='font-medium text-2xl'>₹</span>
+                                        <span className='opacity-65 font-normal text-xs'>+GST</span>
                                     </h1>
                                     <span className='font-medium text-lg'>Monthly billing</span>
                                 </div>
@@ -639,7 +641,8 @@ const DigitalArinonPage = () => {
                                     </h1>
 
                                     <h1 className='font-bold text-5xl tracking-wider'>
-                                        30000<span className='font-medium text-2xl'>₹</span>
+                                        30,000<span className='font-medium text-2xl'>₹</span>
+                                        <span className='opacity-65 font-normal text-xs'>+GST</span>
                                     </h1>
                                     <span className='font-medium text-lg'>Monthly billing</span>
                                 </div>
@@ -659,7 +662,7 @@ const DigitalArinonPage = () => {
                                     </h1>
                                     <hr />
                                     <h1 className='py-4 font-semibold text-base'>
-                                        Best for Boosting Influencer Growth and Brand Power{' '}
+                                        Best for Boosting Influencer Growth and Brand Power
                                     </h1>
                                 </div>
                                 <div className='group-hover:top-0 top-[-100%] left-0 absolute bg-[#a62d7a] w-full h-full transition-all duration-300 ease-in-out' />
@@ -760,7 +763,7 @@ const DigitalArinonPage = () => {
                                     <div className='w-[80%] max-sm:w-full text-center'>
                                         <p className='py-3 text-2xl text-white'>
                                             Arinon understands my audience perfectly! Their creative
-                                            approach has taken my social media to the next level.{' '}
+                                            approach has taken my social media to the next level.
                                         </p>
                                         <h1 className='font-medium text-gray-500 text-lg'>
                                             MUSINGS OF AAKANKSHA
