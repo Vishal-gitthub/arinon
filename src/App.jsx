@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect } from 'react';
+import  { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation, Outlet } from 'react-router-dom';
 
 const FrontPage = lazy(() => import('./Pages/FrontPage.jsx'));

@@ -142,6 +142,7 @@ const plans = [
     {
         name: 'Custom Plan',
         price: null,
+        gst: null,
         features: [
             {
                 name: 'Fully customizable posting schedules',
@@ -252,7 +253,7 @@ function PackageComparison() {
                                                 </h3>
                                                 <p className='mt-4 font-bold text-3xl text-gray-900'>
                                                     {plan.price}
-                                                    <span className='font-normal text-gray-500 text-xs'>{plan.gst}</span>
+                                                    <span className='font-normal text-gray-500 text-xs'>  {plan.gst}</span>
                                                 </p>
                                                 <ul className='space-y-4 mt-6'>
                                                     {plan.features.map((feature) => (

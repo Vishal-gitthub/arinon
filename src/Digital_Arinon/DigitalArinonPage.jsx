@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Chatbot from '../Chatbox';
+
+// Importing backgroundElements
+import BgElement_1 from '../Image_Files/ArinonImages/bgElement1.png';
+import BgElement_2 from '../Image_Files/ArinonImages/bgElement2.svg';
+import BgElement_3 from '../Image_Files/ArinonImages/bgTrianlge-2.png';
+
 // Importing images and SVG files
 import arinonBannerVideo from '../Image_Files/ArinonImages/ArinonHero.mp4';
 import BulbSvg from '../Image_Files/Icons_File/bulb-2.svg';
@@ -147,8 +153,16 @@ const DigitalArinonPage = () => {
             },
             { element: '.leftCard', from: { x: '-100%' }, to: { x: '0%', duration: 1.5 } },
             { element: '.rightCard', from: { x: '100%' }, to: { x: '0%', duration: 1.5 } },
-            { element: '.objectRight', from: { x: '100%' }, to: { x: '0%', duration: 1.5 } },
-            { element: '.objectLeft', from: { x: '-100%' }, to: { x: '0%', duration: 1.5 } },
+            {
+                element: '.objectRight',
+                from: { x: '100%', opacity: 0 },
+                to: { x: '0%', duration: 1.5, opacity: 1 },
+            },
+            {
+                element: '.objectLeft',
+                from: { x: '-100%', opacity: 0 },
+                to: { x: '0%', duration: 1.5, opacity: 1 },
+            },
             { element: '.objectRight2', from: { x: '100%' }, to: { x: '0%', duration: 1.5 } },
             { element: '.objectLeft2', from: { x: '-100%' }, to: { x: '0%', duration: 1.5 } },
             {
@@ -263,7 +277,10 @@ const DigitalArinonPage = () => {
                 </div>
             </section>
             {/* -------------------------------SECTION 1------------------------------- */}
-            <section>
+            <section
+                className='bg-contain lg:bg-no-repeat bg-left'
+                style={{ backgroundImage: `url(${BgElement_1})` }}
+            >
                 {/* -------------------------------CHILD SECTION A------------------------------- */}
                 <div className='px-36 max-sm:px-5 max-md:px-20 text-center' id='home'>
                     <h1 className='py-16 font-bold text-5xl max-sm:text-4xl'>
@@ -282,10 +299,10 @@ const DigitalArinonPage = () => {
                 <div className='flex max-md:flex-col flex-wrap justify-center items-center gap-5 px-24 max-sm:px-3 max-md:px-12 pt-8 pb-8 text-center overflow-hidden'>
                     {/* Left Card */}
                     <div className='leftCard flex flex-col items-center w-full sm:w-[30%] md:w-[50%] lg:w-[30%] creativeIdea'>
-                        <div className='relative top-12'>
+                        <div className='relative top-12 z-[1]'>
                             <img src={BulbSvg} alt='bulb Svg' />
                         </div>
-                        <div className='shadow-[0px_3px_18px_0px_lightgray] px-14 py-20 rounded-2xl h-56'>
+                        <div className='bg-white/5 shadow-[0px_3px_18px_0px_lightgray] backdrop-blur-sm px-14 py-20 rounded-2xl h-56'>
                             <h1 className='font-semibold text-xl'>
                                 We have some creative ideas for you.
                             </h1>
@@ -317,7 +334,7 @@ const DigitalArinonPage = () => {
             </section>
 
             {/* -------------------------------SECTION 2------------------------------- */}
-            <section className='bg-blue-custom mt-12 py-20 text-white' id='about-us'>
+            <section className='bg-blue-custom py-20 text-white' id='about-us'>
                 {/* -------------------------------CHILD SECTION A------------------------------- */}
                 {/* our Philosophy and vision  */}
                 <div className='flex max-md:flex-col justify-center items-center max-md:px-5 overflow-hidden'>
@@ -335,8 +352,8 @@ const DigitalArinonPage = () => {
                 </div>
 
                 <div className='flex max-md:flex-col-reverse justify-center items-center max-md:px-5 overflow-hidden'>
-                    <div className='flex justify-end pl-6 objectLeft'>
-                        <img src={plant2} alt='' className='pl-5' />
+                    <div className='flex justify-end pl-6 max-w-72 objectLeft'>
+                        <img src={plant2} alt='' className='pl-5 animate-none' />
                     </div>
                     <div className='text-right pr-11 max-md:pr-0 w-2/4 max-md:w-full max-md:text-center'>
                         <h1 className='py-4 font-bold text-4xl'>Our Vision</h1>
@@ -380,7 +397,10 @@ const DigitalArinonPage = () => {
 
             {/* Brands Logos Carousels */}
             {/* -------------------------------SECTION 3------------------------------- */}
-            <section className='py-10 brandBg'>
+            <section
+                className='bg-cover bg-fixed py-10 brandBg'
+                style={{ backgroundImage: `url(${BgElement_2})` }}
+            >
                 <div>
                     <Slider {...brandCarousel}>
                         <div className='flex justify-center items-center outline-none'>
@@ -487,7 +507,7 @@ const DigitalArinonPage = () => {
                     {projectsClient.map((project, index) => (
                         <div key={index}>
                             <Link to={project.to}>
-                                <div className='relative w-full h-full overflow-hidden group'>
+                                <div className='group relative w-full h-full overflow-hidden'>
                                     <img
                                         src={project.image}
                                         alt={`Image of ${project.name}`}
@@ -566,7 +586,7 @@ const DigitalArinonPage = () => {
                 {/* prices up down annimation Cards */}
                 <div>
                     <div className='flex flex-wrap justify-center items-center gap-7 pt-8'>
-                        <div className='shadow-[0px_2px_15px_4px_#0000001a] h-[450px] group'>
+                        <div className='group shadow-[0px_2px_15px_4px_#0000001a] h-[450px]'>
                             <div className='relative flex justify-center items-center bg-white w-72 overflow-hidden'>
                                 <div className='group-hover:text-white relative z-10 py-6 text-center transition-all duration-300'>
                                     <h1 className='font-bold text-xl tracking-wider'>
@@ -582,7 +602,7 @@ const DigitalArinonPage = () => {
                                 <div className='bottom-[-100%] group-hover:bottom-0 left-0 absolute bg-[#1d3962] w-full h-full transition-all duration-300 ease-in-out' />
                             </div>
 
-                            <div className='relative flex justify-center items-center bg-white w-72 h-[66%] overflow-hidden group'>
+                            <div className='group relative flex justify-center items-center bg-white w-72 h-[66%] overflow-hidden'>
                                 <div className='group-hover:text-white relative z-10 px-5 text-center transition-all duration-300'>
                                     <h1 className='py-2 text-base'>
                                         3 posts/week (Reels, photos, captions)
@@ -601,7 +621,7 @@ const DigitalArinonPage = () => {
                                 <div className='group-hover:top-0 top-[-100%] left-0 absolute bg-[#a62d7a] w-full h-full transition-all duration-300 ease-in-out' />
                             </div>
                         </div>
-                        <div className='shadow-[0px_2px_15px_4px_#0000001a] h-[450px] group'>
+                        <div className='group shadow-[0px_2px_15px_4px_#0000001a] h-[450px]'>
                             <div className='relative flex justify-center items-center bg-white w-72 h- overflow-hidden'>
                                 <div className='group-hover:text-white relative z-10 py-6 text-center transition-all duration-300'>
                                     <h1 className='font-bold text-xl tracking-wider'>
@@ -616,7 +636,7 @@ const DigitalArinonPage = () => {
                                 <div className='bottom-[-100%] group-hover:bottom-0 left-0 absolute bg-[#1d3962] w-full h-full transition-all duration-300 ease-in-out' />
                             </div>
 
-                            <div className='relative flex justify-center items-center bg-white w-72 h-[66%] overflow-hidden group'>
+                            <div className='group relative flex justify-center items-center bg-white w-72 h-[66%] overflow-hidden'>
                                 <div className='group-hover:text-white relative z-10 px-5 text-center transition-all duration-300'>
                                     <h1 className='py-2 text-base'>
                                         4 posts/week (photos, Reels, captions)
@@ -633,7 +653,7 @@ const DigitalArinonPage = () => {
                                 <div className='group-hover:top-0 top-[-100%] left-0 absolute bg-[#a62d7a] w-full h-full transition-all duration-300 ease-in-out' />
                             </div>
                         </div>
-                        <div className='shadow-[0px_2px_15px_4px_#0000001a] h-[450px] group'>
+                        <div className='group shadow-[0px_2px_15px_4px_#0000001a] h-[450px]'>
                             <div className='relative flex justify-center items-center bg-white w-72 overflow-hidden'>
                                 <div className='group-hover:text-white relative z-10 py-6 text-center transition-all duration-300'>
                                     <h1 className='font-bold text-xl tracking-wider'>
@@ -649,7 +669,7 @@ const DigitalArinonPage = () => {
                                 <div className='bottom-[-100%] group-hover:bottom-0 left-0 absolute bg-[#1d3962] w-full h-full transition-all duration-300 ease-in-out' />
                             </div>
 
-                            <div className='relative flex justify-center items-center bg-white w-72 h-[66%] overflow-hidden group'>
+                            <div className='group relative flex justify-center items-center bg-white w-72 h-[66%] overflow-hidden'>
                                 <div className='group-hover:text-white relative z-10 px-5 text-center transition-all duration-300'>
                                     <h1 className='py-2 text-base'>
                                         5 posts/week (diverse mix including Reels, quotes)
@@ -668,8 +688,8 @@ const DigitalArinonPage = () => {
                                 <div className='group-hover:top-0 top-[-100%] left-0 absolute bg-[#a62d7a] w-full h-full transition-all duration-300 ease-in-out' />
                             </div>
                         </div>
-                        <div className='shadow-[0px_2px_15px_4px_#0000001a] h-[450px] group'>
-                            <div className='relative flex justify-center items-center bg-white py-5 w-72 overflow-hidden group'>
+                        <div className='group shadow-[0px_2px_15px_4px_#0000001a] h-[450px]'>
+                            <div className='group relative flex justify-center items-center bg-white py-5 w-72 overflow-hidden'>
                                 <div className='group-hover:text-white relative z-10 px-5 text-center transition-all duration-300'>
                                     <h1 className='font-bold text-2xl tracking-wider'>
                                         Customized Plan
@@ -706,7 +726,7 @@ const DigitalArinonPage = () => {
             </section>
 
             {/* -------------------------------CHILD SECTION 6------------------------------- */}
-            <section className='bg-blue-100 py-24 group testimonialsBg'>
+            <section className='group bg-blue-100 py-24 testimonialsBg'>
                 <div className='flex flex-col items-center'>
                     <h1 className='font-semibold text-3xl text-center text-white uppercase'>
                         Happy clients

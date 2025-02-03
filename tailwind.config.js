@@ -6,6 +6,9 @@ export default {
             boxShadow: {
                 'custom-shadow': 'inset 2px 2px 4px #c4c4c4, inset -2px -2px 4px #ffffff',
             },
+            backgroundColor: {
+                customBackgroundColor: '#F2DFD7',
+            },
             fontFamily: {
                 custom: ['myCustomFont', 'sans-serif'],
             },

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import chatbotLogo from './Image_Files/Icons_File/ai-assistant_logo.gif';
+import  { useState } from 'react';
+import chatbotLogo from './Image_Files/Icons_File/ai-assistant_logo.png';
 const Chatbot = () => {
     const [isVisible, setIsVisible] = useState(false);
 

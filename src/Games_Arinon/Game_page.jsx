@@ -269,7 +269,7 @@ const Game_page = () => {
                             </a>
                         </div>
                     </div>
-
+                    
                     <div className='relative hr-custom-line mt-12 w-full text-center'>
                         <div className='py-7'>
                             <div className='flex flex-wrap justify-center gap-9'>

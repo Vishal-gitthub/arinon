@@ -55,7 +55,7 @@ const CareerForm = () => {
                     <p className='font-medium text-lg'>Video Editor</p>
                     <p className='flex flex-shrink-0 mt-1 text-sm'>GHITORNI, DELHI</p>
                     <p className='mt-1 text-sm'>2+ years</p>
-                    <button className='inline-flex relative justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-full font-medium text-white transition-all group'>
+                    <button className='group inline-flex relative justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-full font-medium text-white transition-all'>
                         Apply Now
                     </button>
                 </div>
@@ -63,7 +63,7 @@ const CareerForm = () => {
                     <p className='font-medium text-lg'>Video Editor</p>
                     <p className='flex flex-shrink-0 mt-1 text-sm'>GHITORNI, DELHI</p>
                     <p className='mt-1 text-sm'>2+ years</p>
-                    <button className='inline-flex relative justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-full font-medium text-white transition-all group'>
+                    <button className='group inline-flex relative justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-full font-medium text-white transition-all'>
                         Apply Now
                     </button>
                 </div>
@@ -71,7 +71,7 @@ const CareerForm = () => {
                     <p className='font-medium text-lg'>Video Editor</p>
                     <p className='flex flex-shrink-0 mt-1 text-sm'>GHITORNI, DELHI</p>
                     <p className='mt-1 text-sm'>2+ years</p>
-                    <button className='inline-flex relative justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-full font-medium text-white transition-all group'>
+                    <button className='group inline-flex relative justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-full font-medium text-white transition-all'>
                         Apply Now
                     </button>
                 </div>
@@ -215,7 +215,7 @@ const CareerForm = () => {
                                 <button
                                     type='submit'
                                     aria-label='Submit Form'
-                                    className='inline-flex relative justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-full font-medium text-white transition-all group'
+                                    className='group inline-flex relative justify-center items-center bg-blue-custom hover:bg-[#a62d7a] px-6 py-3 rounded-full font-medium text-white transition-all'
                                     disabled={isSending} // Disable the button during submission
                                 >
                                     {isSending ? (
